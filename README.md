@@ -35,3 +35,12 @@ Here is one video, how it looks like today.
 -> Bugs, Bugs, Bugs... everywhere
 -> Performance handling (need to assist the garbage collector with included memory management)
 -> Improving Menu
+
+<b>Importing the Project</b>
+
+0. I am using Eclipse IDE for Java Developers Version: Luna Service Release 2 (4.4.2)
+1. Should be jre1.8.0_101++
+2. Main Class: PixelCombat.java in the default directory
+3. Run Configurations: VM Arguments: -Xms1024m -Xmx4g
+4. Enjoy
+5. Comment or PM me as you wish and please tell me about found bugs :D
