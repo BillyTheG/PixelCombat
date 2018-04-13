@@ -4,6 +4,7 @@ PixelCombat is a self-written 2D Beat'em Up Game in Java. It includes: An Arcade
 All characters (sprites and other materials) are mostly taken from well-known platforms (Anime World e.g. One Piece, Fairy Tail, DBZ ...) and do not belong to my creation. Hence, this game was designed for only fun and is not meant for sale and commercial. 
 
 <b>Motivation</b>
+
 Have you ever found one completed beat'em up game written in java? Until now I could not find a proper tutorial to write LOC to realize such a funny game. My plan is to give one example, how such game can be made. Maybe you have more experiences than me in this field.
 I would appreciate any tip/help/advice. 
 
