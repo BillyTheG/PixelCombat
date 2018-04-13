@@ -65,7 +65,7 @@ public class ColdWinter extends PXMap {
 
 	@Override
 	public void playMusic(GameEngine engine) {
-		engine.musicMP3("/audio/Cold_Winter.mp3");		
+		engine.musicMP3("/audio/ColdWinter.mp3");		
 	}
 
 }
