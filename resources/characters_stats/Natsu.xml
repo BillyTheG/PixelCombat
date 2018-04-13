@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+<type>Natsu</type>
+<stats>
+<attackSpeed type="float">550</attackSpeed>
+<maxLifepoints type="integer">500</maxLifepoints>
+<actualLifepoints type="integer">500</actualLifepoints>
+<strength type="integer">5</strength>
+<regenerateMagictime type="float">1.5</regenerateMagictime>
+<movementSpeed type="float">9.5</movementSpeed>
+<maxMagicpoints type="integer">100</maxMagicpoints>
+<actualMagicpoints type="integer">100</actualMagicpoints>
+</stats>
+</character>

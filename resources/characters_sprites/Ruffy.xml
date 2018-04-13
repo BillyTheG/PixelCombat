@@ -1,0 +1,362 @@
+
+<character>
+<!-- 		1000 ~ 0.54s -->
+	<type>Ruffy</type>
+	<sprites>
+		<stand airBool="false" airIndex="0" loopIndex="0" loops="true">
+			<img duration="350" key="0">/images/ruffy/IMG_Ruffy_Stand_1_re.png</img>
+			<img duration="350" key="1">/images/ruffy/IMG_Ruffy_Stand_2_re.png</img>
+			<img duration="350" key="2">/images/ruffy/IMG_Ruffy_Stand_3_re.png</img>
+			<img duration="350" key="3">/images/ruffy/IMG_Ruffy_Stand_2_re.png</img>
+		</stand>
+		<move airBool="false" airIndex="0" loopIndex="0" loops="true">
+			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_Move_1_re.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Move_2_re.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Move_3_re.png</img>
+			<img duration="200" key="3">/images/ruffy/IMG_Ruffy_Move_4_re.png</img>
+			<img duration="200" key="4">/images/ruffy/IMG_Ruffy_Move_5_re.png</img>
+			<img duration="200" key="5">/images/ruffy/IMG_Ruffy_Move_6_re.png</img>
+			<img duration="200" key="6">/images/ruffy/IMG_Ruffy_Move_7_re.png</img>
+			<img duration="200" key="7">/images/ruffy/IMG_Ruffy_Move_8_re.png</img>
+		</move>
+		<jumping airBool="false" airIndex="0" loopIndex="3" loops="true">
+			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_Jump_1_re.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_2_re.png</img>
+			<img duration="250" key="2">/images/ruffy/IMG_Ruffy_Jump_3_re.png</img>
+			<img duration="100" key="3">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
+			<img duration="100" key="4">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+		</jumping>
+		<basicAttack airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="80" key="0">/images/ruffy/IMG_Ruffy_basicAttack_1_re.png</img>
+			<img duration="80" key="1">/images/ruffy/IMG_Ruffy_basicAttack_2_re.png</img>
+			<img duration="80" key="2">/images/ruffy/IMG_Ruffy_basicAttack_3_re.png</img>
+			<img duration="50" key="3">/images/ruffy/IMG_Ruffy_basicAttack_4_re.png</img>
+			<img duration="50" key="4">/images/ruffy/IMG_Ruffy_basicAttack_5_re.png</img>
+		</basicAttack>
+		<specialAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="130" key="0">/images/ruffy/IMG_Ruffy_basicAttack_5_re.png</img>
+			<img duration="130" key="1">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_1.png</img>
+			<img duration="130" key="2">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_2.png</img>
+			<img duration="130" key="3">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_3.png</img>
+			<img duration="130" key="4">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_4.png</img>
+			<img duration="430" key="5">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_5.png</img>
+			<img duration="150" key="6">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_6.png</img>
+			<img duration="50" key="7">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_7.png</img>
+			<img duration="450" key="8">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_8.png</img>
+			<img duration="130" key="9">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_9.png</img>
+			<img duration="130" key="10">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_10.png</img>
+		</specialAttack1>
+		<specialAttack2 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img key="0" duration="1900">/images/ruffy/IMG_Ruffy_JetPistole_1.png</img>
+			<img key="1" duration="150">/images/ruffy/IMG_Ruffy_JetPistole_2.png</img>
+			<img key="2" duration="80">/images/ruffy/IMG_Ruffy_JetPistole_3.png</img>
+			<img key="3" duration="80">/images/ruffy/IMG_Ruffy_JetPistole_4.png</img>
+			<img key="4" duration="100">/images/ruffy/IMG_Ruffy_JetPistole_5.png</img>
+			<img key="5" duration="250">/images/ruffy/IMG_Ruffy_JetPistole_6.png</img>
+			<img key="6" duration="500">/images/ruffy/IMG_Ruffy_JetPistole_7.png</img>
+			<img key="7" duration="250">/images/ruffy/IMG_Ruffy_JetPistole_8.png</img>
+		</specialAttack2>
+		<specialAttack3 airBool="true" airIndex="2" loopIndex="0" loops="false">
+			<img duration="300" key="0">/images/ruffy/IMG_Ruffy_specialAttack3_1_re.png</img>
+			<img duration="300" key="1">/images/ruffy/IMG_Ruffy_specialAttack3_2_re.png</img>
+			<img duration="140" key="2">/images/ruffy/IMG_Ruffy_specialAttack3_3_re.png</img>
+			<img duration="140" key="3">/images/ruffy/IMG_Ruffy_specialAttack3_4_re.png</img>
+			<img duration="150" key="4">/images/ruffy/IMG_Ruffy_specialAttack3_5_re.png</img>
+			<img duration="800" key="5">/images/ruffy/IMG_Ruffy_specialAttack3_6_re.png</img>
+			<img duration="100" key="6">/images/ruffy/IMG_Ruffy_specialAttack3_7_re.png</img>
+			<img duration="100" key="7">/images/ruffy/IMG_Ruffy_specialAttack3_8_re.png</img>
+			<img duration="100" key="8">/images/ruffy/IMG_Ruffy_specialAttack3_9_re.png</img>
+			<img duration="100" key="9">/images/ruffy/IMG_Ruffy_specialAttack3_10_re.png</img>
+			<img duration="100" key="10">/images/ruffy/IMG_Ruffy_specialAttack3_11_re.png</img>
+			<img duration="300" key="11">/images/ruffy/IMG_Ruffy_specialAttack3_12_re.png</img>
+			<img duration="300" key="12">/images/ruffy/IMG_Ruffy_specialAttack3_13_re.png</img>
+			<img duration="300" key="13">/images/ruffy/IMG_Ruffy_specialAttack3_14_re.png</img>
+		</specialAttack3>
+		<isHit airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="300" key="0">/images/ruffy/IMG_Ruffy_Disable_1.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Disable_2.png</img>
+		</isHit>
+		<knockBack airBool="false" airIndex="0" loopIndex="7" loops="true">
+			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_KnockBack_1.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_KnockBack_2.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_KnockBack_3.png</img>
+			<img duration="200" key="3">/images/ruffy/IMG_Ruffy_KnockBack_4.png</img>
+			<img duration="200" key="4">/images/ruffy/IMG_Ruffy_KnockBack_5.png</img>
+			<img duration="200" key="5">/images/ruffy/IMG_Ruffy_KnockBack_6.png</img>
+			<img duration="200" key="6">/images/ruffy/IMG_Ruffy_KnockBack_7.png</img>
+			<img duration="200" key="7">/images/ruffy/IMG_Ruffy_KnockBack_8.png</img>
+			<img duration="200" key="8">/images/ruffy/IMG_Ruffy_KnockBack_9.png</img>
+			<img duration="200" key="9">/images/ruffy/IMG_Ruffy_KnockBack_10.png</img>
+			<img duration="200" key="10">/images/ruffy/IMG_Ruffy_KnockBack_11.png</img>
+			<img duration="200" key="11">/images/ruffy/IMG_Ruffy_KnockBack_12.png</img>
+		</knockBack>
+		<knockedOut airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_Invincible_1.png</img>
+			<img duration="600" key="1">/images/ruffy/IMG_Ruffy_Invincible_2.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Invincible_3.png</img>
+			<img duration="200" key="3">/images/ruffy/IMG_Ruffy_Invincible_4.png</img>
+			<img duration="200" key="4">/images/ruffy/IMG_Ruffy_Invincible_5.png</img>
+		</knockedOut>
+		<avatar airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="0" key="0">/images/ruffy/IMG_Ruffy_Avatar.png</img>
+		</avatar>
+		<basicAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_BasicAttack1_1_re.png</img>
+			<img duration="100" key="1">/images/ruffy/IMG_Ruffy_BasicAttack1_2_re.png</img>
+			<img duration="100" key="2">/images/ruffy/IMG_Ruffy_BasicAttack1_3_re.png</img>
+			<img duration="80" key="3">/images/ruffy/IMG_Ruffy_BasicAttack1_4_re.png</img>
+			<img duration="80" key="4">/images/ruffy/IMG_Ruffy_BasicAttack1_5_re.png</img>
+			<img duration="80" key="5">/images/ruffy/IMG_Ruffy_BasicAttack1_6_re.png</img>
+			<img duration="100" key="6">/images/ruffy/IMG_Ruffy_BasicAttack1_2_re.png</img>
+			<img duration="100" key="7">/images/ruffy/IMG_Ruffy_BasicAttack1_1_re.png</img>
+		</basicAttack1>
+		<jumpAttack airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="50" key="0">/images/ruffy/IMG_Ruffy_jumpAttack_1_re.png</img>
+			<img duration="80" key="1">/images/ruffy/IMG_Ruffy_jumpAttack_2_re.png</img>
+			<img duration="80" key="2">/images/ruffy/IMG_Ruffy_jumpAttack_3_re.png</img>
+			<img duration="100" key="3">/images/ruffy/IMG_Ruffy_jumpAttack_4_re.png</img>
+			<img duration="80" key="4">/images/ruffy/IMG_Ruffy_jumpAttack_5_re.png</img>
+			<img duration="70" key="5">/images/ruffy/IMG_Ruffy_jumpAttack_6_re.png</img>
+			<img duration="80" key="6">/images/ruffy/IMG_Ruffy_jumpAttack_7_re.png</img>
+			<img duration="80" key="7">/images/ruffy/IMG_Ruffy_jumpAttack_8_re.png</img>
+			<img duration="100" key="8">/images/ruffy/IMG_Ruffy_jumpAttack_9_re.png</img>
+			<img duration="100" key="9">/images/ruffy/IMG_Ruffy_jumpAttack_10_re.png</img>
+		</jumpAttack>
+		<retreating airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="350" key="0">/images/ruffy/IMG_Ruffy_Retreat_2.png</img>
+		</retreating>
+		<dashing airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_Dash_1.png</img>
+			<img duration="100" key="1">/images/ruffy/IMG_Ruffy_Dash_2.png</img>
+			<img duration="100" key="2">/images/ruffy/IMG_Ruffy_Dash_3.png</img>
+			<img duration="100" key="3">/images/ruffy/IMG_Ruffy_Dash_4.png</img>
+			<img duration="100" key="4">/images/ruffy/IMG_Ruffy_Dash_5.png</img>
+			<img duration="50" key="5">/images/ruffy/IMG_Ruffy_Dash_6.png</img>
+			<img duration="150" key="6">/images/ruffy/IMG_Ruffy_Dash_7.png</img>
+		</dashing>
+		<defend airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_Defend_1_re.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Defend_2_re.png</img>
+		</defend>
+		<specialAttack4 airBool="true" airIndex="21" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_1.png</img>
+			<img duration="600" key="1">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_2.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_3.png</img>
+			<img duration="200" key="3">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_4.png</img>
+			<img duration="200" key="4">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_5.png</img>
+			<img duration="200" key="5">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_6.png</img>
+			<img duration="200" key="6">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_7.png</img>
+			<img duration="100" key="7">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_8.png</img>
+			<img duration="100" key="8">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_9.png</img>
+			<img duration="200" key="9">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_10.png</img>
+			<img duration="200" key="10">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_4.png</img>
+			<img duration="200" key="11">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_3.png</img>
+			<img duration="200" key="12">/images/ruffy/IMG_Ruffy_SpecialAttack2_1_2.png</img>
+			<img duration="200" key="13">/images/ruffy/IMG_Ruffy_SpecialAttack2_1.png</img>
+			<img duration="200" key="14">/images/ruffy/IMG_Ruffy_SpecialAttack2_2.png</img>
+			<img duration="200" key="15">/images/ruffy/IMG_Ruffy_SpecialAttack2_3.png</img>
+			<img duration="200" key="16">/images/ruffy/IMG_Ruffy_SpecialAttack2_4.png</img>
+			<img duration="200" key="17">/images/ruffy/IMG_Ruffy_SpecialAttack2_5.png</img>
+			<img duration="200" key="18">/images/ruffy/IMG_Ruffy_SpecialAttack2_6.png</img>
+			<img duration="120" key="19">/images/ruffy/IMG_Ruffy_SpecialAttack2_7.png</img>
+			<img duration="120" key="20">/images/ruffy/IMG_Ruffy_SpecialAttack2_8.png</img>
+			<img duration="120" key="21">/images/ruffy/IMG_Ruffy_SpecialAttack2_9.png</img>
+			<img duration="120" key="22">/images/ruffy/IMG_Ruffy_SpecialAttack2_10.png</img>
+			<img duration="120" key="23">/images/ruffy/IMG_Ruffy_SpecialAttack2_11.png</img>
+			<img duration="120" key="24">/images/ruffy/IMG_Ruffy_SpecialAttack2_12.png</img>
+			<img duration="100" key="25">/images/ruffy/IMG_Ruffy_SpecialAttack2_13.png</img>
+			<img duration="100" key="26">/images/ruffy/IMG_Ruffy_SpecialAttack2_14.png</img>
+			<img duration="100" key="27">/images/ruffy/IMG_Ruffy_SpecialAttack2_15.png</img>
+			<img duration="500" key="28">/images/ruffy/IMG_Ruffy_SpecialAttack2_16.png</img>
+			<img duration="200" key="29">/images/ruffy/IMG_Ruffy_SpecialAttack2_17.png</img>
+			<img duration="100" key="30">/images/ruffy/IMG_Ruffy_SpecialAttack2_18.png</img>
+			<img duration="100" key="31">/images/ruffy/IMG_Ruffy_SpecialAttack2_19.png</img>
+			<img duration="80" key="32">/images/ruffy/IMG_Ruffy_SpecialAttack2_20.png</img>
+		</specialAttack4>
+		<specialAttack5 airBool="false" airIndex="0" loopIndex="3" loops="false">		
+			<img duration="1000" key="0">/images/ruffy/IMG_Ruffy_SpecialAttack1_1.png</img>
+			<img duration="800" key="1">/images/ruffy/IMG_Ruffy_SpecialAttack1_2.png</img>
+			<img duration="1050" key="2">/images/ruffy/IMG_Ruffy_SpecialAttack1_3.png</img>
+			<img duration="70" key="3">/images/ruffy/IMG_Ruffy_SpecialAttack1_4.png</img>
+			<img duration="50" key="4">/images/ruffy/IMG_Ruffy_SpecialAttack1_5.png</img>
+			<img duration="70" key="5">/images/ruffy/IMG_Ruffy_SpecialAttack1_6.png</img>
+			<img duration="150" key="6">/images/ruffy/IMG_Ruffy_SpecialAttack1_7.png</img>
+			<img duration="150" key="7">/images/ruffy/IMG_Ruffy_SpecialAttack1_8.png</img>
+			<img duration="150" key="8">/images/ruffy/IMG_Ruffy_SpecialAttack1_9.png</img>
+			<img duration="150" key="9">/images/ruffy/IMG_Ruffy_SpecialAttack1_10.png</img>
+			<img duration="150" key="10">/images/ruffy/IMG_Ruffy_SpecialAttack1_11.png</img>		
+		</specialAttack5>
+		<basicAttack21 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_BasicAttack1_Finish_10.png</img>
+			<img duration="100" key="1">/images/ruffy/IMG_Ruffy_BasicAttack2_1_1.png</img>
+			<img duration="50" key="2">/images/ruffy/IMG_Ruffy_BasicAttack2_1_2.png</img>
+			<img duration="80" key="3">/images/ruffy/IMG_Ruffy_BasicAttack2_1_21.png</img>
+			<img duration="80" key="4">/images/ruffy/IMG_Ruffy_BasicAttack2_1_3.png</img>
+			<img duration="50" key="5">/images/ruffy/IMG_Ruffy_BasicAttack2_1_4.png</img>
+		</basicAttack21>
+		<basicAttack22 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_BasicAttack2_2_1.png</img>
+			<img duration="100" key="1">/images/ruffy/IMG_Ruffy_BasicAttack2_2_2.png</img>
+			<img duration="120" key="2">/images/ruffy/IMG_Ruffy_BasicAttack2_2_3.png</img>
+			<img duration="50" key="3">/images/ruffy/IMG_Ruffy_BasicAttack2_2_4.png</img>
+			<img duration="50" key="4">/images/ruffy/IMG_Ruffy_BasicAttack2_2_5.png</img>
+			<img duration="50" key="5">/images/ruffy/IMG_Ruffy_BasicAttack2_2_6.png</img>
+			<img duration="100" key="6">/images/ruffy/IMG_Ruffy_BasicAttack2_2_7.png</img>
+			<img duration="100" key="7">/images/ruffy/IMG_Ruffy_BasicAttack2_2_8.png</img>
+			<img duration="100" key="8">/images/ruffy/IMG_Ruffy_BasicAttack2_2_9.png</img>
+			<img duration="150" key="9">/images/ruffy/IMG_Ruffy_BasicAttack2_2_10.png</img>
+		</basicAttack22>
+		<basicAttack23 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="150" key="0">/images/ruffy/IMG_Ruffy_BasicAttack23_1.png</img>
+			<img duration="2000" key="1">/images/ruffy/IMG_Ruffy_BasicAttack23_2.png</img>
+			<img duration="100"  key="2">/images/ruffy/IMG_Ruffy_Dash_3.png</img>
+			<img duration="350" key="3">/images/ruffy/IMG_Ruffy_BasicAttack23_3.png</img>
+			<img duration="150" key="4">/images/ruffy/IMG_Ruffy_BasicAttack23_4.png</img>
+			<img duration="1000" key="5">/images/ruffy/IMG_Ruffy_BasicAttack23_5.png</img>
+			<img duration="250" key="6">/images/ruffy/IMG_Ruffy_BasicAttack23_6.png</img>
+			<img duration="300" key="7">/images/ruffy/IMG_Ruffy_BasicAttack23_7.png</img>
+			<img duration="150" key="8">/images/ruffy/IMG_Ruffy_BasicAttack23_8.png</img>
+		</basicAttack23>
+		<specialAttack6 airBool="true" airIndex="9" loopIndex="0" loops="false">
+			<img duration="320" key="0">/images/ruffy/IMG_Ruffy_specialAttack21_1.png</img>
+			<img duration="220" key="1">/images/ruffy/IMG_Ruffy_specialAttack21_2.png</img>
+			<img duration="220" key="2">/images/ruffy/IMG_Ruffy_specialAttack21_3.png</img>
+			<img duration="220" key="3">/images/ruffy/IMG_Ruffy_specialAttack21_4.png</img>
+			<img duration="120" key="4">/images/ruffy/IMG_Ruffy_specialAttack21_5.png</img>
+			<img duration="120" key="5">/images/ruffy/IMG_Ruffy_specialAttack21_6.png</img>
+			<img duration="120" key="6">/images/ruffy/IMG_Ruffy_specialAttack21_7.png</img>
+			<img duration="220" key="7">/images/ruffy/IMG_Ruffy_specialAttack21_8.png</img>
+			<img duration="220" key="8">/images/ruffy/IMG_Ruffy_specialAttack21_9.png</img>
+			<img duration="120" key="9">/images/ruffy/IMG_Ruffy_specialAttack21_10.png</img>
+			<img duration="120" key="10">/images/ruffy/IMG_Ruffy_specialAttack21_11.png</img>
+			<img duration="120" key="11">/images/ruffy/IMG_Ruffy_specialAttack21_12.png</img>
+			<img duration="220" key="12">/images/ruffy/IMG_Ruffy_specialAttack21_13.png</img>
+			<img duration="120" key="13">/images/ruffy/IMG_Ruffy_specialAttack21_14.png</img>
+			<img duration="120" key="14">/images/ruffy/IMG_Ruffy_specialAttack21_15.png</img>
+			<img duration="220" key="15">/images/ruffy/IMG_Ruffy_specialAttack21_16.png</img>
+			<img duration="70" key="16">/images/ruffy/IMG_Ruffy_specialAttack21_17.png</img>
+			<img duration="70" key="17">/images/ruffy/IMG_Ruffy_specialAttack21_18.png</img>
+			<img duration="70" key="18">/images/ruffy/IMG_Ruffy_specialAttack21_19.png</img>
+			<img duration="70" key="19">/images/ruffy/IMG_Ruffy_specialAttack21_20.png</img>
+			<img duration="70" key="20">/images/ruffy/IMG_Ruffy_specialAttack21_21.png</img>
+		</specialAttack6>
+		<specialAttack7 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="600" key="0">/images/ruffy/IMG_Ruffy_specialAttack6_1.png</img>
+			<img duration="150" key="1">/images/ruffy/IMG_Ruffy_specialAttack6_2.png</img>
+			<img duration="150" key="2">/images/ruffy/IMG_Ruffy_specialAttack6_3.png</img>
+			<img duration="150" key="3">/images/ruffy/IMG_Ruffy_specialAttack6_4.png</img>
+			<img duration="150" key="4">/images/ruffy/IMG_Ruffy_specialAttack6_5.png</img>
+			<img duration="150" key="5">/images/ruffy/IMG_Ruffy_specialAttack6_6.png</img>
+			<img duration="150" key="6">/images/ruffy/IMG_Ruffy_specialAttack6_7.png</img>
+			<img duration="150" key="7">/images/ruffy/IMG_Ruffy_specialAttack6_8.png</img>
+			<img duration="150" key="8">/images/ruffy/IMG_Ruffy_specialAttack6_9.png</img>
+			<img duration="350" key="9">/images/ruffy/IMG_Ruffy_specialAttack6_10.png</img>
+			<img duration="80" key="10">/images/ruffy/IMG_Ruffy_specialAttack6_11.png</img>
+			<img duration="500" key="11">/images/ruffy/IMG_Ruffy_specialAttack6_12.png</img>
+			<img duration="250" key="12">/images/ruffy/IMG_Ruffy_specialAttack6_13.png</img>
+			<img duration="200" key="13">/images/ruffy/IMG_Ruffy_specialAttack6_14.png</img>
+			<img duration="100" key="14">/images/ruffy/IMG_Ruffy_specialAttack6_15.png</img>
+			<img duration="100" key="15">/images/ruffy/IMG_Ruffy_specialAttack6_16.png</img>
+			<img duration="250" key="16">/images/ruffy/IMG_Ruffy_specialAttack6_17.png</img>
+			<img duration="80" key="17">/images/ruffy/IMG_Ruffy_specialAttack6_18.png</img>
+			<img duration="120" key="18">/images/ruffy/IMG_Ruffy_specialAttack6_19.png</img>
+			<img duration="80" key="19">/images/ruffy/IMG_Ruffy_specialAttack6_20.png</img>
+			<img duration="100" key="20">/images/ruffy/IMG_Ruffy_specialAttack6_21.png</img>
+		</specialAttack7>
+		<intro airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="400" key="0">/images/ruffy/IMG_Ruffy_intro_1.png</img>
+			<img duration="400" key="1">/images/ruffy/IMG_Ruffy_intro_2.png</img>
+			<img duration="400" key="2">/images/ruffy/IMG_Ruffy_intro_3.png</img>
+			<img duration="1200" key="3">/images/ruffy/IMG_Ruffy_intro_4.png</img>
+			<img duration="400" key="4">/images/ruffy/IMG_Ruffy_intro_5.png</img>
+			<img duration="400" key="5">/images/ruffy/IMG_Ruffy_intro_6.png</img>
+		</intro>
+		<win airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="400" key="0">/images/ruffy/IMG_Ruffy_Win_0_re.png</img>
+			<img duration="400" key="1">/images/ruffy/IMG_Ruffy_Win_1_re.png</img>
+			<img duration="400" key="2">/images/ruffy/IMG_Ruffy_Win_2_re.png</img>
+		</win>
+		<dead airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="2600" key="0">/images/ruffy/IMG_Ruffy_KnockedOut_1.png</img>
+		</dead>
+		
+		<runAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="175" key="0">/images/ruffy/IMG_Ruffy_Run_Attack_1.png</img>
+			<img duration="120" key="1">/images/ruffy/IMG_Ruffy_Run_Attack_2.png</img>
+			<img duration="120" key="2">/images/ruffy/IMG_Ruffy_Run_Attack_3.png</img>
+			<img duration="120" key="3">/images/ruffy/IMG_Ruffy_Run_Attack_4.png</img>
+			<img duration="110" key="4">/images/ruffy/IMG_Ruffy_Run_Attack_5.png</img>
+			<img duration="110" key="5">/images/ruffy/IMG_Ruffy_Run_Attack_6.png</img>
+			<img duration="110" key="6">/images/ruffy/IMG_Ruffy_Run_Attack_7.png</img>
+			<img duration="350" key="7">/images/ruffy/IMG_Ruffy_Run_Attack_8.png</img>
+		</runAttack1>
+		
+		<runAttack2 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="50" key="0">/images/ruffy/IMG_Ruffy_Run_Attack_2_1.png</img>
+			<img duration="120" key="1">/images/ruffy/IMG_Ruffy_Run_Attack_2_2.png</img>
+			<img duration="100" key="2">/images/ruffy/IMG_Ruffy_Run_Attack_2_3.png</img>
+			<img duration="120" key="3">/images/ruffy/IMG_Ruffy_Run_Attack_2_4.png</img>
+			<img duration="100" key="4">/images/ruffy/IMG_Ruffy_Run_Attack_2_5.png</img>
+			<img duration="20" key="5">/images/ruffy/IMG_Ruffy_Run_Attack_2_6.png</img>
+			<img duration="100" key="6">/images/ruffy/IMG_Ruffy_Run_Attack_2_7.png</img>
+			<img duration="300" key="7">/images/ruffy/IMG_Ruffy_Run_Attack_2_8.png</img>
+		</runAttack2>
+		
+		<jumpRecover airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="250" key="0">/images/ruffy/IMG_Ruffy_Jump_Recover_1.png</img>
+			<img duration="150" key="1">/images/ruffy/IMG_Ruffy_Jump_Recover_2.png</img>
+		</jumpRecover>
+		<airDefend airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/ruffy/IMG_Ruffy_Air_Defend_1.png</img>
+		</airDefend>
+		<airSpecialAttack1 airBool="false" airIndex="0" loopIndex="4" loops="false">
+			<img duration="240" key="0">/images/ruffy/IMG_Ruffy_Air_Special_1_1.png</img>
+			<img duration="140" key="1">/images/ruffy/IMG_Ruffy_Air_Special_1_2.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Air_Special_1_3.png</img>
+			<img duration="250" key="3">/images/ruffy/IMG_Ruffy_Air_Special_1_4.png</img>
+			<img duration="150" key="4">/images/ruffy/IMG_Ruffy_Air_Special_1_5.png</img>
+			<img duration="150" key="5">/images/ruffy/IMG_Ruffy_Air_Special_1_6.png</img>
+			<img duration="150" key="6">/images/ruffy/IMG_Ruffy_Air_Special_1_7.png</img>
+			<img duration="150" key="7">/images/ruffy/IMG_Ruffy_Air_Special_1_8.png</img>
+			<img duration="250" key="8">/images/ruffy/IMG_Ruffy_Air_Special_1_9.png</img>
+			<img duration="200" key="9">/images/ruffy/IMG_Ruffy_Air_Special_1_10.png</img>
+		</airSpecialAttack1>
+		<gear2transform airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="300" key="0">/images/ruffy/IMG_Ruffy_Dash_7.png</img>
+			<img duration="750" key="1">/images/ruffy/IMG_Ruffy_Gear2_Transform_1.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Gear2_Transform_2.png</img>
+			<img duration="200" key="3">/images/ruffy/IMG_Ruffy_Gear2_Transform_3.png</img>
+			<img duration="200" key="4">/images/ruffy/IMG_Ruffy_Gear2_Transform_4.png</img>
+			<img duration="750" key="5">/images/ruffy/IMG_Ruffy_Gear2_Transform_5.png</img>
+			<img duration="400" key="6">/images/ruffy/IMG_Ruffy_Gear2_Transform_6.png</img>
+			<img duration="350" key="7">/images/ruffy/IMG_Ruffy_Gear2_Transform_7.png</img>
+			<img duration="350" key="8">/images/ruffy/IMG_Ruffy_Gear2_Transform_8.png</img>
+			<img duration="350" key="9">/images/ruffy/IMG_Ruffy_Gear2_Transform_9.png</img>
+			<img duration="350" key="10">/images/ruffy/IMG_Ruffy_Gear2_Transform_10.png</img>
+			<img duration="350" key="11">/images/ruffy/IMG_Ruffy_Gear2_Transform_11.png</img>
+			<img duration="350" key="12">/images/ruffy/IMG_Ruffy_Gear2_Transform_12.png</img>
+		</gear2transform>
+
+		<gigantoGatling airBool="false" airIndex = "10" loops="false" loopIndex="0">
+			<img duration="250" key="0">/images/ruffy/IMG_Ruffy_SuperAttack_1.png</img>
+			<img duration="250" key="1">/images/ruffy/IMG_Ruffy_SuperAttack_2.png</img>
+			<img duration="220" key="2">/images/ruffy/IMG_Ruffy_SuperAttack_3.png</img>
+			<img duration="220" key="3">/images/ruffy/IMG_Ruffy_SuperAttack_4.png</img>
+			<img duration="220" key="4">/images/ruffy/IMG_Ruffy_SuperAttack_5.png</img>
+			<img duration="220" key="5">/images/ruffy/IMG_Ruffy_SuperAttack_6.png</img>
+			<img duration="600" key="6">/images/ruffy/IMG_Ruffy_SuperAttack_7.png</img>
+			<img duration="400" key="7">/images/ruffy/IMG_Ruffy_SuperAttack_8.png</img>
+			<img duration="400" key="8">/images/ruffy/IMG_Ruffy_SuperAttack_9.png</img>
+			<img duration="400" key="9">/images/ruffy/IMG_Ruffy_SuperAttack_10.png</img>
+			<img duration="1700" key="10">/images/ruffy/IMG_Ruffy_SuperAttack_11.png</img>
+			<img duration="50" key="11">/images/ruffy/IMG_Ruffy_SpecialAttack1_4.png</img>
+			<img duration="50" key="12">/images/ruffy/IMG_Ruffy_SpecialAttack1_5.png</img>
+			<img duration="50" key="13">/images/ruffy/IMG_Ruffy_SpecialAttack1_6.png</img>
+			<img duration="450" key="14">/images/ruffy/IMG_Ruffy_SpecialAttack1_7.png</img>
+			<img duration="450" key="15">/images/ruffy/IMG_Ruffy_SpecialAttack1_8.png</img>
+			<img duration="450" key="16">/images/ruffy/IMG_Ruffy_SpecialAttack1_9.png</img>
+			<img duration="450" key="17">/images/ruffy/IMG_Ruffy_SpecialAttack1_10.png</img>
+			<img duration="650" key="18">/images/ruffy/IMG_Ruffy_SpecialAttack1_11.png</img>
+		</gigantoGatling>
+	</sprites>
+</character>

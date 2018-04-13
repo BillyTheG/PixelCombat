@@ -1,0 +1,18 @@
+<projectile>
+<type>360Pound</type>
+<sprites>
+	<creation airBool="false" airIndex="0" loops="false" loopIndex="0">
+		<img key="0" duration="50">/images/projectiles/zorro/IMG_Dust_360Pound_1.png</img>
+	</creation>		
+	<move airBool="false" airIndex="0" loops="true" loopIndex="0">
+		<img key="0" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_1.png</img>
+	 	<img key="1" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_2.png</img>
+		<img key="2" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_3.png</img>
+		<img key="3" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_4.png</img>
+	 	<img key="4" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_5.png</img>
+	</move>
+	<explosion airBool="false" airIndex="0" loops="false" loopIndex="0">
+		<img key="0" duration="100">/images/projectiles/zorro/IMG_Dust_360Pound_1.png</img>
+	</explosion>	
+</sprites>
+</projectile>

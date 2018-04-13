@@ -1,0 +1,33 @@
+<projectile>
+<type>Yakkoudori</type>
+<sprites>
+	<creation airBool="false" airIndex="0" loops="false" loopIndex="0">
+		<img duration="100" key="0">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_1.png</img>
+		<img duration="100" key="1">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_2.png</img>
+		<img duration="100" key="2">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_3.png</img>
+		<img duration="100" key="3">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_4.png</img>
+		<img duration="100" key="4">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_5.png</img>
+		<img duration="50"  key="5">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_6.png</img>
+	</creation>		
+	<move airBool="false" airIndex="0" loopIndex="0" loops="true">
+		<img duration="100" key="0">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_1.png</img>
+		<img duration="100" key="1">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_2.png</img>
+		<img duration="100" key="2">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_3.png</img>
+		<img duration="100" key="3">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_4.png</img>
+		<img duration="100" key="4">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_5.png</img>
+		<img duration="50"  key="5">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Move_6.png</img>
+	</move>
+	<explosion airBool="false" airIndex="0" loopIndex="0" loops="false">
+		<img duration="100" key="0">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_1.png</img>
+		<img duration="100" key="1">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_2.png</img>
+		<img duration="100" key="2">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_3.png</img>
+		<img duration="150" key="3">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_4.png</img>
+		<img duration="100" key="4">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_5.png</img>
+		<img duration="50" key="5">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_6.png</img>
+		<img duration="50" key="6">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_7.png</img>
+		<img duration="50" key="7">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_8.png</img>
+		<img duration="50" key="8">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_9.png</img>
+		<img duration="50" key="9">/images/projectiles/zorro/IMG_Zorro_Projectile_Yakkoudori_Explosion_10.png</img>
+	</explosion>
+</sprites>
+</projectile>

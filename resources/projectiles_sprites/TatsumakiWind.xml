@@ -1,0 +1,38 @@
+<projectile>
+<type>TasumakiWind</type>
+<sprites>
+	<creation airBool="false" airIndex="0" loops="false" loopIndex="0">
+		<img key="0" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_1.png</img>
+		<img key="1" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_2.png</img>
+	 	<img key="2" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_3.png</img>
+		<img key="3" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_4.png</img>
+		<img key="4" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_5.png</img>
+	 	<img key="5" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_6.png</img>
+		<img key="6" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_7.png</img>
+		<img key="7" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_8.png</img>
+		<img key="8" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_9.png</img>
+	</creation>		
+	<move airBool="false" airIndex="0" loops="true" loopIndex="0">
+		<img key="0" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_1.png</img>
+		<img key="1" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_2.png</img>
+	 	<img key="2" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_3.png</img>
+		<img key="3" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_4.png</img>
+		<img key="4" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_5.png</img>
+	 	<img key="5" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_6.png</img>
+		<img key="6" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_7.png</img>
+		<img key="7" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_8.png</img>
+		<img key="8" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_9.png</img>
+	</move>
+	<explosion airBool="false" airIndex="0" loops="false" loopIndex="0">
+			<img key="0" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_1.png</img>
+		<img key="1" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_2.png</img>
+	 	<img key="2" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_3.png</img>
+		<img key="3" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_4.png</img>
+		<img key="4" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_5.png</img>
+	 	<img key="5" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_6.png</img>
+		<img key="6" duration="100">/images/projectiles/zorro/IMG_Dust_Tatsumagi_7.png</img>
+		<img key="7" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_8.png</img>
+		<img key="8" duration="70">/images/projectiles/zorro/IMG_Dust_Tatsumagi_9.png</img>
+	</explosion>	
+</sprites>
+</projectile>

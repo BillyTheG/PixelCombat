@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+	<type>360Pound</type>
+	<boxes>
+		<explosion>
+			<box_list picture="0">
+				<box height="1.0" hurts="true" id="0" width="7.650013" x="4.9000187"
+					y="-2.4199972" />
+			</box_list>
+		</explosion>
+		<move>
+			<box_list picture="0">
+				<box height="1.0" hurts="true" id="0" width="7.650013" x="4.90003"
+					y="-2.3999977" />
+			</box_list>
+			<box_list picture="1">
+				<box height="1.6999998" hurts="true" id="0" width="16.500034" x="1.0799541"
+					y="-2.3799977" />
+			</box_list>
+			<box_list picture="2">
+				<box height="1.6999998" hurts="true" id="0" width="16.500034" x="2.7999802"
+					y="-2.3599973" />
+				<box height="1.0" hurts="true" id="1" width="1.0" x="7.9000797"
+					y="-3.239997" />
+				<box height="1.0" hurts="true" id="2" width="1.0" x="7.080055"
+					y="-3.679997" />
+				<box height="1.0" hurts="true" id="3" width="1.0" x="6.400049"
+					y="-4.039996" />
+			</box_list>
+			<box_list picture="3">
+				<box height="2.3499994" hurts="true" id="0" width="20.499973" x="1.219944"
+					y="-2.5199966" />
+			</box_list>
+			<box_list picture="4">
+				<box height="2.3499994" hurts="true" id="0" width="20.499973" x="-0.0800848"
+					y="-2.4599962" />
+			</box_list>
+		</move>
+		<creation>
+			<box_list picture="0">
+				<box height="1.0" hurts="true" id="0" width="7.650013" x="4.9600086"
+					y="-2.4599967" />
+			</box_list>
+		</creation>
+	</boxes>
+</character>

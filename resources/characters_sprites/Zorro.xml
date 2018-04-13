@@ -1,0 +1,345 @@
+<character>
+	<type>Zorro</type>
+	<sprites>
+		<stand airBool="false" airIndex="0" loopIndex="0" loops="true">
+			<img duration="150" key="0">/images/zorro/IMG_Zorro_Stand_1.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_Stand_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_Stand_3.png</img>
+			<img duration="250" key="3">/images/zorro/IMG_Zorro_Stand_4.png</img>
+		</stand>
+		<move airBool="false" airIndex="0" loopIndex="0" loops="true">
+			<img duration="150" key="0">/images/zorro/IMG_Zorro_Move_1.png</img>
+			<img duration="150" key="1">/images/zorro/IMG_Zorro_Move_2.png</img>
+			<img duration="150" key="2">/images/zorro/IMG_Zorro_Move_3.png</img>
+			<img duration="150" key="3">/images/zorro/IMG_Zorro_Move_4.png</img>
+			<img duration="150" key="4">/images/zorro/IMG_Zorro_Move_5.png</img>
+			<img duration="150" key="5">/images/zorro/IMG_Zorro_Move_6.png</img>
+			<img duration="150" key="6">/images/zorro/IMG_Zorro_Move_7.png</img>
+			<img duration="100" key="7">/images/zorro/IMG_Zorro_Move_8.png</img>
+		</move>
+		<jumping airBool="false" airIndex="0" loopIndex="3" loops="true">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_Jump_1.png</img>
+			<img duration="200" key="1">/images/zorro/IMG_Zorro_Jump_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_Jump_3.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_Jump_4.png</img>
+			<img duration="200" key="4">/images/zorro/IMG_Zorro_Jump_5.png</img>
+		</jumping>
+		<basicAttack airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/zorro/IMG_Zorro_BasicAttack11_1.png</img>
+			<img duration="100" key="1">/images/zorro/IMG_Zorro_BasicAttack11_2.png</img>
+			<img duration="100" key="2">/images/zorro/IMG_Zorro_BasicAttack11_3.png</img>			
+			<img duration="50" key="3">/images/zorro/IMG_Zorro_BasicAttack11_4.png</img>
+			<img duration="50" key="4">/images/zorro/IMG_Zorro_BasicAttack11_5.png</img>
+			<img duration="50" key="5">/images/zorro/IMG_Zorro_BasicAttack11_6.png</img>
+			<img duration="50" key="6">/images/zorro/IMG_Zorro_BasicAttack11_7.png</img>
+			<img duration="50" key="7">/images/zorro/IMG_Zorro_BasicAttack11_8.png</img>
+			<img duration="50" key="8">/images/zorro/IMG_Zorro_BasicAttack11_9.png</img>
+		</basicAttack>
+		<specialAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_BasicAttack13_1.png</img>
+			<img duration="300" key="1">/images/zorro/IMG_Zorro_BasicAttack13_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_BasicAttack13_3.png</img>			
+			<img duration="250" key="3">/images/zorro/IMG_Zorro_BasicAttack13_4.png</img>
+			<img duration="100" key="4">/images/zorro/IMG_Zorro_BasicAttack13_5.png</img>
+			<img duration="50" key="5">/images/zorro/IMG_Zorro_BasicAttack13_6.png</img>
+			<img duration="250" key="6">/images/zorro/IMG_Zorro_BasicAttack13_7.png</img>
+			<img duration="250" key="7">/images/zorro/IMG_Zorro_BasicAttack13_8.png</img>
+			<img duration="150" key="8">/images/zorro/IMG_Zorro_BasicAttack13_9.png</img>
+			<img duration="350" key="9">/images/zorro/IMG_Zorro_BasicAttack13_10.png</img>
+			<img duration="350" key="10">/images/zorro/IMG_Zorro_BasicAttack13_11.png</img>
+		</specialAttack1>
+		<specialAttack2 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="1350" key="0">/images/zorro/IMG_Zorro_SpecialAttack2_1.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_SpecialAttack2_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_SpecialAttack2_3.png</img>
+			<img duration="250" key="3">/images/zorro/IMG_Zorro_SpecialAttack2_4.png</img>
+			<img duration="200" key="4">/images/zorro/IMG_Zorro_SpecialAttack2_5.png</img>
+			<img duration="250" key="5">/images/zorro/IMG_Zorro_SpecialAttack2_6.png</img>
+			<img duration="200" key="6">/images/zorro/IMG_Zorro_SpecialAttack2_7.png</img>
+			<img duration="250" key="7">/images/zorro/IMG_Zorro_SpecialAttack2_8.png</img>
+			<img duration="50" key="8">/images/zorro/IMG_Zorro_SpecialAttack2_9.png</img>
+			<img duration="150" key="9">/images/zorro/IMG_Zorro_SpecialAttack2_10.png</img>
+			<img duration="100" key="10">/images/zorro/IMG_Zorro_SpecialAttack2_11.png</img>
+			<img duration="2450" key="11">/images/zorro/IMG_Zorro_SpecialAttack2_12.png</img>
+			<img duration="400" key="12">/images/zorro/IMG_Zorro_SpecialAttack2_13.png</img>
+			<img duration="450" key="13">/images/zorro/IMG_Zorro_SpecialAttack2_14.png</img>
+			<img duration="200" key="14">/images/zorro/IMG_Zorro_SpecialAttack2_15.png</img>
+			<img duration="650" key="15">/images/zorro/IMG_Zorro_SpecialAttack2_16.png</img>
+			<img duration="400" key="16">/images/zorro/IMG_Zorro_SpecialAttack2_17.png</img>
+		</specialAttack2>
+		<specialAttack3 airBool="false" airIndex="0" loopIndex="0"	loops="false">
+			<img duration="4350" key="0">/images/zorro/IMG_Zorro_SpecialAttack6_1.png</img>
+			<img duration="2050" key="1">/images/zorro/IMG_Zorro_SpecialAttack6_2.png</img>
+			<img duration="180" key="2">/images/zorro/IMG_Zorro_SpecialAttack6_3.png</img>
+			<img duration="180" key="3">/images/zorro/IMG_Zorro_SpecialAttack6_4.png</img>
+			<img duration="150" key="4">/images/zorro/IMG_Zorro_SpecialAttack6_5.png</img>		
+			<img duration="150" key="5">/images/zorro/IMG_Zorro_SpecialAttack6_6.png</img>
+			<img duration="150" key="6">/images/zorro/IMG_Zorro_SpecialAttack6_7.png</img>
+			<img duration="150" key="7">/images/zorro/IMG_Zorro_SpecialAttack6_8.png</img>
+			<img duration="500" key="8">/images/zorro/IMG_Zorro_SpecialAttack6_9.png</img>
+			<img duration="350" key="9">/images/zorro/IMG_Zorro_SpecialAttack6_10.png</img>
+		</specialAttack3>
+		<isHit airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="300" key="0">/images/zorro/IMG_Zorro_isHit_1.png</img>
+			<img duration="200" key="1">/images/zorro/IMG_Zorro_isHit_2.png</img>
+		</isHit>
+		<knockBack airBool="false" airIndex="0" loopIndex="4" loops="false">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_KnockBack_1.png</img>
+			<img duration="200" key="1">/images/zorro/IMG_Zorro_KnockBack_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_KnockBack_3.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_KnockBack_4.png</img>
+			<img duration="200" key="4">/images/zorro/IMG_Zorro_KnockBack_5.png</img>
+			<img duration="200" key="5">/images/zorro/IMG_Zorro_KnockBack_6.png</img>
+			<img duration="200" key="6">/images/zorro/IMG_Zorro_KnockBack_7.png</img>
+			<img duration="200" key="7">/images/zorro/IMG_Zorro_KnockBack_8.png</img>
+		</knockBack>
+		<knockedOut airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_KnockedOut_0.png</img>
+			<img duration="600" key="1">/images/zorro/IMG_Zorro_KnockedOut_1.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_KnockedOut_2.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_KnockedOut_3.png</img>
+			<img duration="200" key="4">/images/zorro/IMG_Zorro_KnockedOut_4.png</img>
+		</knockedOut>
+		<avatar airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="0" key="0">/images/zorro/IMG_Zorro_Avatar.png</img>
+		</avatar>
+		<basicAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="120" key="0">/images/zorro/IMG_Zorro_BasicAttack12_1.png</img>
+			<img duration="120" key="1">/images/zorro/IMG_Zorro_BasicAttack12_2.png</img>
+			<img duration="120" key="2">/images/zorro/IMG_Zorro_BasicAttack12_3.png</img>
+			<img duration="120" key="3">/images/zorro/IMG_Zorro_BasicAttack12_4.png</img>
+			<img duration="120" key="4">/images/zorro/IMG_Zorro_BasicAttack12_5.png</img>
+			<img duration="120" key="5">/images/zorro/IMG_Zorro_BasicAttack12_6.png</img>
+			<img duration="120" key="6">/images/zorro/IMG_Zorro_BasicAttack12_7.png</img>
+			<img duration="120" key="7">/images/zorro/IMG_Zorro_BasicAttack12_8.png</img>
+			<img duration="120" key="8">/images/zorro/IMG_Zorro_BasicAttack12_9.png</img>
+		</basicAttack1>
+		<jumpAttack airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/zorro/IMG_Zorro_JumpAttack_1.png</img>
+			<img duration="100" key="1">/images/zorro/IMG_Zorro_JumpAttack_2.png</img>
+			<img duration="100" key="2">/images/zorro/IMG_Zorro_JumpAttack_3.png</img>
+			<img duration="70" key="3">/images/zorro/IMG_Zorro_JumpAttack_4.png</img>
+			<img duration="100" key="4">/images/zorro/IMG_Zorro_JumpAttack_5.png</img>
+			<img duration="100" key="5">/images/zorro/IMG_Zorro_JumpAttack_6.png</img>
+			<img duration="100" key="6">/images/zorro/IMG_Zorro_JumpAttack_7.png</img>
+			<img duration="100" key="7">/images/zorro/IMG_Zorro_JumpAttack_8.png</img>
+			<img duration="300" key="8">/images/zorro/IMG_Zorro_JumpAttack_9.png</img>
+		</jumpAttack>
+		<retreating airBool="false" airIndex="0" loopIndex="0" loops="false">
+		</retreating>
+		<dashing airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="150" key="0">/images/zorro/IMG_Zorro_Dash_1.png</img>
+			<img duration="150" key="1">/images/zorro/IMG_Zorro_Dash_2.png</img>
+			<img duration="120" key="2">/images/zorro/IMG_Zorro_Dash_3.png</img>
+		</dashing>
+		<defend airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_Defend_1.png</img>
+			<img duration="200" key="1">/images/zorro/IMG_Zorro_Defend_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_Defend_3.png</img>
+		</defend>
+		<specialAttack4 airBool="false" airIndex="-1" loopIndex="0" loops="false">
+			<img duration="350" key="0">/images/zorro/IMG_Zorro_Rashomon_1.png</img>
+			<img duration="300" key="1">/images/zorro/IMG_Zorro_Rashomon_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_Rashomon_3.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_Rashomon_4.png</img>
+			<img duration="150" key="4">/images/zorro/IMG_Zorro_Rashomon_5.png</img>
+			<img duration="100" key="5">/images/zorro/IMG_Zorro_Rashomon_6.png</img>
+			<img duration="400" key="6">/images/zorro/IMG_Zorro_Rashomon_7.png</img>
+			<img duration="1200" key="7">/images/zorro/IMG_Zorro_Rashomon_8.png</img>
+			<img duration="800" key="8">/images/zorro/IMG_Zorro_Rashomon_9.png</img>
+			<img duration="600" key="9">/images/zorro/IMG_Zorro_Rashomon_10.png</img>
+		</specialAttack4>
+		<specialAttack5 airBool="false" airIndex="0" loopIndex="0"	loops="false">
+			<img duration="6050" key="0">/images/zorro/IMG_Zorro_SpecialAttack5_0.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_SpecialAttack5_1.png</img>
+			<img duration="250" key="2">/images/zorro/IMG_Zorro_SpecialAttack5_2.png</img>
+			<img duration="2250" key="3">/images/zorro/IMG_Zorro_SpecialAttack5_3.png</img>
+			<img duration="250" key="4">/images/zorro/IMG_Zorro_SpecialAttack5_4.png</img>
+			<img duration="250" key="5">/images/zorro/IMG_Zorro_SpecialAttack5_5.png</img>
+			<img duration="6000" key="6">/images/zorro/IMG_Zorro_SpecialAttack5_6.png</img>
+			<img duration="1000" key="7">/images/zorro/IMG_Zorro_SpecialAttack5_7.png</img>
+			<img duration="200" key="8">/images/zorro/IMG_Zorro_SpecialAttack5_8.png</img>
+			<img duration="250" key="9">/images/zorro/IMG_Zorro_SpecialAttack5_9.png</img>
+			<img duration="250" key="10">/images/zorro/IMG_Zorro_SpecialAttack5_10.png</img>
+			<img duration="6000" key="11">/images/zorro/IMG_Zorro_SpecialAttack5_11.png</img>
+			<img duration="5000" key="12">/images/zorro/IMG_Zorro_SpecialAttack5_12.png</img>
+			<img duration="6000" key="13">/images/zorro/IMG_Zorro_SpecialAttack5_13.png</img>
+			<img duration="500" key="14">/images/zorro/IMG_Zorro_SpecialAttack5_14.png</img>
+			<img duration="400" key="15">/images/zorro/IMG_Zorro_SpecialAttack5_15.png</img>
+			<img duration="300" key="16">/images/zorro/IMG_Zorro_SpecialAttack5_16.png</img>
+		</specialAttack5>
+		<basicAttack21 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="70" key="0">/images/zorro/IMG_Zorro_BasicAttack21_1.png</img>
+			<img duration="70" key="1">/images/zorro/IMG_Zorro_BasicAttack21_2.png</img>
+			<img duration="70" key="2">/images/zorro/IMG_Zorro_BasicAttack21_3.png</img>
+			<img duration="70" key="3">/images/zorro/IMG_Zorro_BasicAttack21_4.png</img>
+			<img duration="70" key="4">/images/zorro/IMG_Zorro_BasicAttack21_5.png</img>
+			<img duration="150" key="5">/images/zorro/IMG_Zorro_BasicAttack21_6.png</img>
+			<img duration="70" key="6">/images/zorro/IMG_Zorro_BasicAttack21_7.png</img>
+			<img duration="150" key="7">/images/zorro/IMG_Zorro_BasicAttack21_8.png</img>
+			<img duration="70" key="8">/images/zorro/IMG_Zorro_BasicAttack21_9.png</img>
+			<img duration="150" key="9">/images/zorro/IMG_Zorro_BasicAttack21_10.png</img>
+		</basicAttack21>
+		<basicAttack22 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="200" key="0">/images/zorro/IMG_Zorro_BasicAttack22_1.png</img>
+			<img duration="100" key="1">/images/zorro/IMG_Zorro_BasicAttack22_2.png</img>
+			<img duration="100" key="2">/images/zorro/IMG_Zorro_BasicAttack22_3.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_BasicAttack22_4.png</img>
+			<img duration="140" key="4">/images/zorro/IMG_Zorro_BasicAttack22_5.png</img>
+			<img duration="200" key="5">/images/zorro/IMG_Zorro_BasicAttack22_6.png</img>
+			<img duration="150" key="6">/images/zorro/IMG_Zorro_BasicAttack22_7.png</img>
+			<img duration="100" key="7">/images/zorro/IMG_Zorro_BasicAttack22_8.png</img>
+		</basicAttack22>
+		<basicAttack23 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="500" key="0">/images/zorro/IMG_Zorro_BasicAttack23_1.png</img>
+			<img duration="200" key="1">/images/zorro/IMG_Zorro_BasicAttack23_2.png</img>
+			<img duration="150" key="2">/images/zorro/IMG_Zorro_BasicAttack23_3.png</img>
+			<img duration="200" key="3">/images/zorro/IMG_Zorro_BasicAttack23_4.png</img>
+			<img duration="400" key="4">/images/zorro/IMG_Zorro_BasicAttack23_5.png</img>
+			<img duration="400" key="5">/images/zorro/IMG_Zorro_BasicAttack23_6.png</img>
+		</basicAttack23>
+		<specialAttack6 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="1200" key="0">/images/zorro/IMG_Zorro_Nigiri_1.png</img>
+			<img duration="300" key="1">/images/zorro/IMG_Zorro_Nigiri_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_Nigiri_3.png</img>
+			<img duration="250" key="3">/images/zorro/IMG_Zorro_Nigiri_4.png</img>
+			<img duration="100" key="4">/images/zorro/IMG_Zorro_Nigiri_5.png</img>
+			<img duration="50" key="5">/images/zorro/IMG_Zorro_Nigiri_6.png</img>
+			<img duration="100" key="6">/images/zorro/IMG_Zorro_Nigiri_7.png</img>
+			<img duration="150" key="7">/images/zorro/IMG_Zorro_Nigiri_8.png</img>
+			<img duration="150" key="8">/images/zorro/IMG_Zorro_Nigiri_9.png</img>
+			<img duration="350" key="9">/images/zorro/IMG_Zorro_Nigiri_10.png</img>
+			<img duration="350" key="10">/images/zorro/IMG_Zorro_Nigiri_11.png</img>
+			<img duration="350" key="11">/images/zorro/IMG_Zorro_Nigiri_12.png</img>
+			<img duration="200" key="12">/images/zorro/IMG_Zorro_Nigiri_13.png</img>
+			<img duration="200" key="13">/images/zorro/IMG_Zorro_Nigiri_14.png</img>
+			<img duration="150" key="14">/images/zorro/IMG_Zorro_Nigiri_15.png</img>
+			<img duration="200" key="15">/images/zorro/IMG_Zorro_Nigiri_16.png</img>
+			<img duration="100" key="16">/images/zorro/IMG_Zorro_Nigiri_17.png</img>
+			<img duration="150" key="17">/images/zorro/IMG_Zorro_Nigiri_18.png</img>
+			<img duration="250" key="18">/images/zorro/IMG_Zorro_Nigiri_19.png</img>
+			<img duration="250" key="19">/images/zorro/IMG_Zorro_Nigiri_20.png</img>
+			<img duration="150" key="20">/images/zorro/IMG_Zorro_Nigiri_21.png</img>
+			<img duration="250" key="21">/images/zorro/IMG_Zorro_Nigiri_22.png</img>
+			<img duration="250" key="22">/images/zorro/IMG_Zorro_Nigiri_23.png</img>
+			<img duration="250" key="23">/images/zorro/IMG_Zorro_Nigiri_24.png</img>
+			<img duration="100" key="24">/images/zorro/IMG_Zorro_Nigiri_25.png</img>
+			<img duration="240" key="25">/images/zorro/IMG_Zorro_Nigiri_26.png</img>
+			<img duration="200" key="26">/images/zorro/IMG_Zorro_Nigiri_27.png</img>
+			<img duration="800" key="27">/images/zorro/IMG_Zorro_Nigiri_28.png</img>
+			<img duration="600" key="28">/images/zorro/IMG_Zorro_Nigiri_29.png</img>
+			<img duration="550" key="29">/images/zorro/IMG_Zorro_Nigiri_30.png</img>
+		</specialAttack6>
+		<specialAttack7 airBool="false" airIndex="0" loopIndex="0"	loops="false">
+			<img duration="150" key="0">/images/zorro/IMG_Zorro_SpecialAttack7_1.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_SpecialAttack7_2.png</img>
+			<img duration="200" key="2">/images/zorro/IMG_Zorro_SpecialAttack7_3.png</img>
+			<img duration="250" key="3">/images/zorro/IMG_Zorro_SpecialAttack7_4.png</img>
+			<img duration="200" key="4">/images/zorro/IMG_Zorro_SpecialAttack7_5.png</img>
+			<img duration="250" key="5">/images/zorro/IMG_Zorro_SpecialAttack7_6.png</img>
+			<img duration="200" key="6">/images/zorro/IMG_Zorro_SpecialAttack7_7.png</img>
+			<img duration="250" key="7">/images/zorro/IMG_Zorro_SpecialAttack7_8.png</img>
+			<img duration="200" key="8">/images/zorro/IMG_Zorro_SpecialAttack7_9.png</img>
+			<img duration="250" key="9">/images/zorro/IMG_Zorro_SpecialAttack7_10.png</img>
+			<img duration="200" key="10">/images/zorro/IMG_Zorro_SpecialAttack7_11.png</img>
+			<img duration="600" key="11">/images/zorro/IMG_Zorro_SpecialAttack7_12.png</img>
+			<img duration="600" key="12">/images/zorro/IMG_Zorro_SpecialAttack7_13.png</img>
+			<img duration="800" key="13">/images/zorro/IMG_Zorro_SpecialAttack7_14.png</img>
+		</specialAttack7>
+		<intro airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="400" key="0">/images/zorro/IMG_Zorro_Intro_1.png</img>
+			<img duration="400" key="1">/images/zorro/IMG_Zorro_Intro_2.png</img>
+			<img duration="400" key="2">/images/zorro/IMG_Zorro_Intro_3.png</img>
+			<img duration="400" key="3">/images/zorro/IMG_Zorro_Intro_4.png</img>
+			<img duration="400" key="4">/images/zorro/IMG_Zorro_Intro_5.png</img>
+			<img duration="400" key="5">/images/zorro/IMG_Zorro_Intro_6.png</img>
+			<img duration="250" key="6">/images/zorro/IMG_Zorro_Intro_7.png</img>
+			<img duration="250" key="7">/images/zorro/IMG_Zorro_Intro_8.png</img>
+			<img duration="300" key="8">/images/zorro/IMG_Zorro_Intro_9.png</img>
+			<img duration="400" key="9">/images/zorro/IMG_Zorro_Intro_10.png</img>
+			<img duration="300" key="10">/images/zorro/IMG_Zorro_Intro_11.png</img>
+			<img duration="300" key="11">/images/zorro/IMG_Zorro_Intro_12.png</img>
+			<img duration="300" key="12">/images/zorro/IMG_Zorro_Intro_13.png</img>		
+		</intro>
+		<win airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="400" key="0">/images/zorro/IMG_Zorro_Intro_1.png</img>
+			<img duration="400" key="1">/images/zorro/IMG_Zorro_Intro_2.png</img>
+			<img duration="400" key="2">/images/zorro/IMG_Zorro_Intro_3.png</img>
+			<img duration="400" key="3">/images/zorro/IMG_Zorro_Intro_4.png</img>
+			<img duration="400" key="4">/images/zorro/IMG_Zorro_Intro_5.png</img>
+			<img duration="400" key="5">/images/zorro/IMG_Zorro_Intro_6.png</img>
+			<img duration="400" key="6">/images/zorro/IMG_Zorro_Intro_7.png</img>
+			<img duration="400" key="7">/images/zorro/IMG_Zorro_Intro_8.png</img>
+			<img duration="400" key="8">/images/zorro/IMG_Zorro_Intro_9.png</img>
+			<img duration="400" key="9">/images/zorro/IMG_Zorro_Intro_10.png</img>
+		</win>
+		<dead airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="2600" key="0">/images/zorro/IMG_Zorro_Dead_1.png</img>
+		</dead>
+		
+		<runAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="175" key="0">/images/zorro/IMG_Zorro_RunAttack1_1.png</img>
+			<img duration="120" key="1">/images/zorro/IMG_Zorro_RunAttack1_2.png</img>
+			<img duration="120" key="2">/images/zorro/IMG_Zorro_RunAttack1_3.png</img>
+			<img duration="120" key="3">/images/zorro/IMG_Zorro_RunAttack1_4.png</img>
+			<img duration="110" key="4">/images/zorro/IMG_Zorro_RunAttack1_5.png</img>
+			<img duration="110" key="5">/images/zorro/IMG_Zorro_RunAttack1_6.png</img>
+			<img duration="110" key="6">/images/zorro/IMG_Zorro_RunAttack1_7.png</img>
+			<img duration="350" key="7">/images/zorro/IMG_Zorro_RunAttack1_8.png</img>
+			<img duration="175" key="8">/images/zorro/IMG_Zorro_RunAttack1_9.png</img>
+			<img duration="120" key="9">/images/zorro/IMG_Zorro_RunAttack1_10.png</img>
+			<img duration="120" key="10">/images/zorro/IMG_Zorro_RunAttack1_11.png</img>
+			<img duration="120" key="11">/images/zorro/IMG_Zorro_RunAttack1_12.png</img>
+			<img duration="110" key="12">/images/zorro/IMG_Zorro_RunAttack1_13.png</img>
+			<img duration="110" key="13">/images/zorro/IMG_Zorro_RunAttack1_14.png</img>
+		</runAttack1>
+		
+		<runAttack2 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="130" key="0">/images/zorro/IMG_Zorro_RunAttack2_1.png</img>
+			<img duration="130" key="1">/images/zorro/IMG_Zorro_RunAttack2_2.png</img>
+			<img duration="130" key="2">/images/zorro/IMG_Zorro_RunAttack2_3.png</img>
+			<img duration="500" key="3">/images/zorro/IMG_Zorro_RunAttack2_4.png</img>
+			<img duration="400" key="4">/images/zorro/IMG_Zorro_RunAttack2_5.png</img>
+			<img duration="350" key="5">/images/zorro/IMG_Zorro_RunAttack2_6.png</img>
+			<img duration="350" key="6">/images/zorro/IMG_Zorro_RunAttack2_7.png</img>
+			<img duration="350" key="7">/images/zorro/IMG_Zorro_RunAttack2_8.png</img>
+		</runAttack2>
+		
+		<jumpRecover airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="150" key="0">/images/zorro/IMG_Zorro_JumpRecover_2.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_JumpRecover_3.png</img>
+			<img duration="150" key="2">/images/zorro/IMG_Zorro_JumpRecover_4.png</img>
+		</jumpRecover>
+		<airDefend airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/zorro/IMG_Zorro_AirDefend_1.png</img>
+			<img duration="100" key="1">/images/zorro/IMG_Zorro_AirDefend_2.png</img>
+		</airDefend>
+		<airSpecialAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="1650" key="0">/images/zorro/IMG_Zorro_ToraGari_1.png</img>
+			<img duration="250" key="1">/images/zorro/IMG_Zorro_ToraGari_2.png</img>
+			<img duration="250" key="2">/images/zorro/IMG_Zorro_ToraGari_3.png</img>
+			<img duration="850" key="3">/images/zorro/IMG_Zorro_ToraGari_4.png</img>
+			<img duration="400" key="4">/images/zorro/IMG_Zorro_ToraGari_5.png</img>
+			<img duration="150" key="5">/images/zorro/IMG_Zorro_ToraGari_6.png</img>
+			<img duration="1050" key="6">/images/zorro/IMG_Zorro_ToraGari_7.png</img>
+			<img duration="850" key="7">/images/zorro/IMG_Zorro_ToraGari_8.png</img>
+			<img duration="550" key="8">/images/zorro/IMG_Zorro_ToraGari_9.png</img>
+		</airSpecialAttack1>
+		
+		<yokkoudori airBool="false" airIndex="0"	loopIndex="0" loops="false">
+			<img duration="600" key="0">/images/zorro/IMG_Zorro_AirSpecialAttack2_1.png</img>
+			<img duration="400" key="1">/images/zorro/IMG_Zorro_AirSpecialAttack2_2.png</img>
+			<img duration="3000" key="2">/images/zorro/IMG_Zorro_AirSpecialAttack2_3.png</img>
+			<img duration="100" key="3">/images/zorro/IMG_Zorro_AirSpecialAttack2_4.png</img>
+			<img duration="100" key="4">/images/zorro/IMG_Zorro_AirSpecialAttack2_5.png</img>
+			<img duration="200" key="5">/images/zorro/IMG_Zorro_AirSpecialAttack2_6.png</img>
+			<img duration="1750" key="6">/images/zorro/IMG_Zorro_AirSpecialAttack2_7.png</img>
+			<img duration="250" key="7">/images/zorro/IMG_Zorro_AirSpecialAttack2_8.png</img>
+			<img duration="250" key="8">/images/zorro/IMG_Zorro_AirSpecialAttack2_9.png</img>
+			<img duration="450" key="9">/images/zorro/IMG_Zorro_AirSpecialAttack2_10.png</img>
+			<img duration="350" key="10">/images/zorro/IMG_Zorro_AirSpecialAttack2_11.png</img>
+			<img duration="350" key="11">/images/zorro/IMG_Zorro_AirSpecialAttack2_12.png</img>
+		</yokkoudori>
+		
+	</sprites>
+</character>

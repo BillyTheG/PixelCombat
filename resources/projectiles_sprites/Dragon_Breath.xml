@@ -1,0 +1,19 @@
+<projectile>
+<type>Dragon_Breath</type>
+<sprites>
+	<creation airBool="false" airIndex="0" loops="false" loopIndex="0">
+		<img key="0" duration="200">/images/projectiles/natsu/Fire_Breath_1.png</img>
+		<img key="1" duration="200">/images/projectiles/natsu/Fire_Breath_2.png</img>
+	 	<img key="2" duration="200">/images/projectiles/natsu/Fire_Breath_3.png</img>
+	</creation>
+	<move airBool="false" airIndex="0" loops="true" loopIndex="0">>
+		<img key="0" duration="100">/images/projectiles/natsu/Fire_Breath_4.png</img>
+		<img key="1" duration="100">/images/projectiles/natsu/Fire_Breath_5.png</img>
+	 	<img key="2" duration="100">/images/projectiles/natsu/Fire_Breath_6.png</img>
+	</move>
+	<explosion airBool="false" airIndex="0" loops="false" loopIndex="0">>
+		<img key="0" duration="200">/images/projectiles/natsu/Fire_Breath_7.png</img>
+		<img key="1" duration="200">/images/projectiles/natsu/Fire_Breath_8.png</img>
+	</explosion>	
+</sprites>
+</projectile>
