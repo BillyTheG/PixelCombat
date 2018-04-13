@@ -233,7 +233,7 @@ public class GamePlay
       }
       this.controller.onKey(KeyCommand.P1RIGHT, hold);
       break;
-    case J: 
+    case NUMPAD1: 
       if (player1NotFreezeOrPlayerNotAI()) {
         if (!hold)
         {
@@ -244,7 +244,7 @@ public class GamePlay
         }
       }
       break;
-    case K: 
+    case NUMPAD2: 
       if (player1NotFreezeOrPlayerNotAI()) {
         if (!hold)
         {
@@ -255,7 +255,7 @@ public class GamePlay
         }
       }
       break;
-    case L: 
+    case NUMPAD3: 
       if (player1NotFreezeOrPlayerNotAI())
       {
         if (!hold) {
@@ -264,7 +264,7 @@ public class GamePlay
         this.controller.onKey(KeyCommand.P2DEFEND, hold);
       }
       break;
-    case I: 
+    case NUMPAD4: 
       if (player1NotFreezeOrPlayerNotAI())
       {
         if (!hold) {
@@ -273,7 +273,7 @@ public class GamePlay
         this.controller.onKey(KeyCommand.P2DASH, hold);
       }
       break;
-    case O: 
+    case NUMPAD5: 
       if (player1NotFreezeOrPlayerNotAI()) {
         if (!hold) {
           this.controller.onKey(KeyCommand.P2SPECIALATTACK2, hold);
