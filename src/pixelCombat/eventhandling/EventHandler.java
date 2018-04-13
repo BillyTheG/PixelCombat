@@ -76,7 +76,7 @@ public class EventHandler
 	
 	public EventHandler(GamePlayController gamePlayController, PXMapHandler arena) {
 		this.arena = arena;
-		this.event = GameEvent.BATTLE;
+		this.event = GameEvent.INTRODUCTION;
 		this.controller = gamePlayController;
 		this.player1 = arena.getPlayer1();
 		this.player2 = arena.getPlayer2();
@@ -87,7 +87,7 @@ public class EventHandler
 
 	public void init() 
 	{
-		this.event = GameEvent.BATTLE;
+		this.event = GameEvent.INTRODUCTION;
 		this.player1 = arena.getPlayer1();
 		this.player2 = arena.getPlayer2();
 		player1.wins = 0;
