@@ -73,17 +73,17 @@ public class GeometryUtils {
 	}
 
 	/**
-	 * Checks if two circles overlap
+	 * Checks if two rectangles overlap
 	 * 
-	 * @param c1 circle c1
-	 * @param c2 circle c2
-	 * @return do circles collide
+	 * @param r1 rectangle r1
+	 * @param r2 rectangle r2
+	 * @return do rectangles collide
 	 */
-	public static boolean isCollision(BoundingRectangle c1, BoundingRectangle c2) {
-		 return c1.getUpperLeft().x < c2.getUpperLeft().x + c2.getWidth()  &&
-				 c2.getUpperLeft().x < c1.getUpperLeft().x + c1.getWidth()  &&
-				 c1.getUpperLeft().y < c2.getUpperLeft().y  + c2.getHeight() &&
-				 c2.getUpperLeft().y < c1.getUpperLeft().y + c1.getHeight();
+	public static boolean isCollision(BoundingRectangle r1, BoundingRectangle r2) {
+		 return r1.getUpperLeft().x < r2.getUpperLeft().x + r2.getWidth()  &&
+				 r2.getUpperLeft().x < r1.getUpperLeft().x + r1.getWidth()  &&
+				 r1.getUpperLeft().y < r2.getUpperLeft().y  + r2.getHeight() &&
+				 r2.getUpperLeft().y < r1.getUpperLeft().y + r1.getHeight();
 	}
 	
 	
