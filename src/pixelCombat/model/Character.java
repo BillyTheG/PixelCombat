@@ -135,7 +135,7 @@ public abstract class Character
     this.attackSound = AttackSound;
     this.specialAttackSound = SpecialAttackSound;
     this.deathSound = DeathSound;
-    this.actualMagicpoints = 100.0F;
+    this.actualMagicpoints = 0f;
     this.maxMagicpoints = MaxMagicPoints;
     this.releasedProjectiles = new ArrayList<>();
     this.releasedParticles = new ArrayList<>();

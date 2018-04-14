@@ -128,6 +128,12 @@ public class CharacterSelection extends GamePhase implements Observable{
 		case K:
 			controller.onKey(KeyCommand.P2BASICATTACK2, hold);
 			break;		
+		case NUMPAD1:
+			controller.onKey(KeyCommand.P2BASICATTACK1, hold);
+			break;	
+		case NUMPAD2:
+			controller.onKey(KeyCommand.P2BASICATTACK2, hold);
+			break;		
 		case ENTER:
 			controller.onKey(KeyCommand.ENTER, hold);
 			break;

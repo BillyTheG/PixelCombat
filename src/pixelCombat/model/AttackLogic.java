@@ -97,7 +97,10 @@ public abstract class AttackLogic {
 		if (attackStatus == AttackStates.isComboAttacking || attackStatus == AttackStates.isSpecialAttacking1
 				|| attackStatus == AttackStates.isSpecialAttacking2 || attackStatus == AttackStates.isSpecialAttacking3
 				|| attackStatus == AttackStates.isSpecialAttacking4 || attackStatus == AttackStates.isSpecialAttacking5
-				|| attackStatus == AttackStates.isSpecialAttacking6)
+				|| attackStatus == AttackStates.isSpecialAttacking6
+				|| attackStatus == AttackStates.Gear2Transform
+				|| attackStatus == AttackStates.GigantoGatling
+				|| attackStatus == AttackStates.isYokkouDoring)
 			return true;
 
 		return false;
