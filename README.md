@@ -45,3 +45,5 @@ Here is one video, how it looks like today.
 3. Run Configurations: VM Arguments: -Xms1024m -Xmx4g
 4. Enjoy
 5. Comment or PM me as you wish and please tell me about found bugs :D
+
+Note: Please check the field FPS in the main class. If the game runs too fast or too slow, change this parameter!
