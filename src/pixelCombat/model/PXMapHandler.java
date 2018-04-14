@@ -335,28 +335,37 @@ public class PXMapHandler
       }
       return;
     }
+    // the intersection box
     float x1 = iRect.getUpperLeft().x;
     float y1 = iRect.getUpperLeft().y;
-    float x2 = player1.boxLogic.currentColBox.getUpperLeft().x;
-    float y2 = player1.boxLogic.currentColBox.getUpperLeft().y;
     float w1 = iRect.getWidth();
     float h1 = iRect.getHeight();
+    // rectangle box of one arbitrary player
+    float x2 = player1.boxLogic.currentColBox.getUpperLeft().x;
+    float y2 = player1.boxLogic.currentColBox.getUpperLeft().y;
     float w2 = player1.boxLogic.currentColBox.getWidth();
     float h2 = player1.boxLogic.currentColBox.getHeight();
+    
+    // we hit from left
     if ((x1 + w1 / 2.0F > x2 + w2 / 2.0F) && (!player1.collidesX))
     {
       player1.physics.VX = (-1.0F * Math.abs(player1.physics.VX));
       player1.collidesX = true;
     }
+    // we hit from right
     if ((x1 + w1 / 2.0F < x2 + w2 / 2.0F) && (!player1.collidesX))
     {
       player1.physics.VX = Math.abs(player1.physics.VX);
       player1.collidesX = true;
     }
+    
+    
+    // we hit from above
     if ((y1 + h1 / 2.0F > y2 + h2 / 2.0F) && (!player1.collidesY))
     {
-      player1.physics.VY = (0.0F - Math.abs(player1.physics.VY));
+      player1.physics.VY = - Math.abs(player1.physics.VY);
       player1.collidesY = true;
+      //both players have to repel each other
       if (player1.getPos().x < player2.getPos().x)
       {
         player1.physics.VX -= 5.0F;
@@ -368,10 +377,12 @@ public class PXMapHandler
         player2.physics.VX -= 5.0F;
       }
     }
+    // we hit from botton
     if ((y1 + h1 / 2.0F < y2 + h2 / 2.0F) && (!player1.collidesY))
     {
       player1.physics.VY = Math.abs(player1.physics.VY);
       player1.collidesY = true;
+      //both players have to repel each other
       if (player1.getPos().x < player2.getPos().x)
       {
         player1.physics.VX -= 5.0F;
