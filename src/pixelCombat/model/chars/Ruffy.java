@@ -334,6 +334,10 @@ public class Ruffy
   
   public void finishing()
   {
+	  if (!this.statusLogic.isWinning()) {
+	      return;
+	    }  
+	  
     setGear2On(false);
     this.releasedDusts.remove(this.gear2aura);
     switch (this.picManager.getCurrFrameIndex())

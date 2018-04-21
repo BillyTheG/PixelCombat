@@ -6,8 +6,7 @@ public class AngleDirectionCalcTest {
 
 	public static void main(String[] args) {
 		AngleDirectionCalcTest test = new AngleDirectionCalcTest();
-		System.out.println(test.calculateDirection(new Vector2d(1,-4)));// TODO Auto-generated method stub
-
+		System.out.println(test.calculateDirection(new Vector2d(1,-4)));
 	}
 
 	public double calculateDirection(Vector2d direction)

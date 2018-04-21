@@ -124,9 +124,7 @@ public class MapSelection extends GamePhase implements Observable{
 	
 	
 	@Override
-	public void reset() {
-		// TODO Auto-generated method stub
-		
+	public void reset() {	
 	}
 
 	@Override

@@ -79,8 +79,7 @@ public class Title extends GamePhase{
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 }

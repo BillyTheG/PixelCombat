@@ -11,7 +11,6 @@ public class RuffyViewLogic extends ViewLogic
 
 	public RuffyViewLogic(Character character) {
 		super(character);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

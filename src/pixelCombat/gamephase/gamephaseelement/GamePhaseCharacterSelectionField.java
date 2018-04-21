@@ -86,12 +86,7 @@ public class GamePhaseCharacterSelectionField extends GamePhaseElement implement
 		return null;
 	}
 
-	@Override
-	public void dynamic() 
-	{
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	/**
 	 * @return the selections

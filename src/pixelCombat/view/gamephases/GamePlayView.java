@@ -207,7 +207,9 @@ public class GamePlayView extends Renderer {
 
 		renderBackGround(delta, player1, player2);
 		drawNPCs(player1, player2);
-
+		
+		//ArtWorks as Bg
+		drawArtworks(new ArrayList<ArtWork>(arena.getArtWorks()),true);
 		drawSpirits(arena.getSpirits());
 		drawChars(chars, (float) delta / 1000000000f);
 		
@@ -223,7 +225,8 @@ public class GamePlayView extends Renderer {
 		drawAvatars(player1, player2);
 		
 		artWorkCover.update((float) delta / 1000000000f);
-		drawArtworks(new ArrayList<ArtWork>(arena.getArtWorks()));
+		//ArtWorks as Fg
+		drawArtworks(new ArrayList<ArtWork>(arena.getArtWorks()),false);
 
 		drawBorders(player1, player2);
 	}
@@ -318,7 +321,7 @@ public class GamePlayView extends Renderer {
 
 	}
 
-	public void drawArtworks(List<ArtWork> artWorks) {
+	public void drawArtworks(List<ArtWork> artWorks, boolean behind) {
 		Vector2d pos;
 
 		if (artWorks.size() > 0) {
@@ -336,26 +339,32 @@ public class GamePlayView extends Renderer {
 			}
 		}
 		
+		
 		for (ArtWork o : artWorks) {
 
 			pos = o.getPos();
 			x = (int) (pos.x * FIELD_SIZE);
 			y = (int) (pos.y * FIELD_SIZE);
 
-			float 	scaleX = o.getScaleX();
-			float 	scaleY = o.getScaleY();
-			double 	opacity = o.getOPACITY();
+			float 	scaleX 				= o.getScaleX();
+			float 	scaleY 				= o.getScaleY();
+			double 	opacity 			= o.getOPACITY();
+			boolean shouldBeDrawnBehind = o.shouldBeDrawBehind();
 			
-			graphicsContext.setGlobalAlpha(opacity);
-			
-			if(o.isSpecialArtWork())
-				getGraphicsContext().drawImage(o.draw(), (x-o.draw().getWidth()/2f)*SCALEFACTOR, (y-o.draw().getHeight()/2f)*SCALEFACTOR,
-					o.draw().getWidth()*SCALEFACTOR * scaleX, o.draw().getHeight()*SCALEFACTOR * scaleY);
-			else
-				getGraphicsContext().drawImage(o.draw(), x, y-o.draw().getHeight()/2f,
+			if(shouldBeDrawnBehind == behind)
+			{
+				graphicsContext.setGlobalAlpha(opacity);
+				if(o.isSpecialArtWork())
+					getGraphicsContext().drawImage(o.draw(), (x-o.draw().getWidth()/2f)*SCALEFACTOR, (y-o.draw().getHeight()/2f)*SCALEFACTOR,
 						o.draw().getWidth()*SCALEFACTOR * scaleX, o.draw().getHeight()*SCALEFACTOR * scaleY);
+				else
+					getGraphicsContext().drawImage(o.draw(), x, y-o.draw().getHeight()/2f,
+							o.draw().getWidth()*SCALEFACTOR * scaleX, o.draw().getHeight()*SCALEFACTOR * scaleY);
+				
+				graphicsContext.setGlobalAlpha(1);
+			}
 			
-			graphicsContext.setGlobalAlpha(1);
+			
 		}
 		graphicsContext.setGlobalAlpha(1);
 	}
@@ -584,7 +593,8 @@ public class GamePlayView extends Renderer {
 
 		}
 
-		if (!player1.statusLogic.isImportant() && !player2.statusLogic.isImportant())
+		if (!player1.statusLogic.isImportant() && !player2.statusLogic.isImportant()
+				&& !player1.statusLogic.isDead() && !player2.statusLogic.isDead())
 			GamePlayView.CAMERA_X_SPEED = CAMERA_X_SPEED_Default;
 
 		if (player1.shaking || player2.shaking) {

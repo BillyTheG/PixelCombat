@@ -8,8 +8,6 @@ import pixelCombat.model.Dust;
 import pixelCombat.view.Animation;
 
 public class Fire_Dragon extends Dust {
-
-	
 	
 	public Fire_Dragon(Vector2d pos, boolean faceRight) {
 		super(pos,faceRight);

@@ -8,13 +8,10 @@ public class NatsuBoxLogic extends BoxLogic{
 
 	public NatsuBoxLogic(Character character,Console console) {
 		super(character,console);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void loadFurtherBoxes(int currentAnimation2) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	

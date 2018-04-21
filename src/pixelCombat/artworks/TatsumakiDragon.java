@@ -23,6 +23,7 @@ public class TatsumakiDragon extends ArtWork {
 		
 		this.dustAnimator = new Animation(images,times,false);
 		setSpecialArtWork(true);
+		setDrawBehind(true);
 		setOPACITY(0.25d);
 		scaleX = 1.25f;
 		scaleY = 1.25f;

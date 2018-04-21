@@ -74,12 +74,6 @@ public class GamePhasePointer extends GamePhaseElement{
 		return this.animator.getImage();
 	}
 
-	@Override
-	public void dynamic() 
-	{
-		
-	}
-
 	/**
 	 * @return the pointedButton
 	 */

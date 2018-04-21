@@ -7,7 +7,6 @@ public class ZorroStatusLogic extends StatusLogic {
 
 	public ZorroStatusLogic(Character character) {
 		super(character);
-		// TODO Auto-generated constructor stub
 	}
 
 

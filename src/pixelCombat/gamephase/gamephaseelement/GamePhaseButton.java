@@ -28,12 +28,6 @@ public class GamePhaseButton extends GamePhaseElement{
 		return animator.getImage();
 	}
 
-	@Override
-	public void dynamic() 
-	{
-		
-	}
-
 	/**
 	 * @return the selected
 	 */

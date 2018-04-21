@@ -285,8 +285,16 @@ public class Zorro
   
   public void finishing()
   {
+	  
+	  
+	  
     getUlToraGariArtWork().dead = true;
     this.releasedArtWorks.clear();
+    if (!this.statusLogic.isWinning()) {
+        return;
+      }
+    
+    
     switch (this.picManager.getCurrFrameIndex())
     {
     case 0: 

@@ -21,7 +21,7 @@ public class ZorroShiShinShinSon
   {
     super(user, id);
     this.user = user;
-    setRequiredEnergy(0.0F);
+    setRequiredEnergy(90.0F);
   }
   
   public void process()

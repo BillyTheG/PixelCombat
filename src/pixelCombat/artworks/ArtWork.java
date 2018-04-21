@@ -22,7 +22,7 @@ public class ArtWork {
 	protected 			float 		scaleY 				=	1f;
 	private 			boolean 	isSpecialArtWork 	= 	false;
 	private				double		OPACITY				=	1d;
-	private				boolean 	drawBehind			= 	false; //TODO some ArtWorks as bgs some as fgs
+	private				boolean 	drawBehind			= 	false;
 	
 	
 	public ArtWork(Vector2d pos, float VX, float VY) 
@@ -184,5 +184,13 @@ public class ArtWork {
 
 	public void setOPACITY(double oPACITY) {
 		OPACITY = oPACITY;
+	}
+
+	public boolean shouldBeDrawBehind() {
+		return drawBehind;
+	}
+
+	public void setDrawBehind(boolean drawBehind) {
+		this.drawBehind = drawBehind;
 	}
 }

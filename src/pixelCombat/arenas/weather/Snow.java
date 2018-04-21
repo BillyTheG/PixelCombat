@@ -70,7 +70,6 @@ public class Snow extends Weather {
 	
 	@Override
 	public void updateFurther(float delta) {
-		// TODO Auto-generated method stub
 		
 	}
 

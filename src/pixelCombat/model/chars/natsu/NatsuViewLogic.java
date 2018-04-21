@@ -9,13 +9,10 @@ public class NatsuViewLogic extends ViewLogic
 
 	public NatsuViewLogic(Character character) {
 		super(character);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void changeFurtherImages(AttackStates attackStatus) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

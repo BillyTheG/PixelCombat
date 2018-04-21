@@ -11,14 +11,11 @@ public class NatsuKi extends AIManager{
 
 	@Override
 	public void checkMoreCases() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void updateFurtherPriorities() {
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 	@Override

@@ -46,7 +46,6 @@ public abstract class GamePhaseElement
 	
 	public abstract void update(float delta);
 	public abstract Image draw();
-	public abstract void dynamic();
 
 	/**
 	 * @return the gamePhase

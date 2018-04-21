@@ -46,8 +46,7 @@ public class ZorroKI extends AIManager{
 	
 	@Override
 	public void updateFurtherPriorities() {
-		// TODO Auto-generated method stub
-		
+			
 	}
 
 	@Override

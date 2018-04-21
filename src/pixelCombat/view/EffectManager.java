@@ -21,7 +21,6 @@ public class EffectManager {
 	
 	
 	public EffectManager() {
-		// TODO
 		this.color_pallette = new HashMap<Integer, Integer>();
 		init();
 		colorizer = new Colorizer(this);

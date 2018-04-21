@@ -10,7 +10,6 @@ public class RuffyBoxLogic extends BoxLogic{
 
 	public RuffyBoxLogic(Character character, Console console) {
 		super(character,console);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

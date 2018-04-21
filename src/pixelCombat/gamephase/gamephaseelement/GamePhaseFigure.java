@@ -130,9 +130,7 @@ public abstract class GamePhaseFigure extends GamePhaseElement
 		return animator.getImage();
 	}
 
-	@Override
-	public void dynamic(){}
- 
+	
 	public void kill()
 	{
 		

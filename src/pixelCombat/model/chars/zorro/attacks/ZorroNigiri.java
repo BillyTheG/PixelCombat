@@ -29,7 +29,7 @@ public class ZorroNigiri
   {
     super(user, id);
     this.user = user;
-    setRequiredEnergy(0.0F);
+    setRequiredEnergy(20.0F);
     this.dashWind = new DashWind(new Vector2d(), true);
     this.nigiriArtWork = new NigiriArtwork();
   }

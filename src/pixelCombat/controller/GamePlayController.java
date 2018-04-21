@@ -35,15 +35,20 @@ import pixelCombat.view.gamephases.GamePlayView;
 
 public class GamePlayController extends Controller  implements EventListener{
 
-	public	GameEngine engine;
-	public 	PXMapHandler arena;
-	public 	Character player1;
-	public 	Character player2;
-	public	EventHandler eventHandler;
-	public	GameEvent event;
-	private GamePlayView gamePlayView;
-	private boolean initialized;
-	private GamePlay gamePlay;
+	public	GameEngine 		engine;
+	public 	PXMapHandler 	arena;
+	public 	Character 		player1;
+	public 	Character 		player2;
+	public	EventHandler 	eventHandler;
+	public	GameEvent 		event;
+	private GamePlayView 	gamePlayView;
+	private boolean 		initialized;
+	private GamePlay 		gamePlay;
+	private boolean 		GLOBALFREEZE = false;
+	private float			globalFreezeBuffer = 0;
+	private float 			globalFreezeDuration = 2.0f;
+	
+	
 	/**
 	 * Constructor for Character Selection Controller
 	 * 
@@ -319,9 +324,7 @@ public class GamePlayController extends Controller  implements EventListener{
 		return true;
 	}
 
-	public void reset() {
-		// TODO Auto-generated method stub
-		
+	public void reset() {	
 	}
 	
 
@@ -340,7 +343,7 @@ public class GamePlayController extends Controller  implements EventListener{
 		
 		
 		
-		checkFreeze(delta);
+		checkPlayers(delta);
 		
 		if(player1.superAttacking)
 			player1.specialBG.update((float) delta / 1000000000.0f);
@@ -393,21 +396,27 @@ public class GamePlayController extends Controller  implements EventListener{
 		BoxLogic boxlogic_p1 = player1.boxLogic;
 		BoxLogic boxlogic_p2 = player2.boxLogic;
 		
-		//ViewLogic viewLogic_p1 = player1.viewLogic;
-		//ViewLogic viewLogic_p2 = player2.viewLogic;
-		
 		boxlogic_p1.update();
 		boxlogic_p2.update();
-		//viewLogic_p1.update();
-		//viewLogic_p2.update();
-		
-		
+				
 	}
 
-	private void checkFreeze(long delta) {
+	private void checkPlayers(long delta) {
 		
 			float delta_n = (float) delta / 1000000000.0f;
 		
+			if(GLOBALFREEZE)
+			{
+				globalFreezeBuffer+= delta_n;
+				if(globalFreezeBuffer >= globalFreezeDuration)
+				{
+					globalFreezeBuffer = 0f;
+					setGLOBALFREEZE(false);
+				}
+				return;
+			}
+		
+			
 			if(!player2.freeze)
 			{
 				player1.update(delta_n);
@@ -575,6 +584,14 @@ public class GamePlayController extends Controller  implements EventListener{
 		this.eventHandler.setEvent(GameEvent.INTRODUCTION);
 		initialized = false;
 		
+	}
+
+	public boolean isGLOBALFREEZE() {
+		return GLOBALFREEZE;
+	}
+
+	public void setGLOBALFREEZE(boolean gLOBALFREEZE) {
+		GLOBALFREEZE = gLOBALFREEZE;
 	}
 
 

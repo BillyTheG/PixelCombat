@@ -88,8 +88,6 @@ public class Help extends GamePhase{
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public int getCurrentPage() {

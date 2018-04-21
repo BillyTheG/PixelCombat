@@ -391,12 +391,10 @@ public abstract class StatusLogic {
 		return getGlobalStatus() == GlobalStates.KNOCKBACK;
 	}
 
-//TODO Dead really???
 	public boolean isImportant() {
 		
 		return getGlobalStatus() == GlobalStates.KNOCKBACK || 
-			getGlobalStatus() == GlobalStates.DEAD ||
-			!character.isAlive() || isFocused();
+		isFocused();
 	}
 
 	public boolean isFocused() {

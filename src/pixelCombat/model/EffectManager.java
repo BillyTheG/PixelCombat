@@ -12,10 +12,6 @@ public class EffectManager {
 	
 	public EffectManager()
 	{
-		//TODO
-		
-		//TODO edit effects like fire, define filters and image editing tools...
-		//
 	}
 	
 	

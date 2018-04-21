@@ -97,12 +97,6 @@ public class PixelCombat extends Application {
 					frameBuffer = 0f;
 				}
 				
-//				if((float)deltaTime/1000000000f >= 0.012f)
-//				{
-//					inputController.update((long) (0.016*1000000000f));
-//					engine.update((long) (0.016*1000000000f));				
-//
-//				}
 			}
 
 		}.start();

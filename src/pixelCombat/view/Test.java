@@ -6,7 +6,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		Test test = new Test();
-		System.out.println(test.calculateDirection(new Vector2d(1,-4)));// TODO Auto-generated method stub
+		System.out.println(test.calculateDirection(new Vector2d(1,-4)));
 
 	}
 
