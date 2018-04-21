@@ -366,13 +366,17 @@
 			<box_list picture="1">
 				<box height="2.3499975" hurts="false" id="0" width="1.75" x="0.060002327" y="-1.3266673"/>
 			</box_list>
-			<box_list picture="2">
-				<box height="3.2999973" hurts="false" id="0" width="1.75" x="0.10666847" y="-0.7200022"/>
-			</box_list>
-			<box_list picture="3">
-				<box height="3.2999973" hurts="false" id="0" width="1.75" x="0.10666847" y="-0.7200022"/>
-			</box_list>
 		</jumping>
+		
+		<jumpFall>
+			<box_list picture="0">
+				<box height="3.2999973" hurts="false" id="0" width="1.75" x="0.10666847" y="-0.7200022"/>
+			</box_list>
+			<box_list picture="1">
+				<box height="3.2999973" hurts="false" id="0" width="1.75" x="0.10666847" y="-0.7200022"/>
+			</box_list>		
+		</jumpFall>
+		
 		<dashing>
 			<box_list picture="0">
 			</box_list>

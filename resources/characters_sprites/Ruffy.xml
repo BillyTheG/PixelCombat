@@ -18,12 +18,9 @@
 			<img duration="200" key="6">/images/ruffy/IMG_Ruffy_Move_7_re.png</img>
 			<img duration="200" key="7">/images/ruffy/IMG_Ruffy_Move_8_re.png</img>
 		</move>
-		<jumping airBool="false" airIndex="0" loopIndex="3" loops="true">
+		<jumping airBool="false" airIndex="0" loopIndex="0" loops="true">
 			<img duration="200" key="0">/images/ruffy/IMG_Ruffy_Jump_1_re.png</img>
-			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_2_re.png</img>
-			<img duration="250" key="2">/images/ruffy/IMG_Ruffy_Jump_3_re.png</img>
-			<img duration="100" key="3">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
-			<img duration="100" key="4">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+			<img duration="400" key="1">/images/ruffy/IMG_Ruffy_Jump_2_re.png</img>
 		</jumping>
 		<basicAttack airBool="false" airIndex="0" loopIndex="0" loops="false">
 			<img duration="80" key="0">/images/ruffy/IMG_Ruffy_basicAttack_1_re.png</img>
@@ -328,6 +325,12 @@
 			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
 			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
 		</knockBackRecover>
+		
+		<jumpFall airBool="false" airIndex="1" loopIndex="1" loops="true">>
+			<img duration="250" key="0">/images/ruffy/IMG_Ruffy_Jump_3_re.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
+			<img duration="300" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+		</jumpFall>
 		
 		<gear2transform airBool="false" airIndex="0" loopIndex="0" loops="false">
 			<img duration="300" key="0">/images/ruffy/IMG_Ruffy_Dash_7.png</img>

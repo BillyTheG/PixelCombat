@@ -66,11 +66,9 @@ public abstract class Attack {
 	{
 		if(user.checkDefender(user.enemy) && isAttacking())
 		{
-			if (user.statusLogic.isRight()) {
-				user.enemy.statusLogic.setMovementStates(MovementStates.LEFT);
-			} else {
-				user.enemy.statusLogic.setMovementStates(MovementStates.RIGHT);
-			}
+			if (user.statusLogic.isRight()) user.enemy.statusLogic.setMovementStates(MovementStates.LEFT);
+			else 							user.enemy.statusLogic.setMovementStates(MovementStates.RIGHT);
+			
 			checkContent();
 		}
 		if(user.animationTimeRunnedOut() && isAttacking())

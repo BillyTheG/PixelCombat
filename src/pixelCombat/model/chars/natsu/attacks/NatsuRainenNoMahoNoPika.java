@@ -43,6 +43,7 @@ public class NatsuRainenNoMahoNoPika extends Attack {
 		switch (getUser().picManager.getCurrFrameIndex()) {
 		case 0:
 			if (getUser().isSwitcher()) {
+				natsu.superAttacking = true;
 				artWork.reset();
 				natsu.releasedArtWorks.add(artWork);
 				this.natsu.sound("/audio/natsu_rainen_no.wav");
@@ -290,11 +291,7 @@ public class NatsuRainenNoMahoNoPika extends Attack {
 	}
 
 	public void checkFinished() {
-		this.natsu.statusLogic.setAHitDelay(false);
-		this.lightningFistTouch = false;
-		this.bufferTime = 0.0F;
-		this.natsu.freeze_loop = false;
-		this.natsu.freeze = false;
+		resetStats();
 	}
 
 	public boolean isAttacking() {
@@ -302,6 +299,7 @@ public class NatsuRainenNoMahoNoPika extends Attack {
 	}
 
 	public void resetStats() {
+		natsu.superAttacking = false;
 		this.natsu.statusLogic.setAHitDelay(false);
 		this.lightningFistTouch = false;
 		this.bufferTime = 0.0F;

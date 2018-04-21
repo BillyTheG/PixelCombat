@@ -17,7 +17,7 @@ public class PlayerPhysics
   public float VY;
   public static float GRAVITATION = 45.0F;
   public float ACCELERATION = 1.35F;
-  public static float FRICTION = 0.9F;
+  public static float FRICTION = 0.85F;
   public static float EPSILON = 0.005F;
   private HardLand hardland1 = null;
   private HardLand hardland2 = null;
@@ -63,6 +63,7 @@ public class PlayerPhysics
     if (this.isMoving) {
       acceleration(delta);
     }
+    this.isMoving = false;
     movement(delta);
   }
   

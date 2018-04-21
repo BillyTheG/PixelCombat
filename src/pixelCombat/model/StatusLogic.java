@@ -39,10 +39,10 @@ public abstract class StatusLogic {
 
 	public void checkUpdate(){
 		
-		if(actionStates == ActionStates.MOVE)
-			character.physics.isMoving =true;
-		else
-			character.physics.isMoving =false;
+//		if(actionStates == ActionStates.MOVE)
+//			character.physics.isMoving =true;
+//		else
+//			character.physics.isMoving =false;
 		
 		switch (globalStates) {
 
@@ -90,7 +90,7 @@ public abstract class StatusLogic {
 	public boolean canNotJump() {
 		return isKnockback() 
 				|| character.attackLogic.isAttacking()
-				|| isJumping() 
+				|| isJumping() || isJumpFalling()
 				|| isJumpRecovering()
 				|| isDashing()
 				|| isDead()
@@ -139,7 +139,8 @@ public abstract class StatusLogic {
 				|| isDashing() 
 				|| isDefending() 
 				|| isJumpRecovering()
-				|| isJumping();
+				|| isJumping()
+				|| isJumpFalling();
 	}
 
 	public boolean canNotAirSpecial1() {
@@ -151,12 +152,16 @@ public abstract class StatusLogic {
 				|| isDashing() 
 				|| isDefending() 
 				|| isJumpRecovering()
-				|| !isJumping());
+				|| (!isJumping()
+				&& !isJumpFalling()));
 	}
 	
+	
+
 	public boolean canNotMove() {
 		return canNotAttack() 
 				|| isJumping()
+				|| isJumpFalling()
 				|| character.getPos().y < PXMapHandler.GROUNDLEVEL;
 
 	}
@@ -170,7 +175,7 @@ public abstract class StatusLogic {
 	}
 
 	public boolean canAirAttack() {
-		return isJumping()  && 	Math.abs(character.getPos().y - PXMapHandler.GROUNDLEVEL) > 1f;
+		return isJumping()&& isJumpFalling()  && 	Math.abs(character.getPos().y - PXMapHandler.GROUNDLEVEL) > 1f;
 	}
 	
 	
@@ -372,7 +377,9 @@ public abstract class StatusLogic {
 		return getActionStates() == ActionStates.JUMP || isOnAir();
 	}
 
-
+	boolean isJumpFalling() {
+		return getActionStates() == ActionStates.JUMPFALL;
+	}
 
 
 	public boolean isDashing() {

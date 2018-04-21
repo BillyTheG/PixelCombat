@@ -201,7 +201,36 @@ public abstract class Character extends PXObject {
 
 	protected abstract String retreat();
 
+	public void updateMovement(){
+			if(Math.abs(physics.VX)<= 1f && !physics.isMoving){
+				statusLogic.setActionStates(ActionStates.STAND);
+			}		
+		
+	}
+	
 	public void updateJump() {
+		
+		if (getPos().y == this.groundLevel) {
+			this.jumpDust.reset(new Vector2d(this.pos.x, this.groundLevel + 0.25F), this.statusLogic.isRight());
+			this.releasedDusts.add(this.jumpDust);
+			this.statusLogic.setOnAir(false);
+			this.timeManager.getJumpDelay().setY(Float.valueOf(0.0F));
+			setJumpAttacking(false);
+			this.attackLogic.setAttackStatus(AttackStates.notAttacking);
+			this.freeze = false;
+			this.freeze_loop = false;
+			setSwitcher(true);
+
+			sound(this.landSound);
+			this.statusLogic.setActionStates(ActionStates.JUMP_RECOVER);
+		}
+		
+		if (this.physics.VY >0) {
+			this.statusLogic.setActionStates(ActionStates.JUMPFALL);
+		}
+	}
+	
+	public void updateJumpFall() {
 		if (getPos().y == this.groundLevel) {
 			this.jumpDust.reset(new Vector2d(this.pos.x, this.groundLevel + 0.25F), this.statusLogic.isRight());
 			this.releasedDusts.add(this.jumpDust);
@@ -219,6 +248,8 @@ public abstract class Character extends PXObject {
 	}
 
 	private void updateJumpRecover() {
+		this.physics.VX = 0;
+		
 		if (this.picManager.getAnimTime() == this.picManager.getTotalDuration()) {
 			this.statusLogic.setActionStates(ActionStates.STAND);
 		}
@@ -227,6 +258,8 @@ public abstract class Character extends PXObject {
 	public abstract void updateDash();
 
 	private void defend() {
+		
+		
 		if (this.statusLogic.isResetDefending()) {
 			this.timeManager.getDefendReleaseTime().setY(Float.valueOf(0.0F));
 			if (this.statusLogic.isJumping()) {
@@ -236,6 +269,14 @@ public abstract class Character extends PXObject {
 			}
 			this.statusLogic.setResetDefending(false);
 		}
+		
+		if(this.timeManager.getDefendReleaseTime().y == this.timeManager.getDelayHolder().get(TimeState.DEFENDRELEASETIME))
+		{
+			this.statusLogic.setResetDefending(false);
+			this.statusLogic.setActionStates(ActionStates.STAND);
+		}
+		
+		
 	}
 
 	public void knockBack() {
@@ -345,6 +386,10 @@ public abstract class Character extends PXObject {
 			this.aiManager.update(delta);
 		}
 		if ((this.statusLogic.isActive()) || (this.statusLogic.isBlinking())) {
+			
+			if(this.statusLogic.isMoving())
+				updateMovement();
+			
 			if (this.statusLogic.isIntroducting()) {
 				introduct();
 			}
@@ -357,6 +402,10 @@ public abstract class Character extends PXObject {
 			if (this.statusLogic.isJumping()) {
 				updateJump();
 			}
+			
+			if (this.statusLogic.isJumpFalling()) {
+				updateJumpFall();			}
+			
 			if (this.statusLogic.isJumpRecovering()) {
 				updateJumpRecover();
 			}

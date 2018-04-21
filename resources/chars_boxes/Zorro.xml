@@ -18,19 +18,23 @@
 				<box height="3.9999971" hurts="false" id="0" width="1.0"
 					x="-4.863739E-5" y="-0.440001" />
 			</box_list>
-			<box_list picture="2">
+		</jumping>
+		
+		<jumpFall>
+			<box_list picture="0">
 				<box height="3.9999962" hurts="false" id="0" width="1.0" x="0.059952736"
 					y="-0.42000103" />
 			</box_list>
-			<box_list picture="3">
+			<box_list picture="1">
 				<box height="3.9999967" hurts="false" id="0" width="1.0" x="0.01994896"
 					y="-0.48000193" />
 			</box_list>
-			<box_list picture="4">
+			<box_list picture="2">
 				<box height="3.9999971" hurts="false" id="0" width="1.0"
 					x="-0.040060043" y="-0.48000097" />
 			</box_list>
-		</jumping>
+		</jumpFall>
+		
 		<specialAttack7>
 			<box_list picture="0">
 				<box height="3.2999973" hurts="false" id="0" width="1.0499992"

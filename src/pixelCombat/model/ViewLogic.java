@@ -41,7 +41,10 @@ public abstract class ViewLogic {
 	public final int AIR_SPECIALATTACK1 = 30;
 	
 	public final int KNOCKBACKRECOVER = 31;
-	public final int MAX_STANDARD_SPRITES = KNOCKBACKRECOVER;
+	public final int JUMPFALL = 32;
+	
+	
+	public final int MAX_STANDARD_SPRITES = JUMPFALL;
 	
 	
 	public ViewLogic(Character character) {
@@ -130,6 +133,9 @@ public abstract class ViewLogic {
 					case JUMP:
 						character.picManager.change(JUMPING);
 						break;
+					case JUMPFALL:
+						character.picManager.change(JUMPFALL);
+						break;	
 					case JUMP_RECOVER:
 						character.picManager.change(JUMPRECOVER);
 						break;

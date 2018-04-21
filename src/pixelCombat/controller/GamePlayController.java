@@ -70,8 +70,9 @@ public class GamePlayController extends Controller  implements EventListener{
 		Character player2 = arena.getPlayer2();
 	
 		
-		if(uncontrollable())
+		if(uncontrollable())				
 			return true;
+		
 		
 		switch (key) {
 //-----------------------------------------------------------------------------------------------------------------------------------			
@@ -164,12 +165,14 @@ public class GamePlayController extends Controller  implements EventListener{
 
 	public boolean defend(boolean hold, Character player) {
 		if (!player.statusLogic.canNotDefend()) {
-			
-			if(player.statusLogic.isJumping())	player.statusLogic.setActionStates(ActionStates.AIR_DEFENDING);
-			else								player.statusLogic.setActionStates(ActionStates.DEFENDING);
-		if(!hold)
+						
+			player.statusLogic.setResetDefending(true);
+			if(!hold){
 				player.statusLogic.setActionStates(ActionStates.STAND);
-		}
+				player.statusLogic.setResetDefending(false);
+			}
+				
+			}
 		
 		return true;
 	}
@@ -257,11 +260,13 @@ public class GamePlayController extends Controller  implements EventListener{
 			{
 				player.physics.VX = factor*1f;
 				player.statusLogic.setActionStates(ActionStates.MOVE);
-				player.statusLogic.setMovementStates(movementState);		
+				player.statusLogic.setMovementStates(movementState);					
 			}
 		
 			if(!hold && !player.statusLogic.isOnAir())
 				player.statusLogic.setActionStates(ActionStates.STAND);
+			
+			player.physics.isMoving =true;
 		}
 		
 		if (	player.statusLogic.isActive() 
@@ -278,8 +283,10 @@ public class GamePlayController extends Controller  implements EventListener{
 			
 			if(!hold)
 				player.statusLogic.setActionStates(ActionStates.JUMP);
+			
+			player.physics.isMoving =true;
 		}
-
+		
 		return true;	
 	}
 	

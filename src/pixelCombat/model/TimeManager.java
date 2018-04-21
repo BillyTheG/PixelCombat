@@ -16,7 +16,7 @@ public class TimeManager {
 	private Tuple<TimeState,Float> blinkTime 				;					//delay 100f
 	private Tuple<TimeState,Float> jumpDelay				;	 				//delay 19.5f
 	private Tuple<TimeState,Float> dashAndRetreatDelay 		;		//delay 25f
-	private Tuple<TimeState,Float> defendReleaseTime 		;			//delay 20f
+	private Tuple<TimeState,Float> defendReleaseTime 		;			//delay 15f
 //	private Tuple<TimeState,Float> basicAttack1_bufferTime	;	
 //	private Tuple<TimeState,Float> basicAttack2_bufferTime	;	
 //	private Tuple<TimeState,Float> specialAttack1_bufferTime;	
@@ -42,7 +42,7 @@ public class TimeManager {
 		this.blinkTime 					= 		new Tuple<TimeState, Float>(TimeState.BLINKTIME,10f);				//delay 100f
 		this.jumpDelay					=	 	new Tuple<TimeState, Float>(TimeState.JUMPDELAY,19.5f); 				//delay 19.5f
 		this.dashAndRetreatDelay 		=		new Tuple<TimeState, Float>(TimeState.DASHANDRETREATDELAY,40f);		//delay 25f
-		this.defendReleaseTime 			= 		new Tuple<TimeState, Float>(TimeState.DEFENDRELEASETIME,20f);		//delay 20f
+		this.defendReleaseTime 			= 		new Tuple<TimeState, Float>(TimeState.DEFENDRELEASETIME,15f);		//delay 20f
 //		this.basicAttack1_bufferTime	=		new Tuple<TimeState, Float>(TimeState.BASICATTACK1_BUFFERTIME,1f * character.attackReleaseTime);
 //		this.basicAttack2_bufferTime	=		new Tuple<TimeState, Float>(TimeState.BASICATTACK2_BUFFERTIME,1f * character.attackReleaseTime);
 //		this.specialAttack1_bufferTime	=		new Tuple<TimeState, Float>(TimeState.SPECIALATTACK1_BUFFERTIME,1f * character.attackReleaseTime);
@@ -59,7 +59,7 @@ public class TimeManager {
 		delayHolder.put(TimeState.BLINKTIME, 10f);
 		delayHolder.put(TimeState.JUMPDELAY, 19.5f);
 		delayHolder.put(TimeState.DASHANDRETREATDELAY, 40f);
-		delayHolder.put(TimeState.DEFENDRELEASETIME, 20f);
+		delayHolder.put(TimeState.DEFENDRELEASETIME, 15f);
 		
 		//standard timer
 //		delayHolder.put(TimeState.BASICATTACK1_BUFFERTIME, 1f * character.attackReleaseTime);

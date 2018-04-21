@@ -57,7 +57,10 @@ public abstract class BoxLogic {
 	public final int AIR_SPECIALATTACK1 = 30;
 	
 	public final int KNOCKBACKRECOVER = 31;
-	public final int MAX_STANDARD_SPRITES = KNOCKBACKRECOVER;
+	public final int JUMPFALL = 32;
+	
+	
+	public final int MAX_STANDARD_SPRITES = JUMPFALL;
 	
     
 	public BoundingRectangle currentColBox;
@@ -89,6 +92,9 @@ public abstract class BoxLogic {
 		case JUMPING:
 			updateBoxSeq(JUMPING,"jumping");
 			break;
+		case JUMPFALL:
+			updateBoxSeq(JUMPFALL,"jumpFall");
+			break;	
 		case JUMPRECOVER:
 			updateBoxSeq(JUMPRECOVER,"jumpRecover");
 			break;

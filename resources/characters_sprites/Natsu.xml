@@ -16,11 +16,9 @@
 	   		<img key="5" duration="50">/images/natsu/IMG_Natsu_Move_6_re.png</img>
         </move>
         
-        <jumping  airBool="false" airIndex="0" loops="true" loopIndex="3">
+        <jumping  airBool="false" airIndex="0" loops="false" loopIndex="0">
             <img key="0" duration="100">/images/natsu/IMG_Natsu_Jump_1_re.png</img>
             <img key="1" duration="500">/images/natsu/IMG_Natsu_Jump_2_re.png</img>
-            <img key="2" duration="300">/images/natsu/IMG_Natsu_Jump_3_re.png</img>
-            <img key="3" duration="100">/images/natsu/IMG_Natsu_Jump_4_re.png</img>
         </jumping>
         
         <basicAttack  airBool="false" airIndex="0" loops="false" loopIndex="0">
@@ -302,6 +300,11 @@
 			<img duration="100" key="7">/images/natsu/IMG_Natsu_KnockBackRecover_8.png</img>
 			<img duration="100" key="8">/images/natsu/IMG_Natsu_KnockBackRecover_9.png</img>		
 	</knockBackRecover>
+   	
+   	<jumpFall airBool="false" airIndex="1" loopIndex="0" loops="false">>
+		<img key="0" duration="300">/images/natsu/IMG_Natsu_Jump_3_re.png</img>
+        <img key="1" duration="100">/images/natsu/IMG_Natsu_Jump_4_re.png</img>
+	</jumpFall>
    	
     </sprites>
 </character>

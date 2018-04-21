@@ -112,6 +112,7 @@ public class RuffyKomboGear3
     }
     else
     {
+    	user.superAttacking = true;
       getUser().sound("/audio/Yell 01.wav");
       this.user.getGear3().reset();
       this.user.releasedArtWorks.add(this.user.getGear3());
@@ -177,6 +178,7 @@ public class RuffyKomboGear3
   public void checkFinished()
   {
     this.user.setAttackOnAir(false);
+    user.superAttacking = false;
     this.user.releasedDusts.remove(this.user.getDashGatlingDust());
     this.user.secondTeleport = false;
   }
@@ -186,5 +188,7 @@ public class RuffyKomboGear3
     return this.user.getAttackLogic().isSpecialAttacking4();
   }
   
-  public void resetStats() {}
+  public void resetStats() {
+	  user.superAttacking = false;
+  }
 }

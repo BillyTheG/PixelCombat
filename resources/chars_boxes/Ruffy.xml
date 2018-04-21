@@ -52,19 +52,23 @@
 				<box height="3.699996" hurts="false" id="0" width="1.0" x="-0.10001087"
 					y="-0.20000315" />
 			</box_list>
-			<box_list picture="2">
+		</jumping>
+		
+		<jumpFall>
+			<box_list picture="0">
 				<box height="3.6999965" hurts="false" id="0" width="1.0"
 					x="-0.100011826" y="-0.300004" />
 			</box_list>
-			<box_list picture="3">
+			<box_list picture="1">
 				<box height="3.6999965" hurts="false" id="0" width="1.0"
 					x="-0.020018578" y="-0.260005" />
 			</box_list>
-			<box_list picture="4">
+			<box_list picture="2">
 				<box height="3.6999965" hurts="false" id="0" width="1.0"
 					x="-0.060027122" y="-0.28000736" />
-			</box_list>
-		</jumping>
+			</box_list>		
+		</jumpFall>	
+		
 		<dashing>
 			<box_list picture="0">
 				<!-- <box height="2.6499987" hurts="false" id="0" width="3.3999977" -->
