@@ -17,13 +17,14 @@ public class Round1 extends ArtWork {
 	
 	
 	public Round1() {
-		super(new Vector2d(-PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2),new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2),30f,0f);		
+		super(		new Vector2d(-PXMapHandler.X_FIELDS_STANDARD/2f,PXMapHandler.Y_FIELDS_STANDARD/2),
+					new Vector2d(PXMapHandler.X_FIELDS_STANDARD/2f,PXMapHandler.Y_FIELDS_STANDARD/2),30f,0f);		
 		ArrayList<Image> images = new ArrayList<Image>();		
 		images.add(loadImage("/images/IMG_Misc_Round1_Writing.png"));
 		ArrayList<Float> times = new ArrayList<Float>();
 		times.add(0.35f);			
 		this.dustAnimator = new Animation(images,times,true);
-
+		setSpecialArtWork(true);
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class Round1 extends ArtWork {
 			canSound = false;
 		}
 		
-		if(target.distance(pos) == 0f&& !canDie)
+		if(firstTarget.distance(pos) == 0f&& !canDie)
 		{
 			if(canSound2 )
 			{
@@ -49,8 +50,8 @@ public class Round1 extends ArtWork {
 				durationBuffer+=delta;
 			else
 			{
-				target.x =  PXMapHandler.X_FIELDS + PXMapHandler.X_FIELDS/2f;
-				target.y =	PXMapHandler.Y_FIELDS/2f;	
+				firstTarget.x =  PXMapHandler.X_FIELDS_STANDARD + PXMapHandler.X_FIELDS_STANDARD/2f;
+				firstTarget.y =	PXMapHandler.Y_FIELDS_STANDARD/2f;	
 				canDie 	= true;
 			}				
 			
@@ -58,7 +59,7 @@ public class Round1 extends ArtWork {
 		
 		
 		
-		if(canDie && target.distance(pos) == 0f)
+		if(canDie && firstTarget.distance(pos) == 0f)
 			this.dead = true;
 		
 		
@@ -68,8 +69,8 @@ public class Round1 extends ArtWork {
 		this.dead = false;
 		this.durationBuffer = 0f;
 		this.repositionate();
-		this.target.x = PXMapHandler.X_FIELDS/2f;
-		this.target.y = PXMapHandler.Y_FIELDS/2f;
+		this.firstTarget.x = PXMapHandler.X_FIELDS_STANDARD/2f;
+		this.firstTarget.y = PXMapHandler.Y_FIELDS_STANDARD/2f;
 		this.canDie = false;
 		canSound = true;
 		canSound2 = true;

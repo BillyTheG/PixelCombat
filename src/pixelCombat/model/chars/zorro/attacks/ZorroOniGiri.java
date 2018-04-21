@@ -1,6 +1,7 @@
 package pixelCombat.model.chars.zorro.attacks;
 
 import pixelCombat.Math.Vector2d;
+import pixelCombat.artworks.ZorroOniGiriArtWork;
 import pixelCombat.dusts.BloodSplash1;
 import pixelCombat.dusts.OniGiriSmoke;
 import pixelCombat.dusts.ZorroDemonAura;
@@ -13,10 +14,13 @@ public class ZorroOniGiri
   extends Attack
 {
   private Zorro user;
-  private int shadows = 5;
-  private float max_distance = 20.0F;
+  private int shadowMax = 6;
+  private int shadows = shadowMax;
+  private float max_distance = 15.0F;
   private float distance;
   private ZorroDemonAura demonAura;
+  private ZorroOniGiriArtWork oniGiriArtWork = new ZorroOniGiriArtWork();
+  
   
   public ZorroOniGiri(Zorro user, int id)
   {
@@ -47,12 +51,20 @@ public class ZorroOniGiri
         
         getUser().sound("/audio/Zorro_Santoryou_Ho_Gi.wav");
         getUser().sound("/audio/Zorro_OniGiri_Intro.wav");
+     
         this.user.setSwitcher(false);
       }
       break;
     case 6: 
       if ((!this.user.isSwitcher()) && (this.shadows > 0) && (this.user.picManager.isAlmostFinished(6)))
       {
+    	if(shadows == shadowMax)
+    	{
+    		oniGiriArtWork.reset();
+            user.releasedArtWorks.add(oniGiriArtWork);     
+    	}
+    	  
+    	  
         this.shadows -= 1;
         this.user.picManager.resetToIndex(4);
       }
@@ -138,9 +150,10 @@ public class ZorroOniGiri
     this.user.freeze_loop = false;
     this.user.superAttacking = false;
     this.user.statusLogic.setFocused(false);
-    this.shadows = 5;
+    this.shadows = shadowMax;
     this.distance = 0.0F;
     this.user.borderEffecting = false;
+    this.user.releasedArtWorks.remove(oniGiriArtWork);
   }
   
   public boolean isAttacking()
@@ -152,7 +165,8 @@ public class ZorroOniGiri
   {
     this.user.borderEffecting = false;
     this.user.superAttacking = false;
-    this.shadows = 5;
+    this.user.releasedArtWorks.remove(oniGiriArtWork);
+    this.shadows = shadowMax;
     this.distance = 0.0F;
   }
 }

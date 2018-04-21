@@ -1,6 +1,7 @@
 package pixelCombat.model.chars.zorro.attacks;
 
 import pixelCombat.Math.Vector2d;
+import pixelCombat.artworks.RashomonArtWork;
 import pixelCombat.dusts.BloodSplash1;
 import pixelCombat.dusts.RashomonDust;
 import pixelCombat.enums.ActionStates;
@@ -16,6 +17,7 @@ public class ZorroRashomon
   private float max_distance = 6.0F;
   private float distance;
   private RashomonDust rashomonDust;
+  private RashomonArtWork rashomonArtWork = new RashomonArtWork();
   
   public ZorroRashomon(Zorro user, int id)
   {
@@ -32,6 +34,8 @@ public class ZorroRashomon
     case 0: 
       if (this.user.isSwitcher())
       {
+    	rashomonArtWork.reset();
+    	this.user.releasedArtWorks.add(rashomonArtWork); 
         this.user.freeze = true;
         this.user.freeze_loop = true;
         this.user.statusLogic.setFocused(true);

@@ -33,6 +33,10 @@ public class RuffyKomboGear2
         if (checkGear()) {
           return;
         }
+        
+        user.getJetPistoleArtWork().reset();
+        user.releasedArtWorks.add(user.getJetPistoleArtWork());
+        
         getUser().sound("/audio/gear_2.wav");
         getUser().setSwitcher(false);
       }
@@ -154,6 +158,7 @@ public class RuffyKomboGear2
       this.user.freeze_loop = true;
     }
     else
+    if (this.user.picManager.getCurrFrameIndex() == 10.0F)
     {
       this.user.freeze_loop = false;
     }
@@ -196,6 +201,8 @@ public class RuffyKomboGear2
     if (!this.user.isGear2On()) {
       return false;
     }
+    resetStats();
+    
     this.user.giveEnergyBack(this);
     this.user.attackLogic.setAttackStatus(AttackStates.notAttacking);
     
@@ -205,6 +212,9 @@ public class RuffyKomboGear2
   public void checkFinished()
   {
     this.user.setKicks(10);
+    this.user.freeze = false;
+    this.user.freeze_loop = false;
+    this.user.releasedDusts.remove(this.user.getGear2aura());
   }
   
   public boolean isAttacking()
@@ -212,5 +222,10 @@ public class RuffyKomboGear2
     return this.user.getAttackLogic().isSpecialAttacking7();
   }
   
-  public void resetStats() {}
+  public void resetStats() {
+	  this.user.setKicks(10);
+      this.user.freeze = false;
+      this.user.freeze_loop = false;
+	  this.user.releasedDusts.remove(this.user.getGear2aura());	  
+  }
 }

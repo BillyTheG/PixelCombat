@@ -10,14 +10,20 @@ import pixelCombat.view.Animation;
 
 public class ArtWork {
 
-	public Vector2d pos;
-	public Vector2d startPos;
-	public Vector2d target;
-	public Animation dustAnimator;
-	public float VX;
-	public float VY;
-	public boolean dead = false;
-	private Clip clip;
+	public 				Vector2d 	pos;
+	public 				Vector2d 	startPos;
+	public 				Vector2d 	firstTarget;
+	public 				Animation 	dustAnimator;
+	public 				float 		VX;
+	public 				float 		VY;
+	public 				boolean 	dead 				= 	false;
+	private 			Clip 		clip;
+	protected 			float 		scaleX 				=	1f;
+	protected 			float 		scaleY 				=	1f;
+	private 			boolean 	isSpecialArtWork 	= 	false;
+	private				double		OPACITY				=	1d;
+	private				boolean 	drawBehind			= 	false; //TODO some ArtWorks as bgs some as fgs
+	
 	
 	public ArtWork(Vector2d pos, float VX, float VY) 
 	{
@@ -27,14 +33,16 @@ public class ArtWork {
 		this.VY = VY;
 	}
 
-	public ArtWork(Vector2d pos,Vector2d target, float VX, float VY) 
+	public ArtWork(Vector2d pos,Vector2d firstTarget, float VX, float VY) 
 	{
 		this.pos = pos;
-		this.target = target;
+		this.firstTarget = firstTarget;
 		this.startPos = new Vector2d(pos.x,pos.y);
 		this.VX = VX;
 		this.VY = VY;
 	}
+	
+	
 	
 	public void update(float delta)
 	{
@@ -52,12 +60,12 @@ public class ArtWork {
 		this.pos.x += VX*delta;
 		this.pos.y += VY*delta;
 		
-		if(target!=null)
-			checkIfTargetReached();
+		if(firstTarget!=null)
+			checkIfTargetReached(firstTarget);
 
 		
 	}
-	private void checkIfTargetReached() {
+	protected void checkIfTargetReached(Vector2d target) {
 		
 		if(pos.x > target.x && VX >0)
 			pos.x = target.x ;
@@ -153,6 +161,28 @@ public class ArtWork {
 	    }
 	    catch (Exception localException) {}
 	  }
+
+	public float getScaleX() {
+		return scaleX;
+	}
     
-    
+	public float getScaleY() {
+		return scaleY;
+	}
+
+	public boolean isSpecialArtWork() {
+		return isSpecialArtWork;
+	}
+
+	public void setSpecialArtWork(boolean isSpecialArtWork) {
+		this.isSpecialArtWork = isSpecialArtWork;
+	}
+
+	public double getOPACITY() {
+		return OPACITY;
+	}
+
+	public void setOPACITY(double oPACITY) {
+		OPACITY = oPACITY;
+	}
 }

@@ -36,8 +36,11 @@ import pixelCombat.xml.XML_Box_Reader;
 
 public class PXMapHandler
 {
-  public static final int X_FIELDS = 18;
-  public static final int Y_FIELDS = 10;
+
+  public static final int X_FIELDS_STANDARD = 24;
+  public static final int Y_FIELDS_STANDARD = 14;
+  public static final int X_FIELDS = (int) (X_FIELDS_STANDARD * GamePlayView.SCALEFACTOR);
+  public static final int Y_FIELDS = (int) (Y_FIELDS_STANDARD * GamePlayView.SCALEFACTOR);
   public static final float GROUNDLEVEL = 7.5F;
   private Object[][] grid;
   private List<Character> character = new ArrayList<>();
@@ -123,6 +126,9 @@ public class PXMapHandler
     
     this.player1.enemy = this.player2;
     this.player2.enemy = this.player1;
+    this.player1.setEngine(engine);
+    this.player2.setEngine(engine);
+    
   }
   
   public void reset()

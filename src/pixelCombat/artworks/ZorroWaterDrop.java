@@ -123,9 +123,10 @@ public class ZorroWaterDrop extends ArtWork {
 		times.add(0.03f);
 
 		
-		
+		scaleX = 1.25f;
+		scaleY = 1.25f;
 		this.dustAnimator = new Animation(images,times,true);
-
+		setSpecialArtWork(true);
 	}
 
 }

@@ -21,6 +21,8 @@ public class RuffyGigantoWhip
   
   public void process()
   {
+	  checkFreeze(); 
+	  
     switch (getUser().picManager.getCurrFrameIndex())
     {
     case 0: 
@@ -28,7 +30,10 @@ public class RuffyGigantoWhip
         return;
       }
       if (getUser().isSwitcher())
-      {
+      {  
+    	  user.getGear3().reset();
+          user.releasedArtWorks.add(user.getGear3());  
+    	  
         if (this.user.isAttackOnAir()) {
           this.user.changeToAirPoint("specialAttack6");
         } else {
@@ -92,14 +97,37 @@ public class RuffyGigantoWhip
     this.user.statusLogic.setAHitDelay(true);
   }
   
-  public void checkFinished() {}
+  public void checkFinished() {
+	  resetStats();
+  }
   
   public boolean isAttacking()
   {
     return this.user.getAttackLogic().isSpecialAttacking6();
   }
   
-  public void resetStats() {}
+  public void resetStats() {
+	  user.freeze = false;
+	  user.freeze_loop = false;
+	  user.statusLogic.setFocused(false);
+	  
+	  
+  }
+  
+  
+  private void checkFreeze()
+  {
+    if (this.user.picManager.getCurrFrameIndex() < 10.0F)
+    {
+      this.user.freeze = true;
+      this.user.freeze_loop = true;
+    }
+    else
+    if (this.user.picManager.getCurrFrameIndex() == 10.0F)
+    {
+    	resetStats();
+    }
+  }
   
   private boolean checkGear()
   {
@@ -108,7 +136,7 @@ public class RuffyGigantoWhip
     }
     this.user.giveEnergyBack(this);
     this.user.attackLogic.setAttackStatus(AttackStates.notAttacking);
-    
+    resetStats();
     return true;
   }
 }

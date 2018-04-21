@@ -1,9 +1,5 @@
 package pixelCombat.model.chars.natsu.attacks;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-
 import pixelCombat.Math.Vector2d;
 import pixelCombat.artworks.NatsuSuper;
 import pixelCombat.artworks.OnAir;
@@ -22,7 +18,7 @@ public class NatsuGurenHooken
   private FireSpearAura fireSpearAura;
   private FireSpark fireSpark;
   private NatsuSuper natsuSuper;
-  private Clip clip;
+
   
   public NatsuGurenHooken(Natsu natsu, int id)
   {
@@ -41,8 +37,10 @@ public class NatsuGurenHooken
     case 0: 
       if (this.natsu.isSwitcher())
       {
+    	  
         this.natsu.sound("/audio/Ruffy_SuperAttack.wav");
-        music("/audio/Natsu_Guren_Hooken.wav");
+        natsu.getEngine().stopMP3();
+        natsu.getEngine().musicMP3("/audio/Natsu_Guren_Hooken.mp3");
         this.natsu.superAttacking = true;
         this.natsu.getLightning().pos.x = (this.natsu.pos.x - 0.3F);
         this.natsu.getLightning().pos.y = (this.natsu.pos.y - 1.45F);
@@ -173,10 +171,9 @@ public class NatsuGurenHooken
     this.natsu.freeze = false;
     this.natsu.freeze_loop = false;
     this.onAir.setDead(true);
-    if (this.clip != null) {
-      this.clip.stop();
-    }
     this.natsu.releasedArtWorks.remove(this.onAir);
+    natsu.getEngine().stopMP3();
+    natsu.getEngine().musicPreviousMP3();
   }
   
   public boolean isAttacking()
@@ -200,25 +197,8 @@ public class NatsuGurenHooken
     this.onAir.setDead(true);
     this.natsu.releasedArtWorks.remove(this.onAir);
     this.natsu.releasedArtWorks.remove(this.natsuSuper);
-    if (this.clip != null) {
-      this.clip.stop();
-    }
+
   }
   
-  public void music(String url)
-  {
-    try
-    {
-      if (this.clip != null)
-      {
-        this.clip.stop();
-        this.clip.close();
-      }
-      this.clip = AudioSystem.getClip();
-      AudioInputStream inputStream1 = AudioSystem.getAudioInputStream(getClass().getResource(url));
-      this.clip.open(inputStream1);
-      this.clip.loop(-1);
-    }
-    catch (Exception localException) {}
-  }
+
 }

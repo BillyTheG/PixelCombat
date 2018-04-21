@@ -12,6 +12,9 @@ public class Animation {
 	protected float animTime;
 	protected float totalDuration;
 	public boolean once;
+	public int loopCounts = 0;
+	public int loopTypedCounts = 0;
+	
 	public static float ANIMATION_DIVISOR = 2000f;
 	
 	public Animation(ArrayList<Image> images, ArrayList<Float> times, boolean once, int loopPoint1)
@@ -20,6 +23,26 @@ public class Animation {
 		totalDuration = 0f;
 		this.loopPoint1 = loopPoint1;
 		this.once = once;
+		start();
+		loadFrames(images,times);
+	}
+	
+	/**
+	 *  Constructor with loopPoint and loopCount for Special ArtWorks 
+	 * 
+	 * 
+	 * @param images , all images
+	 * @param times , all time vlaues for each img
+	 * @param loopPoint1 , looping start index
+	 * @param loopCounts , amount of loopings
+	 */
+	public Animation(ArrayList<Image> images, ArrayList<Float> times, int loopPoint1, int loopCounts)
+	{
+		frames = new ArrayList<AnimFrame>();
+		totalDuration = 0f;
+		this.loopPoint1 = loopPoint1;
+		this.once = true;
+		loopTypedCounts= loopCounts;
 		start();
 		loadFrames(images,times);
 	}
@@ -50,6 +73,7 @@ public class Animation {
 	{
 		animTime = 0f;
 		currFrameIndex = 0;
+		loopCounts = loopTypedCounts;
 	}
 	
 	public void addFrame(Image image, float duration)
@@ -109,7 +133,14 @@ public class Animation {
 		
 		if(animTime >= totalDuration && once)
 		{
-			animTime = totalDuration;			
+			if(loopCounts == 0)
+				animTime = totalDuration;		
+			else
+			{
+				animTime = animTime % totalDuration;
+				loopCounts-=1;
+				currFrameIndex = 0;
+			}
 		}
 		
 		while(animTime > getFrame(currFrameIndex).endTime)

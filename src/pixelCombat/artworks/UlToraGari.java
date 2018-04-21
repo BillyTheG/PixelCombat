@@ -22,7 +22,9 @@ public class UlToraGari extends ArtWork {
 		times.add(0.05f);	
 		
 		this.dustAnimator = new Animation(images,times,false);
-
+		scaleX = 1.5f;
+		scaleY = 1.5f;
+		setSpecialArtWork(true);
 	}
 
 }

@@ -4,16 +4,15 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
-import pixelCombat.artworks.ArtWork;
-import pixelCombat.model.PXMapHandler;
+import pixelCombat.model.Dust;
 import pixelCombat.view.Animation;
 
-public class ZorroShiShinShinSonSlash extends ArtWork {
+public class ZorroShiShinShinSonSlash extends Dust {
 
 	
 	
-	public ZorroShiShinShinSonSlash() {
-		super(new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2),0f,0f);
+	public ZorroShiShinShinSonSlash(Vector2d pos, boolean faceRight) {
+		super(pos,faceRight);
 		ArrayList<Image> images = new ArrayList<Image>();
 		images.add(loadImage("/dusts/IMG_Dust_Shin_Son_Son_Slash_1.png"));
 		images.add(loadImage("/dusts/IMG_Dust_Shin_Son_Son_Slash_2.png"));

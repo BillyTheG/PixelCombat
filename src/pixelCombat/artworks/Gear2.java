@@ -8,15 +8,18 @@ import pixelCombat.model.PXMapHandler;
 import pixelCombat.view.Animation;
 
 
-public class Gear2 extends ArtWork {
+public class Gear2 extends MovableArtWork {
 
 	
 	
 	public Gear2() {
-		super(new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2),0f,-2f);
+		super(new Vector2d(-PXMapHandler.X_FIELDS/2f,2f),new Vector2d(PXMapHandler.X_FIELDS/2f,2f),
+				new Vector2d(PXMapHandler.X_FIELDS+PXMapHandler.X_FIELDS/2f,2f),	
+				
+				70f,0f);
 		ArrayList<Image> images = new ArrayList<Image>();		
-		images.add(loadImage("/artWorks/IMG_Ruffy_Artwork_Gear2.png"));
-		images.add(loadImage("/artWorks/IMG_Ruffy_Artwork_Gear2.png"));
+		images.add(loadImage("/artWorks/IMG_ArtWork_Luffy_Jet_Pistole.png"));
+		images.add(loadImage("/artWorks/IMG_ArtWork_Luffy_Jet_Pistole.png"));
 		
 		
 		

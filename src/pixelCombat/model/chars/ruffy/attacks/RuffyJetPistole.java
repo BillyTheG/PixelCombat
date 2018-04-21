@@ -34,8 +34,8 @@ public class RuffyJetPistole
           getUser().sound("/audio/Ruffy_Jet_Cry.wav");
         }
         this.user.statusLogic.setFocused(true);
-        this.user.borderEffecting = true;
-        this.user.getUpAndDownBorder().reset();
+        user.getGear2().reset();
+        user.releasedArtWorks.add(user.getGear2());
         getUser().setSwitcher(false);
       }
       break;

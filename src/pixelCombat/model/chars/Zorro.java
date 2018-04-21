@@ -91,7 +91,7 @@ public class Zorro
     this.bloodSplash_3 = new BloodSplash1(new Vector2d(this.pos.x, this.pos.y), false);
     
     this.bloodSplash2 = new BloodSplash2(new Vector2d(this.pos.x, this.pos.y), false);
-    this.shiShinShinSonSlash = new ZorroShiShinShinSonSlash();
+    this.shiShinShinSonSlash = new ZorroShiShinShinSonSlash(new Vector2d(),true);
     this.shiShinShinSonSmoke = new ShiShinShinSonSmoke(new Vector2d(this.pos.x, this.pos.y), false);
     
     this.bloodSplashs1.add(this.bloodSplash_1);

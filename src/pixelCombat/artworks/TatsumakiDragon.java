@@ -12,7 +12,8 @@ public class TatsumakiDragon extends ArtWork {
 
 		
 	public TatsumakiDragon() {
-		super(new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2f-15f),0f,5f);
+		super(new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2f-5f),
+				new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2f),0f,5f);
 		
 		ArrayList<Image> images = new ArrayList<Image>();		
 		images.add(loadImage("/artWorks/IMG_Zorro_Artwork_Tatsumaki.png"));
@@ -21,6 +22,12 @@ public class TatsumakiDragon extends ArtWork {
 		times.add(0.05f);	
 		
 		this.dustAnimator = new Animation(images,times,false);
+		setSpecialArtWork(true);
+		setOPACITY(0.25d);
+		scaleX = 1.25f;
+		scaleY = 1.25f;
+				
+		
 	}
 
 }

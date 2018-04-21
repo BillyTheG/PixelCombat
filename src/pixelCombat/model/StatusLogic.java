@@ -391,7 +391,7 @@ public abstract class StatusLogic {
 		return getGlobalStatus() == GlobalStates.KNOCKBACK;
 	}
 
-
+//TODO Dead really???
 	public boolean isImportant() {
 		
 		return getGlobalStatus() == GlobalStates.KNOCKBACK || 

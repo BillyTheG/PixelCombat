@@ -45,9 +45,9 @@ public class RuffyJetPistoleFromAir
     case 5: 
       if (!getUser().isSwitcher())
       {
-        this.user.freeze = true;
-        this.user.freeze_loop = true;
-        this.user.statusLogic.setFocused(true);
+    	  this.user.freeze = false;
+          this.user.freeze_loop = false;
+          this.user.statusLogic.setFocused(false);
         getUser().setSwitcher(true);
         getUser().sound("/audio/Jet Pistol 01.wav");
       }
@@ -55,9 +55,7 @@ public class RuffyJetPistoleFromAir
     case 6: 
       if (getUser().isSwitcher())
       {
-        this.user.freeze = false;
-        this.user.freeze_loop = false;
-        this.user.statusLogic.setFocused(false);
+      
         this.jetPistoleDust.reset(new Vector2d(this.user.pos.x + this.user.getDir() * 0.2F, this.user.pos.y + 0.15F), this.user.statusLogic.isRight());
         this.earthQuake.reset(new Vector2d(this.user.pos.x, 8.0F), this.user.statusLogic.isRight());
         if (!this.user.shaking) {
@@ -105,9 +103,10 @@ public class RuffyJetPistoleFromAir
     }
     else
     {
-      getUser().sound("/audio/gum_gum.wav");
-      this.user.getJetPistoleArtWork().reset();
-      this.user.releasedArtWorks.add(this.user.getJetPistoleArtWork());
+    	 this.user.freeze = true;
+         this.user.freeze_loop = true;
+         this.user.statusLogic.setFocused(true);
+         getUser().sound("/audio/gum_gum.wav");
     }
   }
   

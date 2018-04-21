@@ -159,7 +159,7 @@ public class PlayerPicManager extends PicManager<Character>{
 	public void resetToIndex(int returnIndex) {	
 		setCurrFrameIndex(returnIndex);
 		if(returnIndex == 0)
-			setAnimTime(getFrame(returnIndex).getEndTime());	
+			setAnimTime(0);	
 		else
 			setAnimTime(getFrame(returnIndex-1).getEndTime());							
 	}

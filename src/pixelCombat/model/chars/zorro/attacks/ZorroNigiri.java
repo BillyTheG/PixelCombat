@@ -1,6 +1,7 @@
 package pixelCombat.model.chars.zorro.attacks;
 
 import pixelCombat.Math.Vector2d;
+import pixelCombat.artworks.NigiriArtwork;
 import pixelCombat.dusts.BloodSplash1;
 import pixelCombat.dusts.DashWind;
 import pixelCombat.enums.ActionStates;
@@ -21,6 +22,8 @@ public class ZorroNigiri
   private float shadowMaxBuffer = 0.04F;
   private float posY = -1.0F;
   private DashWind dashWind;
+  private NigiriArtwork nigiriArtWork;
+  
   
   public ZorroNigiri(Zorro user, int id)
   {
@@ -28,6 +31,7 @@ public class ZorroNigiri
     this.user = user;
     setRequiredEnergy(0.0F);
     this.dashWind = new DashWind(new Vector2d(), true);
+    this.nigiriArtWork = new NigiriArtwork();
   }
   
   public void process()
@@ -37,6 +41,8 @@ public class ZorroNigiri
     case 0: 
       if (this.user.isSwitcher())
       {
+    	this.nigiriArtWork.reset();
+    	user.releasedArtWorks.add(nigiriArtWork);
         this.standingsA = 6;
         this.user.superAttacking = true;
         this.user.specialBG.reset();

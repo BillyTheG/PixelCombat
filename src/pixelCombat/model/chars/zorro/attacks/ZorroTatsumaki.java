@@ -17,9 +17,7 @@ public class ZorroTatsumaki
 {
   private Zorro user;
   private ArrayList<Projectile> createdProjectiles;
-  private ZorroTatsumakiDragon dragon1;
-  private ZorroTatsumakiDragon dragon2;
-  private ZorroTatsumakiDragon dragon3;
+  private ZorroTatsumakiDragon dragon;
   
   public ZorroTatsumaki(Zorro user, int id)
   {
@@ -27,13 +25,7 @@ public class ZorroTatsumaki
     this.user = user;
     setRequiredEnergy(40.0F);
     this.createdProjectiles = new ArrayList<Projectile>();
-    this.dragon1 = new ZorroTatsumakiDragon(new Vector2d(), true);
-    this.dragon2 = new ZorroTatsumakiDragon(new Vector2d(), true);
-    this.dragon3 = new ZorroTatsumakiDragon(new Vector2d(), true);
-    
-    this.dragon1.dead = true;
-    this.dragon2.dead = true;
-    this.dragon3.dead = true;
+    this.dragon = new ZorroTatsumakiDragon(new Vector2d(), true);
   }
   
   public void process()
@@ -65,6 +57,8 @@ public class ZorroTatsumaki
         this.user.setSwitcher(true);
         this.user.getTatsumakiWindExplosion().reset(new Vector2d(this.user.pos.x + 1.0F, this.user.pos.y - 3.45F), true);
         this.user.releasedDusts.add(this.user.getTatsumakiWindExplosion());
+        dragon.reset(new Vector2d(user.getPos().x,user.getGroundLevel()-2), user.statusLogic.isRight());
+        user.releasedDusts.add(dragon);
       }
       break;
     case 5: 
@@ -107,28 +101,15 @@ public class ZorroTatsumaki
       }
       break;
     }
-    if ((this.user.picManager.getCurrFrameIndex() <= 7) && (this.user.picManager.getCurrFrameIndex() >= 6)) {
-      makeDragons();
-    }
+    checkDragon();
   }
   
-  private void makeDragons()
-  {
-    checkDragon(this.dragon1, -3.75F);
-    checkDragon(this.dragon2, 0.0F);
-    checkDragon(this.dragon3, 3.75F);
-  }
+ 
   
-  private void checkDragon(ZorroTatsumakiDragon dragon, float xPos)
+  private void checkDragon()
   {
-    if (dragon.isDead())
-    {
-      dragon.reset(new Vector2d(this.user.pos.x + xPos, this.user.pos.y + 5.0F), this.user.statusLogic.isRight());
-      if (!this.user.releasedDusts.contains(dragon)) {
-        this.user.releasedDusts.add(dragon);
-      }
-    }
-    dragon.pos.y -= this.user.delta * 10.0F;
+	  if(!dragon.dead)
+		  dragon.pos.y -= this.user.delta * 10.0F;
   }
   
   private void makeWinds(float y, float x, boolean sounding)

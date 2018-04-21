@@ -1,6 +1,7 @@
 package pixelCombat.model.chars.natsu.attacks;
 
 import pixelCombat.Math.Vector2d;
+import pixelCombat.artworks.NatsuHookoArtWork;
 import pixelCombat.enums.MovementStates;
 import pixelCombat.model.Attack;
 import pixelCombat.model.chars.Natsu;
@@ -10,6 +11,7 @@ public class NatsuKaryuNoHooken
   extends Attack
 {
   private Natsu natsu;
+  private NatsuHookoArtWork hookenArtWork = new NatsuHookoArtWork();
   
   public NatsuKaryuNoHooken(Natsu natsu, int id)
   {
@@ -23,8 +25,12 @@ public class NatsuKaryuNoHooken
     switch (getUser().picManager.getCurrFrameIndex())
     {
     case 0: 
+    	this.natsu.freeze = true;
+    	this.natsu.freeze_loop = true;
       if (getUser().isSwitcher())
       {
+    	  hookenArtWork.reset();
+    	  natsu.releasedArtWorks.add(hookenArtWork);
         this.natsu.sound("/audio/natsu_karyuu.wav");
         getUser().setSwitcher(false);
       }
@@ -32,6 +38,8 @@ public class NatsuKaryuNoHooken
     case 2: 
       if (!getUser().isSwitcher())
       {
+    	this.natsu.freeze = false;
+      	this.natsu.freeze_loop = false;
         this.natsu.sound("/audio/hoko.wav");
         getUser().setSwitcher(true);
       }
@@ -61,12 +69,17 @@ public class NatsuKaryuNoHooken
   
   public void checkContent() {}
   
-  public void checkFinished() {}
+  public void checkFinished() {
+	  resetStats();
+  }
   
   public boolean isAttacking()
   {
     return this.natsu.attackLogic.isSpecialAttacking4();
   }
   
-  public void resetStats() {}
+  public void resetStats() {
+	  this.natsu.freeze = false;
+    	this.natsu.freeze_loop = false;
+  }
 }

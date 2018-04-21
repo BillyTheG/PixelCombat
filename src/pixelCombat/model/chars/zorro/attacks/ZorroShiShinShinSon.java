@@ -6,7 +6,6 @@ import pixelCombat.enums.ActionStates;
 import pixelCombat.enums.GlobalStates;
 import pixelCombat.model.Attack;
 import pixelCombat.model.chars.Zorro;
-import pixelCombat.utils.GameEngine;
 
 public class ZorroShiShinShinSon
   extends Attack
@@ -15,11 +14,14 @@ public class ZorroShiShinShinSon
   private int talk1 = 10;
   private int talk2 = 8;
   
+  private int outroMax = 20;
+  private int outro    = outroMax;
+  
   public ZorroShiShinShinSon(Zorro user, int id)
   {
     super(user, id);
     this.user = user;
-    setRequiredEnergy(95.0F);
+    setRequiredEnergy(0.0F);
   }
   
   public void process()
@@ -29,11 +31,7 @@ public class ZorroShiShinShinSon
     case 0: 
       if (this.user.isSwitcher())
       {
-        if (GameEngine.clip != null)
-        {
-          GameEngine.TOGGLE_MUSIC = false;
-          GameEngine.clip.stop();
-        }
+    	user.getEngine().pauseMP3();
         this.user.statusLogic.setBackGroundEffect(BackGroundEffect.MONOCHROME);
         
         this.user.freeze = true;
@@ -104,23 +102,32 @@ public class ZorroShiShinShinSon
       {
         getUser().sound("/audio/Zorro_Shi_Shin_SonSon_Dash.wav");
         makeTelePort();
-        getUser().sound("/audio/Zorro_Ittoryou.wav");
+        
         this.user.picManager.resetToIndex(8);
       }
-      break;
+      break;      
     case 12: 
-      if (this.user.isSwitcher())
+      if (this.user.isSwitcher()&& (this.outro > 0) && (this.user.picManager.isAlmostFinished(12)))
       {
-        getUser().sound("/audio/Zorro_Shi_Shin_SonSon_Talk.wav");
-        getUser().sound("/audio/Zorro_Shi_Shin_SonSon_3.wav");
-        this.user.setSwitcher(false);
+    	if(outro == outroMax)
+    		getUser().sound("/audio/Zorro_Ittoryou.wav");
+    	if(outro == outroMax/2)
+    	{
+    		 getUser().sound("/audio/Zorro_Shi_Shin_SonSon_Talk.wav");
+             getUser().sound("/audio/Zorro_Shi_Shin_SonSon_3.wav");
+    	}
+    	outro-=1;
+    	this.user.picManager.resetToIndex(11);  
       }
+      if(outro == 0)
+    	  this.user.setSwitcher(false);
+      
       break;
     case 13: 
       if (!this.user.isSwitcher())
       {
-        this.user.getShiShinShinSonSlash().reset();
-        this.user.releasedArtWorks.add(this.user.getShiShinShinSonSlash());
+        this.user.getShiShinShinSonSlash().reset(new Vector2d(user.enemy.pos.x,user.enemy.pos.y),user.statusLogic.isRight());
+        this.user.releasedDusts.add(this.user.getShiShinShinSonSlash());
         getUser().sound("/audio/Zorro_Sword_ReturnToSheath.wav");
         this.user.setSwitcher(true);
       }
@@ -135,9 +142,9 @@ public class ZorroShiShinShinSon
       this.user.statusLogic.swapDirection();
     }
     if (this.user.statusLogic.isRight()) {
-      this.user.pos.x = (x2 + 3.5F);
+      this.user.pos.x = (x2 + 5.5F);
     } else {
-      this.user.pos.x = (x2 - 3.5F);
+      this.user.pos.x = (x2 - 5.5F);
     }
   }
   
@@ -148,7 +155,7 @@ public class ZorroShiShinShinSon
     getUser().sound("/audio/Zorro_Sword_Slash_Hit_5.wav");
     
     this.user.getBloodSplash2().reset(new Vector2d(this.user.enemy.pos.x - 0.5F, this.user.enemy.pos.y), 
-      this.user.statusLogic.isRight());
+      this.user.enemy.statusLogic.isRight());
     this.user.releasedDusts.add(this.user.getBloodSplash2());
     if (!this.user.enemy.statusLogic.isKnockback())
     {
@@ -174,13 +181,9 @@ public class ZorroShiShinShinSon
     this.user.statusLogic.setFocused(false);
     this.talk1 = 10;
     this.talk2 = 8;
+    outro = outroMax;
     this.user.statusLogic.setBackGroundEffect(BackGroundEffect.NONE);
-    if (GameEngine.clip != null)
-    {
-      GameEngine.TOGGLE_MUSIC = true;
-      GameEngine.clip.start();
-      GameEngine.clip.loop(-1);
-    }
+    user.getEngine().playMP3();
   }
   
   public boolean isAttacking()
@@ -197,11 +200,6 @@ public class ZorroShiShinShinSon
     this.user.borderEffecting = false;
     this.user.freeze = false;
     this.user.freeze_loop = false;
-    if (GameEngine.clip != null)
-    {
-      GameEngine.TOGGLE_MUSIC = true;
-      GameEngine.clip.start();
-      GameEngine.clip.loop(-1);
-    }
+    outro = outroMax;
   }
 }

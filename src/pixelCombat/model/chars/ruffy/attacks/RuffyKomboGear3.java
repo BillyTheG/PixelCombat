@@ -66,9 +66,6 @@ public class RuffyKomboGear3
         getUser().sound("/audio/teleport.wav");
         getUser().sound("/audio/Gear Third 00.wav");
         
-        this.user.getGear3().reset();
-        this.user.releasedArtWorks.add(this.user.getGear3());
-        
         this.user.pos = new Vector2d(this.user.pos.x + this.user.getDir() * 8.0F, this.user.pos.y);
         this.user.statusLogic.swapDirection();
         
@@ -116,8 +113,8 @@ public class RuffyKomboGear3
     else
     {
       getUser().sound("/audio/Yell 01.wav");
-      this.user.getGear2().reset();
-      this.user.releasedArtWorks.add(this.user.getGear2());
+      this.user.getGear3().reset();
+      this.user.releasedArtWorks.add(this.user.getGear3());
     }
   }
   

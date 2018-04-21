@@ -1,9 +1,5 @@
 package pixelCombat.model.chars.natsu.attacks;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-
 import pixelCombat.Math.Vector2d;
 import pixelCombat.artworks.OnAir;
 import pixelCombat.dusts.FireSpearAura;
@@ -26,7 +22,6 @@ public class NatsuGurenBakurenji
   private int punches = 10;
   private boolean spearAttackEnabled;
   private boolean activateAnimation = false;
-  private Clip clip;
   
   public NatsuGurenBakurenji(Natsu natsu, int id)
   {
@@ -45,7 +40,8 @@ public class NatsuGurenBakurenji
     case 0: 
       if (this.natsu.isSwitcher())
       {
-        music("/audio/Natsu_Bakurenji_Snd_2.wav");
+        natsu.getEngine().stopMP3();
+        natsu.getEngine().musicMP3("/audio/Natsu_Bakurenji_Snd_2.mp3");
         this.natsu.sound("/audio/natsu_dragon.wav");
         if (!this.natsu.shaking) {
           this.natsu.shaking = true;
@@ -163,7 +159,6 @@ public class NatsuGurenBakurenji
     case 15: 
       if (!this.spearAttackEnabled)
       {
-        this.clip.stop();
         this.natsu.attackLogic.setAttackStatus(AttackStates.notAttacking);
         resetStats();
         return;
@@ -357,10 +352,10 @@ public class NatsuGurenBakurenji
     this.natsu.physics.VY = 0.0F;
     this.natsu.enemy.pos.y = 0.0F;
     this.natsu.enemy.physics.VY = 0.0F;
+    natsu.getEngine().stopMP3();
+    natsu.getEngine().musicPreviousMP3();
     resetStats();
-    if (this.clip != null) {
-      this.clip.stop();
-    }
+ 
   }
   
   public boolean isAttacking()
@@ -392,25 +387,7 @@ public class NatsuGurenBakurenji
     
     this.natsu.setSwitcher(true);
     this.natsu.statusLogic.setAHitDelay(false);
-    if (this.clip != null) {
-      this.clip.stop();
-    }
+  
   }
   
-  public void music(String url)
-  {
-    try
-    {
-      if (this.clip != null)
-      {
-        this.clip.stop();
-        this.clip.close();
-      }
-      this.clip = AudioSystem.getClip();
-      AudioInputStream inputStream1 = AudioSystem.getAudioInputStream(getClass().getResource(url));
-      this.clip.open(inputStream1);
-      this.clip.loop(-1);
-    }
-    catch (Exception localException) {}
-  }
 }

@@ -17,8 +17,8 @@ public class DashWind
     ArrayList<Image> images = new ArrayList<Image>();
     
     images.add(loadImage("/dusts/IMG_Dust_Zorro_Dash_Wind_1.png"));
-    images.add(loadImage("/dusts/IMG_Dust_Zorro_Dash_Wind_1.png"));
-    images.add(loadImage("/dusts/IMG_Dust_Zorro_Dash_Wind_1.png"));
+    images.add(loadImage("/dusts/IMG_Dust_Zorro_Dash_Wind_2.png"));
+    images.add(loadImage("/dusts/IMG_Dust_Zorro_Dash_Wind_3.png"));
     
     ArrayList<Float> times = new ArrayList<Float>();
     

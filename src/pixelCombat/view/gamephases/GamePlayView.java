@@ -19,6 +19,7 @@ import pixelCombat.Math.Vector2d;
 import pixelCombat.arenas.BackGroundEffect;
 import pixelCombat.arenas.PXMap;
 import pixelCombat.artworks.ArtWork;
+import pixelCombat.artworks.ArtWorkCover;
 import pixelCombat.dusts.Finish_BG;
 import pixelCombat.dusts.WandBlow;
 import pixelCombat.effects.NextRoundBorder;
@@ -54,7 +55,7 @@ public class GamePlayView extends Renderer {
 
 	// protected Image IMG_BACKGROUND2 = loadImage("/images/2.png");
 	protected float levelMin = 0;
-	public static float levelMax ;//= (float) IMG_BACKGROUND.getWidth();
+	public static float levelMax;// = (float) IMG_BACKGROUND.getWidth();
 	public static float levelMaxy;// = (float) IMG_BACKGROUND.getHeight();
 	protected float CX = 0;
 	protected float CY = 0;
@@ -113,9 +114,8 @@ public class GamePlayView extends Renderer {
 
 	public static final float SCALEFACTOR = 0.75f;
 	private WandBlow wandBlow;
+	private ArtWorkCover artWorkCover = new ArtWorkCover();
 
-	
-	
 	// -------------------------------------------------------
 	// ende Variablen
 
@@ -127,8 +127,8 @@ public class GamePlayView extends Renderer {
 		this.gamePlay = gamePlay;
 		CX = SCREEN_WIDTH / 2;
 		CY = SCREEN_HEIGHT / 2;
-		this.imageLoader = new ImageLoader(arena,player1,player2, console);
-	    this.wandBlow = new WandBlow(new Vector2d(), true);
+		this.imageLoader = new ImageLoader(arena, player1, player2, console);
+		this.wandBlow = new WandBlow(new Vector2d(), true);
 	}
 
 	/**
@@ -151,11 +151,9 @@ public class GamePlayView extends Renderer {
 		interfaceView = new InterfaceView(getGraphicsContext(), this);
 
 		if (arena.getMap().getHeight() > PXMapHandler.Y_FIELDS * FIELD_SIZE)
-			delta_Y = (float) (-PXMapHandler.Y_FIELDS * FIELD_SIZE + arena.getMap()
-					.getHeight());
+			delta_Y = (float) (-PXMapHandler.Y_FIELDS * FIELD_SIZE + arena.getMap().getHeight());
 		else
-			delta_Y = (float) (PXMapHandler.Y_FIELDS * FIELD_SIZE - arena.getMap()
-					.getHeight());
+			delta_Y = (float) (PXMapHandler.Y_FIELDS * FIELD_SIZE - arena.getMap().getHeight());
 
 		levelMaxy -= delta_Y;
 		setInitialized(true);
@@ -211,20 +209,22 @@ public class GamePlayView extends Renderer {
 		drawNPCs(player1, player2);
 
 		drawSpirits(arena.getSpirits());
-		drawChars(chars,(float) delta/1000000000f);
-
+		drawChars(chars, (float) delta / 1000000000f);
+		
 		drawProjectiles(new ArrayList<Projectile>(arena.getProjectiles()));
 		drawParticles(new ArrayList<Particle>(arena.getParticles()));
 		drawDusts(new ArrayList<Dust>(player1.getReleasedDusts()));
 		drawDusts(new ArrayList<Dust>(player2.getReleasedDusts()));
 		drawWeather(player1, player2);
 		drawForeGrounds(player1, player2);
-		
+
 		if (!player1.isBorderEffecting() && !player2.isBorderEffecting())
 			interfaceView.render();
 		drawAvatars(player1, player2);
-		drawArtworks(new ArrayList<ArtWork>(arena.getArtWorks()));
 		
+		artWorkCover.update((float) delta / 1000000000f);
+		drawArtworks(new ArrayList<ArtWork>(arena.getArtWorks()));
+
 		drawBorders(player1, player2);
 	}
 
@@ -233,89 +233,69 @@ public class GamePlayView extends Renderer {
 		for (Spirit spirit : list) {
 			pos = spirit.getPos();
 			x = (int) (pos.x * FIELD_SIZE - screenX + CX);
-			y = (int) (pos.y * FIELD_SIZE - screenY + CY);		
-			spirit.draw(getGraphicsContext(),x,y);	
+			y = (int) (pos.y * FIELD_SIZE - screenY + CY);
+			spirit.draw(getGraphicsContext(), x, y);
 		}
-		
+
 	}
 
 	private void drawForeGrounds(Character player1, Character player2) {
-		if(map.getForeGround() == null) 
+		if (map.getForeGround() == null)
 			return;
-		if(player1.superAttacking || player2.superAttacking)
+		if (player1.superAttacking || player2.superAttacking)
 			return;
-		
-		if(player1.finishing || player2.finishing)
+
+		if (player1.finishing || player2.finishing)
 			return;
-		
-		if(this.arena.getBackGroundEffect() != BackGroundEffect.NONE)
+
+		if (this.arena.getBackGroundEffect() != BackGroundEffect.NONE)
 			return;
-		getGraphicsContext()
-				.drawImage(map.getForeGround(), (- screenX + CX)/5,
-						 map.getHeight()-delta_Y-80- screenY + CY);
-		
+		getGraphicsContext().drawImage(map.getForeGround(), (-screenX + CX) / 5,
+				map.getHeight() - delta_Y - 80 - screenY + CY);
+
 	}
 
 	private void drawWeather(Character player1, Character player2) {
-		if(map.getCurrentWeatherBG() == null) 
+		if (map.getCurrentWeatherBG() == null)
 			return;
-		if(player1.superAttacking || player2.superAttacking)
+		if (player1.superAttacking || player2.superAttacking)
 			return;
-		
-		if(player1.finishing || player2.finishing)
+
+		if (player1.finishing || player2.finishing)
 			return;
-		
-		if(this.arena.getBackGroundEffect() != BackGroundEffect.NONE)
+
+		if (this.arena.getBackGroundEffect() != BackGroundEffect.NONE)
 			return;
-		
-		 Vector2d pos = new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2);
-			x = (int) (pos.x * FIELD_SIZE);
-			y = (int) (pos.y * FIELD_SIZE);
-			getGraphicsContext()
-					.drawImage(map.getCurrentWeatherBG(), x - map.getCurrentWeatherBG().getWidth() / 2f,
-							y - map.getCurrentWeatherBG().getHeight() / 2f);
+
+		Vector2d pos = new Vector2d(PXMapHandler.X_FIELDS / 2f, PXMapHandler.Y_FIELDS / 2);
+		x = (int) (pos.x * FIELD_SIZE);
+		y = (int) (pos.y * FIELD_SIZE);
+		getGraphicsContext().drawImage(map.getCurrentWeatherBG(), x - map.getCurrentWeatherBG().getWidth() / 2f,
+				y - map.getCurrentWeatherBG().getHeight() / 2f);
 	}
 
 	private void drawBorders(Character player1, Character player2) {
 		if (player1.isBorderEffecting()) {
 			UpAndDownBorder upAndDownBorder = player1.getUpAndDownBorder();
-			getGraphicsContext().drawImage(
-					upAndDownBorder.draw(),
-					0,
-					0,
-					upAndDownBorder.draw().getWidth()
-							* GamePlayView.SCALEFACTOR,
-					upAndDownBorder.draw().getHeight()
-							* GamePlayView.SCALEFACTOR);
+			getGraphicsContext().drawImage(upAndDownBorder.draw(), 0, 0,
+					upAndDownBorder.draw().getWidth() * GamePlayView.SCALEFACTOR,
+					upAndDownBorder.draw().getHeight() * GamePlayView.SCALEFACTOR);
 		}
 		if (player2.isBorderEffecting()) {
 			UpAndDownBorder upAndDownBorder = player2.getUpAndDownBorder();
-			getGraphicsContext().drawImage(
-					upAndDownBorder.draw(),
-					0,
-					0,
-					upAndDownBorder.draw().getWidth()
-							* GamePlayView.SCALEFACTOR,
-					upAndDownBorder.draw().getHeight()
-							* GamePlayView.SCALEFACTOR);
+			getGraphicsContext().drawImage(upAndDownBorder.draw(), 0, 0,
+					upAndDownBorder.draw().getWidth() * GamePlayView.SCALEFACTOR,
+					upAndDownBorder.draw().getHeight() * GamePlayView.SCALEFACTOR);
 		}
-		
-		if(gamePlay.roundIsEnd())
-		{
+
+		if (gamePlay.roundIsEnd()) {
 			NextRoundBorder nextRoundBorder = gamePlay.nextRoundBorder;
-			getGraphicsContext().drawImage(
-					nextRoundBorder.draw(),
-					0,
-					0,
-					nextRoundBorder.draw().getWidth()
-							* GamePlayView.SCALEFACTOR,
-							nextRoundBorder.draw().getHeight()
-							* GamePlayView.SCALEFACTOR);
-			
-			
-			
+			getGraphicsContext().drawImage(nextRoundBorder.draw(), 0, 0,
+					nextRoundBorder.draw().getWidth() * GamePlayView.SCALEFACTOR,
+					nextRoundBorder.draw().getHeight() * GamePlayView.SCALEFACTOR);
+
 		}
-		
+
 	}
 
 	public void drawAvatars(Character player1, Character player2) {
@@ -327,29 +307,57 @@ public class GamePlayView extends Renderer {
 		pos = player1.getPos();
 		x = (int) (pos.x * FIELD_SIZE);
 		y = (int) (pos.y * FIELD_SIZE);
-		getGraphicsContext().drawImage(IMG_P1_Text,
-				x - IMG_P1_Text.getWidth() * 1 / 4 - screenX + CX,
+		getGraphicsContext().drawImage(IMG_P1_Text, x - IMG_P1_Text.getWidth() * 1 / 4 - screenX + CX,
 				y - 150 - screenY + CY);
 
 		pos = player2.getPos();
 		x = (int) (pos.x * FIELD_SIZE);
 		y = (int) (pos.y * FIELD_SIZE);
-		getGraphicsContext().drawImage(IMG_P2_Text,
-				x - IMG_P2_Text.getWidth() * 1 / 4 - screenX + CX,
+		getGraphicsContext().drawImage(IMG_P2_Text, x - IMG_P2_Text.getWidth() * 1 / 4 - screenX + CX,
 				y - 150 - screenY + CY);
-	
+
 	}
 
 	public void drawArtworks(List<ArtWork> artWorks) {
 		Vector2d pos;
+
+		if (artWorks.size() > 0) {
+			
+			boolean isSpecial = false;
+			for (ArtWork artWork : artWorks)
+				isSpecial = isSpecial || artWork.isSpecialArtWork();
+
+			if (!isSpecial) {
+				pos = artWorkCover.getPos();
+				x = (int) (pos.x * FIELD_SIZE*SCALEFACTOR);
+				y = (int) (pos.y * FIELD_SIZE*SCALEFACTOR);
+				getGraphicsContext().drawImage(artWorkCover.draw(), (double)x, (double)y,
+						artWorkCover.draw().getWidth()*SCALEFACTOR,artWorkCover.draw().getHeight()*SCALEFACTOR);
+			}
+		}
+		
 		for (ArtWork o : artWorks) {
+
 			pos = o.getPos();
 			x = (int) (pos.x * FIELD_SIZE);
 			y = (int) (pos.y * FIELD_SIZE);
-			getGraphicsContext()
-					.drawImage(o.draw(), x - o.draw().getWidth() / 2f,
-							y - o.draw().getHeight() / 2f);
+
+			float 	scaleX = o.getScaleX();
+			float 	scaleY = o.getScaleY();
+			double 	opacity = o.getOPACITY();
+			
+			graphicsContext.setGlobalAlpha(opacity);
+			
+			if(o.isSpecialArtWork())
+				getGraphicsContext().drawImage(o.draw(), (x-o.draw().getWidth()/2f)*SCALEFACTOR, (y-o.draw().getHeight()/2f)*SCALEFACTOR,
+					o.draw().getWidth()*SCALEFACTOR * scaleX, o.draw().getHeight()*SCALEFACTOR * scaleY);
+			else
+				getGraphicsContext().drawImage(o.draw(), x, y-o.draw().getHeight()/2f,
+						o.draw().getWidth()*SCALEFACTOR * scaleX, o.draw().getHeight()*SCALEFACTOR * scaleY);
+			
+			graphicsContext.setGlobalAlpha(1);
 		}
+		graphicsContext.setGlobalAlpha(1);
 	}
 
 	public void drawDusts(List<Dust> dusts) {
@@ -359,17 +367,11 @@ public class GamePlayView extends Renderer {
 			x = (int) (pos.x * FIELD_SIZE);
 			y = (int) (pos.y * FIELD_SIZE);
 			if (o.faceRight)
-				getGraphicsContext().drawImage(
-						o.draw(),
-						x - screenX + CX - o.draw().getWidth() / 2f,
-						y - o.draw().getHeight() / 2f - fixPic(o.draw())
-								- screenY + CY);
+				getGraphicsContext().drawImage(o.draw(), x - screenX + CX - o.draw().getWidth() / 2f,
+						y - o.draw().getHeight() / 2f - fixPic(o.draw()) - screenY + CY);
 			else
-				getGraphicsContext().drawImage(
-						o.draw(),
-						x - screenX + CX + o.draw().getWidth() / 2f,
-						y - o.draw().getHeight() / 2f - fixPic(o.draw())
-								- screenY + CY, -o.draw().getWidth(),
+				getGraphicsContext().drawImage(o.draw(), x - screenX + CX + o.draw().getWidth() / 2f,
+						y - o.draw().getHeight() / 2f - fixPic(o.draw()) - screenY + CY, -o.draw().getWidth(),
 						o.draw().getHeight());
 		}
 	}
@@ -383,8 +385,7 @@ public class GamePlayView extends Renderer {
 			y = (int) (pos.y * FIELD_SIZE);
 			float radius = o.getRadius();
 			getGraphicsContext().setFill(color);
-			getGraphicsContext().fillOval(x - screenX + CX, y - screenY + CY,
-					(int) radius, (int) radius);
+			getGraphicsContext().fillOval(x - screenX + CX, y - screenY + CY, (int) radius, (int) radius);
 		}
 	}
 
@@ -394,64 +395,50 @@ public class GamePlayView extends Renderer {
 			pos = o.getPos();
 			x = (int) (pos.x * FIELD_SIZE);
 			y = (int) (pos.y * FIELD_SIZE);
-			
-			
-			if (o.dir == 1f)
-			{
-				if(o.isRotable())
-				{
+
+			if (o.dir == 1f) {
+				if (o.isRotable()) {
 					graphicsContext.save();
-					o.rotate(graphicsContext, o.calculateDirection(), x- screenX + CX, y- screenY + CY );	
+					o.rotate(graphicsContext, o.calculateDirection(), x - screenX + CX, y - screenY + CY);
 				}
-				getGraphicsContext().drawImage(
-						o.draw(),
-						x - screenX + CX - o.draw().getWidth() / 2f,
-						y - o.draw().getHeight() / 2f - fixPic(o.draw())
-								- screenY + CY);
-			}
-			else
-			{
-				if(o.isRotable())
-				{
+				getGraphicsContext().drawImage(o.draw(), x - screenX + CX - o.draw().getWidth() / 2f,
+						y - o.draw().getHeight() / 2f - fixPic(o.draw()) - screenY + CY);
+			} else {
+				if (o.isRotable()) {
 					graphicsContext.save();
-					o.rotate(graphicsContext, o.calculateDirection()-180, x- screenX + CX, y- screenY + CY);	
+					o.rotate(graphicsContext, o.calculateDirection() - 180, x - screenX + CX, y - screenY + CY);
 				}
-				getGraphicsContext().drawImage(
-						o.draw(),
-						x - screenX + CX + o.draw().getWidth() / 2f,
-						y - o.draw().getHeight() / 2f - fixPic(o.draw())
-								- screenY + CY, -o.draw().getWidth(),
+				getGraphicsContext().drawImage(o.draw(), x - screenX + CX + o.draw().getWidth() / 2f,
+						y - o.draw().getHeight() / 2f - fixPic(o.draw()) - screenY + CY, -o.draw().getWidth(),
 						o.draw().getHeight());
 			}
 			graphicsContext.restore();
-			
+
 		}
 	}
 
 	public void drawChars(List<Character> cl, float delta) {
 		Vector2d pos;
 
-		Character importantImplayer =null;
-		
+		Character importantImplayer = null;
+
 		for (Character p : cl) {
 			pos = p.getPos();
 			x = (int) (pos.x * FIELD_SIZE - screenX + CX);
-			y = (int) (pos.y * FIELD_SIZE - screenY + CY);		
+			y = (int) (pos.y * FIELD_SIZE - screenY + CY);
 			draw(p);
-			
-			if(p.statusLogic.isImportant() || p.statusLogic.isWinning())
+
+			if (p.statusLogic.isImportant() || p.statusLogic.isWinning())
 				importantImplayer = p;
-			
+
 		}
-		
-		if(importantImplayer != null)
-		{
+
+		if (importantImplayer != null) {
 			pos = importantImplayer.getPos();
 			x = (int) (pos.x * FIELD_SIZE - screenX + CX);
-			y = (int) (pos.y * FIELD_SIZE - screenY + CY);		
-			draw(importantImplayer);	
+			y = (int) (pos.y * FIELD_SIZE - screenY + CY);
+			draw(importantImplayer);
 		}
-		
 
 	}
 
@@ -464,25 +451,22 @@ public class GamePlayView extends Renderer {
 
 	public void drawNPCs(Character player1, Character player2) {
 		Vector2d pos;
-		if (!player1.superAttacking && !player2.superAttacking &&
-				!player1.finishing && !player2.finishing) {
+		if (!player1.superAttacking && !player2.superAttacking && !player1.finishing && !player2.finishing) {
 			for (NPC o : arena.getNpc()) {
 				pos = o.getPos();
 				x = (int) (pos.x * FIELD_SIZE);
 				y = (int) (pos.y * FIELD_SIZE);
 				float factor = pos.y / 7.5F;
-		        
-		        getGraphicsContext().drawImage(
-		          o.draw(), 
-		          (this.x - this.screenX + this.CX - o.draw().getWidth() / 2.0D) / 1.0750000476837158D, 
-		          this.y - o.draw().getHeight() / 2.0D - fixPic2(o.draw()) - 
-		          this.screenY + this.CY, o.draw().getWidth() * factor, o.draw().getHeight() * factor);
+
+				getGraphicsContext().drawImage(o.draw(),
+						(this.x - this.screenX + this.CX - o.draw().getWidth() / 2.0D) / 1.0750000476837158D,
+						this.y - o.draw().getHeight() / 2.0D - fixPic2(o.draw()) - this.screenY + this.CY,
+						o.draw().getWidth() * factor, o.draw().getHeight() * factor);
 			}
 		}
 	}
 
-	public void renderBackGround(long delta, Character player1,
-			Character player2) {
+	public void renderBackGround(long delta, Character player1, Character player2) {
 		if (map.getCurrentBG() != null) {
 
 			// ColorAdjust colorAdjust = new ColorAdjust();
@@ -497,44 +481,39 @@ public class GamePlayView extends Renderer {
 			// imageView.setCache(true);
 			// imageView.setCacheHint(CacheHint.SPEED);
 
-					
-		
-			//getGraphicsContext().drawImage(map.getCurrentBG(), (0 - screenX + CX),	-1000 - screenY + CY, IMG_BACKGROUND1.getWidth() * 10, IMG_BACKGROUND1.getHeight() * 10);
+			// getGraphicsContext().drawImage(map.getCurrentBG(), (0 - screenX +
+			// CX), -1000 - screenY + CY, IMG_BACKGROUND1.getWidth() * 10,
+			// IMG_BACKGROUND1.getHeight() * 10);
 			getGraphicsContext().setEffect(null);
 			checkEffect();
 			// getGraphicsContext().setEffect(monochrome);
 
 			// getGraphicsContext().setEffect(colorAdjust);
 
-			getGraphicsContext().drawImage(map.getCurrentBG(), (0 - screenX + CX),
-					-this.delta_Y - screenY + CY);
+			getGraphicsContext().drawImage(map.getCurrentBG(), (0 - screenX + CX), -this.delta_Y - screenY + CY);
 			getGraphicsContext().setEffect(null);
 			// specials
 			if (player1.superAttacking) {
 				Dust p1Sp = player1.getSpecialBG();
-				getGraphicsContext().drawImage(p1Sp.draw(), 0, 0,
-						p1Sp.draw().getWidth() * 1.15f,
+				getGraphicsContext().drawImage(p1Sp.draw(), 0, 0, p1Sp.draw().getWidth() * 1.15f,
 						p1Sp.draw().getHeight() * 1.15f);
 			}
 			if (player2.superAttacking) {
 				Dust p2Sp = player2.getSpecialBG();
-				getGraphicsContext().drawImage(p2Sp.draw(), 0, 0,
-						p2Sp.draw().getWidth() * 1.15f,
+				getGraphicsContext().drawImage(p2Sp.draw(), 0, 0, p2Sp.draw().getWidth() * 1.15f,
 						p2Sp.draw().getHeight() * 1.15f);
 			}
 
 			if (player1.finishing || player2.finishing) {
-				getGraphicsContext().drawImage(finish_bg.draw(), -65, 0,
-						finish_bg.draw().getWidth()*.85f,
-						finish_bg.draw().getHeight()*0.85f);
+				getGraphicsContext().drawImage(finish_bg.draw(), -65, 0, finish_bg.draw().getWidth() * .85f,
+						finish_bg.draw().getHeight() * 0.85f);
 				finish_bg.update((float) delta / 1000000000.0f);
 			}
 
 		} else {
 
 			getGraphicsContext().setFill(Color.BLACK);
-			getGraphicsContext().fillRect(0, 0, GamePlayView.SCREEN_WIDTH,
-					GamePlayView.SCREEN_HEIGHT);
+			getGraphicsContext().fillRect(0, 0, GamePlayView.SCREEN_WIDTH, GamePlayView.SCREEN_HEIGHT);
 		}
 	}
 
@@ -561,8 +540,6 @@ public class GamePlayView extends Renderer {
 		Vector2d pos_1 = player1.getPos();
 		Vector2d pos_2 = player2.getPos();
 
-		
-		
 		if (player1.statusLogic.isWinning()) {
 			GamePlayView.CAMERA_X_SPEED = 35f;
 			x = Math.abs(pos_1.x);
@@ -598,23 +575,20 @@ public class GamePlayView extends Renderer {
 				x = Math.abs(pos_1.x + pos_2.x) / 2f;
 				y = pos_2.y;
 			}
-		} 
-		else {
+		} else {
 			x = Math.abs(pos_1.x + pos_2.x) / 2f;
 			y = (pos_1.y + pos_2.y) / 2f;
-			
-			if(getTarget().x != 0 && Math.abs(pos_1.x-pos_2.x)>CX/50f )
+
+			if (getTarget().x != 0 && Math.abs(pos_1.x - pos_2.x) > CX / 50f)
 				return;
-			
+
 		}
 
-		if (!player1.statusLogic.isImportant()
-				&& !player2.statusLogic.isImportant())
+		if (!player1.statusLogic.isImportant() && !player2.statusLogic.isImportant())
 			GamePlayView.CAMERA_X_SPEED = CAMERA_X_SPEED_Default;
 
 		if (player1.shaking || player2.shaking) {
-			if (pos_1.distance(pos_2) <= GamePlayView.SCREEN_HEIGHT
-					/ GamePlayView.FIELD_SIZE
+			if (pos_1.distance(pos_2) <= GamePlayView.SCREEN_HEIGHT / GamePlayView.FIELD_SIZE
 					&& getTarget().y <= (pos_1.y + pos_2.y) / 2f - 1f)
 				updateShake(delta);
 			else {
@@ -622,23 +596,23 @@ public class GamePlayView extends Renderer {
 				player2.shaking = false;
 			}
 		}
-//		 else if (!player1.statusLogic.isWinning()
-//				&& !player2.statusLogic.isWinning()
-//				&& (player1.getPos().x < 1.5f + target.x - CX / 50f
-//						|| player2.getPos().x > target.x + CX / 50f - 1.5f
-//						|| player2.getPos().x < 1.5f + target.x - CX / 50f || player1
-//						.getPos().x > target.x + CX / 50f - 1.5f)
-//				&& !((player1.getPos().x > 1.5f + target.x - CX / 50f && player2
-//						.getPos().x > target.x + CX / 50f - 1.5f) || (player2
-//						.getPos().x > 1.5f + target.x - CX / 50f && player1
-//						.getPos().x > target.x + CX / 50f - 1.5f))
-//				&& !((player2.getPos().x < 1.5f + target.x - CX / 50f && player1
-//						.getPos().x < target.x + CX / 50f - 1.5f) || (player1
-//						.getPos().x < 1.5f + target.x - CX / 50f && player2
-//						.getPos().x < target.x + CX / 50f - 1.5f))
-//
-//		)
-//			return;
+		// else if (!player1.statusLogic.isWinning()
+		// && !player2.statusLogic.isWinning()
+		// && (player1.getPos().x < 1.5f + target.x - CX / 50f
+		// || player2.getPos().x > target.x + CX / 50f - 1.5f
+		// || player2.getPos().x < 1.5f + target.x - CX / 50f || player1
+		// .getPos().x > target.x + CX / 50f - 1.5f)
+		// && !((player1.getPos().x > 1.5f + target.x - CX / 50f && player2
+		// .getPos().x > target.x + CX / 50f - 1.5f) || (player2
+		// .getPos().x > 1.5f + target.x - CX / 50f && player1
+		// .getPos().x > target.x + CX / 50f - 1.5f))
+		// && !((player2.getPos().x < 1.5f + target.x - CX / 50f && player1
+		// .getPos().x < target.x + CX / 50f - 1.5f) || (player1
+		// .getPos().x < 1.5f + target.x - CX / 50f && player2
+		// .getPos().x < target.x + CX / 50f - 1.5f))
+		//
+		// )
+		// return;
 
 		else {
 			if (getTarget().x == 0f) {
@@ -651,20 +625,18 @@ public class GamePlayView extends Renderer {
 				getTarget().x = x;
 			} else // Bewege den Cursor zur neuen Mitte des Bildschirs
 			if ((getTarget().x >= x && dir_x < 0f) || (getTarget().x <= x && dir_x > 0f)) { // Kamera
-																					// viel
-																					// zu
-																					// langsam,
-																					// muss
-																					// also
-																					// schneller
-																					// verfolgen
+				// viel
+				// zu
+				// langsam,
+				// muss
+				// also
+				// schneller
+				// verfolgen
 				if ((!player1.isAlive() && CAMERA_X_SPEED < player1.physics.VX)
 						|| (!player2.isAlive() && CAMERA_X_SPEED < player2.physics.VX))
-					getTarget().x += dir_x * CAMERA_X_SPEED * 10f * (float) delta
-							/ 1000000000.0f;
+					getTarget().x += dir_x * CAMERA_X_SPEED * 10f * (float) delta / 1000000000.0f;
 				else
-					getTarget().x += dir_x * CAMERA_X_SPEED * (float) delta
-							/ 1000000000.0f;
+					getTarget().x += dir_x * CAMERA_X_SPEED * (float) delta / 1000000000.0f;
 				if (dir_x < 0f && getTarget().x <= x)
 					getTarget().x = x;
 				if (dir_x > 0f && getTarget().x >= x)
@@ -691,8 +663,7 @@ public class GamePlayView extends Renderer {
 			} else // Bewege den Cursor zur neuen Mitte des Bildschirs
 			if ((getTarget().y >= y && dir_y < 0f) || (getTarget().y <= y && dir_y > 0f)) {
 
-				getTarget().y += dir_y * CAMERA_Y_SPEED * (float) delta
-						/ 1000000000.0f;
+				getTarget().y += dir_y * CAMERA_Y_SPEED * (float) delta / 1000000000.0f;
 				if (dir_y < 0f && getTarget().y <= y)
 					getTarget().y = y;
 				if (dir_y > 0f && getTarget().y >= y)
@@ -701,26 +672,28 @@ public class GamePlayView extends Renderer {
 
 			// Rände dürfen nicht passiert werden, dabei wird Bildschirmhälfte
 			// als Maß genommen
-			if (getTarget().y < -delta_Y/ 50f + CY / 50f )
-				getTarget().y = -delta_Y / 50f + CY / 50f ;
+			if (getTarget().y < -delta_Y / 50f + CY / 50f)
+				getTarget().y = -delta_Y / 50f + CY / 50f;
 			if (getTarget().y > CY / 50f)
 				getTarget().y = CY / 50f;
 
 		}
 
 		// Virtuellen Bildverschiebung X
-		if (getTarget().x * GamePlayView.FIELD_SIZE < CX) // Cursor befindet sich in
-														// der ersten(linken)
-														// Bildschirmhaelfte
+		if (getTarget().x * GamePlayView.FIELD_SIZE < CX) // Cursor befindet
+															// sich in
+															// der
+															// ersten(linken)
+															// Bildschirmhaelfte
 		{
 			screenX = CX;
 		} else if (getTarget().x * GamePlayView.FIELD_SIZE > levelMax - CX) // Cursor
-																		// befindet
-																		// sich
-																		// an
-																		// der
-																		// rechtesten
-																		// Bildschirmhaelfte
+		// befindet
+		// sich
+		// an
+		// der
+		// rechtesten
+		// Bildschirmhaelfte
 		{
 			screenX = levelMax - CX;
 		} else // Charakter befindet sich dazwischen
@@ -729,17 +702,21 @@ public class GamePlayView extends Renderer {
 		}
 
 		// Virtuellen Bildverschiebung Y
-		
-		 // Cursor befindet sich in der ersten(obersten) Bildschirmhaelfte
-		if (getTarget().y * GamePlayView.FIELD_SIZE > CY){
+
+		// Cursor befindet sich in der ersten(obersten) Bildschirmhaelfte
+		if (getTarget().y * GamePlayView.FIELD_SIZE > CY) {
 			screenY = CY;
-		} 
-		
-		else if (getTarget().y * GamePlayView.FIELD_SIZE < -delta_Y + CY
-				) // Cursor befindet sich an der untersten
-							// Bildschirmhaelfte
+		}
+
+		else if (getTarget().y * GamePlayView.FIELD_SIZE < -delta_Y + CY) // Cursor
+																			// befindet
+																			// sich
+																			// an
+																			// der
+																			// untersten
+																			// Bildschirmhaelfte
 		{
-			screenY = -levelMaxy + CY ;
+			screenY = -levelMaxy + CY;
 		} else // Charakter befindet sich dazwischen
 		{
 			screenY = getTarget().y * GamePlayView.FIELD_SIZE;
@@ -747,82 +724,74 @@ public class GamePlayView extends Renderer {
 
 	}
 
-	private void checkBorders()
-	  {
-	    Character player1 = this.arena.getPlayer1();
-	    Character player2 = this.arena.getPlayer2();
-	    if ((player1.isBorderEffecting()) || (player2.isBorderEffecting())) {
-	      return;
-	    }
-	    checkLeftBorder(player1, player2);
-	    checkLeftBorder(player2, player1);
-	    checkRightBorder(player1, player2);
-	    checkRightBorder(player2, player1);
-	    if ((player1.statusLogic.isMoving()) && (player1.physics.VX == 0.0F)) {
-	      player1.physics.VX = (player1.getDir() * 1.0F);
-	    }
-	    if ((player2.statusLogic.isMoving()) && (player2.physics.VX == 0.0F)) {
-	      player2.physics.VX = (player2.getDir() * 1.0F);
-	    }
-	  }
-	  
-	  private void checkLeftBorder(Character player1, Character player2)
-	  {
-	    if (((player2.getPos().x < 1.5F + getTarget().x - this.CX / 50.0F) && 
-	      (player1.isAlive()) && (player2.isAlive())) || 
-	      (player2.getPos().x < 1.5F))
-	    {
-	      if (player2.getPos().x < 1.5F) {
-	        player2.getPos().x = 1.5F;
-	      } else {
-	        player2.getPos().x = (1.5F + getTarget().x - this.CX / 50.0F);
-	      }
-	      if (player2.statusLogic.isKnockback())
-	      {
-	        this.wandBlow.reset(new Vector2d(player2.pos.x, player2.pos.y), false);
-	        player2.releasedDusts.add(this.wandBlow); 
-	        pixelCombat.physics.PlayerPhysics tmp170_167 = player2.physics;
-	        tmp170_167.VX = ((float)(tmp170_167.VX * -1.05D));
-	        player2.physics.update(player2.delta);
-	        player2.statusLogic.swapDirection();
-	        if (this.shakeTimer == 0.0F) {
-	          player2.sound("/audio/Ruffy_Stamp.wav");
-	        }
-	        if (!player2.shaking) {
-	          player2.shaking = true;
-	        }
-	      }
-	    }
-	  }
-	  
-	  private void checkRightBorder(Character player1, Character player2)
-	  {
-	    if (((player2.getPos().x > getTarget().x + this.CX / 50.0F - 1.5F) && 
-	      (player1.isAlive()) && (player2.isAlive())) || 
-	      (player2.getPos().x > levelMax / 50.0F - 1.5F))
-	    {
-	      if (player2.getPos().x > levelMax / 50.0F - 1.5F) {
-	        player2.getPos().x = (levelMax / 50.0F - 1.5F);
-	      } else {
-	        player2.getPos().x = (getTarget().x + this.CX / 50.0F - 1.5F);
-	      }
-	      if (player2.statusLogic.isKnockback())
-	      {
-	        this.wandBlow.reset(new Vector2d(player2.pos.x, player2.pos.y), true);
-	        player2.releasedDusts.add(this.wandBlow); 
-	        pixelCombat.physics.PlayerPhysics 
-	          tmp194_191 = player2.physics;tmp194_191.VX = ((float)(tmp194_191.VX * -1.05D));
-	        player2.physics.update(player2.delta);
-	        player2.statusLogic.swapDirection();
-	        if (this.shakeTimer == 0.0F) {
-	          player2.sound("/audio/Ruffy_Stamp.wav");
-	        }
-	        if (!player2.shaking) {
-	          player2.shaking = true;
-	        }
-	      }
-	    }
-	  }
+	private void checkBorders() {
+		Character player1 = this.arena.getPlayer1();
+		Character player2 = this.arena.getPlayer2();
+		if ((player1.isBorderEffecting()) || (player2.isBorderEffecting())
+			|| player1.statusLogic.isFocused() || player2.statusLogic.isFocused()) {
+			return;
+		}
+		checkLeftBorder(player1, player2);
+		checkLeftBorder(player2, player1);
+		checkRightBorder(player1, player2);
+		checkRightBorder(player2, player1);
+		if ((player1.statusLogic.isMoving()) && (player1.physics.VX == 0.0F)) {
+			player1.physics.VX = (player1.getDir() * 1.0F);
+		}
+		if ((player2.statusLogic.isMoving()) && (player2.physics.VX == 0.0F)) {
+			player2.physics.VX = (player2.getDir() * 1.0F);
+		}
+	}
+
+	private void checkLeftBorder(Character player1, Character player2) {
+		if (((player2.getPos().x < 1.5F + getTarget().x - this.CX / 50.0F) && (player1.isAlive())
+				&& (player2.isAlive())) || (player2.getPos().x < 1.5F)) {
+			if (player2.getPos().x < 1.5F) {
+				player2.getPos().x = 1.5F;
+			} else {
+				player2.getPos().x = (1.5F + getTarget().x - this.CX / 50.0F);
+			}
+			if (player2.statusLogic.isKnockback()) {
+				this.wandBlow.reset(new Vector2d(player2.pos.x, player2.pos.y), false);
+				player2.releasedDusts.add(this.wandBlow);
+				pixelCombat.physics.PlayerPhysics tmp170_167 = player2.physics;
+				tmp170_167.VX = ((float) (tmp170_167.VX * -1.05D));
+				player2.physics.update(player2.delta);
+				player2.statusLogic.swapDirection();
+				if (this.shakeTimer == 0.0F) {
+					player2.sound("/audio/Ruffy_Stamp.wav");
+				}
+				if (!player2.shaking) {
+					player2.shaking = true;
+				}
+			}
+		}
+	}
+
+	private void checkRightBorder(Character player1, Character player2) {
+		if (((player2.getPos().x > getTarget().x + this.CX / 50.0F - 1.5F) && (player1.isAlive())
+				&& (player2.isAlive())) || (player2.getPos().x > levelMax / 50.0F - 1.5F)) {
+			if (player2.getPos().x > levelMax / 50.0F - 1.5F) {
+				player2.getPos().x = (levelMax / 50.0F - 1.5F);
+			} else {
+				player2.getPos().x = (getTarget().x + this.CX / 50.0F - 1.5F);
+			}
+			if (player2.statusLogic.isKnockback()) {
+				this.wandBlow.reset(new Vector2d(player2.pos.x, player2.pos.y), true);
+				player2.releasedDusts.add(this.wandBlow);
+				pixelCombat.physics.PlayerPhysics tmp194_191 = player2.physics;
+				tmp194_191.VX = ((float) (tmp194_191.VX * -1.05D));
+				player2.physics.update(player2.delta);
+				player2.statusLogic.swapDirection();
+				if (this.shakeTimer == 0.0F) {
+					player2.sound("/audio/Ruffy_Stamp.wav");
+				}
+				if (!player2.shaking) {
+					player2.shaking = true;
+				}
+			}
+		}
+	}
 
 	// Shaker
 	private void updateShake(long delta) {
@@ -883,8 +852,8 @@ public class GamePlayView extends Renderer {
 			if (getTarget().x < CX / 50f)
 				getTarget().x = CX / 50f;
 			getTarget().y = getTarget().y + yOffset;
-			if (getTarget().y < -delta_Y/ 50f + CY / 50f )
-				getTarget().y = -delta_Y / 50f + CY / 50f ;
+			if (getTarget().y < -delta_Y / 50f + CY / 50f)
+				getTarget().y = -delta_Y / 50f + CY / 50f;
 			if (getTarget().y > CY / 50f)
 				getTarget().y = CY / 50f;
 		} else {
@@ -904,12 +873,11 @@ public class GamePlayView extends Renderer {
 	}
 
 	private void drawLeft(float x, Character p, float y) {
-		
+
 		getGraphicsContext().save();
-		getGraphicsContext().translate((2*x), 0);
+		getGraphicsContext().translate((2 * x), 0);
 		getGraphicsContext().scale(-1, 1);
-		getGraphicsContext().drawImage(p.draw(),
-				x - (float) p.draw().getWidth() / 2f,
+		getGraphicsContext().drawImage(p.draw(), x - (float) p.draw().getWidth() / 2f,
 				y - (float) p.draw().getHeight() / 2f - fixPic(p.draw()));
 		getGraphicsContext().restore();
 
@@ -917,13 +885,11 @@ public class GamePlayView extends Renderer {
 
 	public void rotate(GraphicsContext gc, double angle, double px, double py) {
 		Rotate r = new Rotate(angle, px, py);
-		gc.setTransform(r.getMxx(), r.getMyx(), r.getMxy(), r.getMyy(),
-				r.getTx(), r.getTy());
+		gc.setTransform(r.getMxx(), r.getMyx(), r.getMxy(), r.getMyy(), r.getTx(), r.getTy());
 	}
 
 	private void drawRight(float x, Character p, float y) {
-		getGraphicsContext().drawImage(p.draw(),
-				x - (float) p.draw().getWidth() / 2f,
+		getGraphicsContext().drawImage(p.draw(), x - (float) p.draw().getWidth() / 2f,
 				y - (float) p.draw().getHeight() / 2f - fixPic(p.draw()));
 	}
 
@@ -950,10 +916,6 @@ public class GamePlayView extends Renderer {
 			diff = halfHeight - 100;
 		return diff;
 	}
-	
-
-
-	
 
 	public Character getChar_player1() {
 		return char_player1;
@@ -979,7 +941,6 @@ public class GamePlayView extends Renderer {
 		this.initialized = initialized;
 	}
 
-	
 	public GraphicsContext getGraphicsContext() {
 		return graphicsContext;
 	}
@@ -989,7 +950,7 @@ public class GamePlayView extends Renderer {
 	}
 
 	public void reset() {
-		finish_bg.reset(new Vector2d(0,0),true);
+		finish_bg.reset(new Vector2d(0, 0), true);
 		x = Math.abs(char_player1.pos.x + char_player2.pos.x) / 2f;
 		y = char_player1.pos.y;
 		getTarget().x = 0;
@@ -1004,11 +965,13 @@ public class GamePlayView extends Renderer {
 	}
 
 	/**
-	 * @param target the target to set
+	 * @param target
+	 *            the target to set
 	 */
 	public void setTarget(Vector2d target) {
 		this.target = target;
 	}
+
 	/**
 	 * Method for the sounding effects.
 	 * 
@@ -1016,17 +979,16 @@ public class GamePlayView extends Renderer {
 	 * @param url
 	 *            , Url
 	 */
-	public  void sound(Clip clip, String url) {
-		
-		if(!GameEngine.TOGGLE_SOUND)
+	public void sound(Clip clip, String url) {
+
+		if (!GameEngine.TOGGLE_SOUND)
 			return;
-		
+
 		try {
-			if(clip!= null)
+			if (clip != null)
 				clip.stop();
 			clip = AudioSystem.getClip();
-			AudioInputStream inputStream1 = AudioSystem
-					.getAudioInputStream(Character.class.getResource(url));
+			AudioInputStream inputStream1 = AudioSystem.getAudioInputStream(Character.class.getResource(url));
 			clip.open(inputStream1);
 			clip.start();
 
@@ -1036,9 +998,9 @@ public class GamePlayView extends Renderer {
 
 	public void kill() {
 		this.initialized = false;
-		finish_bg.reset(new Vector2d(0,0),true);
+		finish_bg.reset(new Vector2d(0, 0), true);
 		getTarget().x = 0;
 		getTarget().y = 0;
-		
+
 	}
 }

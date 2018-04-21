@@ -76,7 +76,7 @@ public class EventHandler
 	
 	public EventHandler(GamePlayController gamePlayController, PXMapHandler arena) {
 		this.arena = arena;
-		this.event = GameEvent.INTRODUCTION;
+		this.event = GameEvent.BATTLE;
 		this.controller = gamePlayController;
 		this.player1 = arena.getPlayer1();
 		this.player2 = arena.getPlayer2();
@@ -87,7 +87,7 @@ public class EventHandler
 
 	public void init() 
 	{
-		this.event = GameEvent.INTRODUCTION;
+		this.event = GameEvent.BATTLE;
 		this.player1 = arena.getPlayer1();
 		this.player2 = arena.getPlayer2();
 		player1.wins = 0;
@@ -267,6 +267,10 @@ public class EventHandler
 			
 			//3) kamera auf dead zeigen
 			//   siehe View
+			
+			//TODO here must be implemented another way of ending the gamesession
+			//TODO other states maybe like IDLE,ONGROUND,FINISHEDATTACK should end the session instead of freeze counter
+			//TODO Interference with freeze of other classes -> should implement a third independent variable 'globalFreeze'
 			
 			
 			

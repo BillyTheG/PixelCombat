@@ -3,6 +3,7 @@ package pixelCombat.model.chars.zorro.attacks;
 import java.util.ArrayList;
 
 import pixelCombat.Math.Vector2d;
+import pixelCombat.artworks.ZorroYokkoDaiiArtWork;
 import pixelCombat.dusts.BloodSplash1;
 import pixelCombat.enums.ActionStates;
 import pixelCombat.enums.GlobalStates;
@@ -20,6 +21,8 @@ public class ZorroYokkouDori
   private float oldY;
   private float max_distance = 1.0F;
   private float distance = 0.0F;
+  private ZorroYokkoDaiiArtWork yokkouDoriArtWork = new ZorroYokkoDaiiArtWork();
+  
   
   public ZorroYokkouDori(Zorro user, int id)
   {
@@ -36,8 +39,12 @@ public class ZorroYokkouDori
     case 0: 
       if (this.user.isSwitcher())
       {
+    	this.user.superAttacking = true;
+        this.user.specialBG.reset();
         this.user.statusLogic.setFocused(true);
         this.user.setSwitcher(false);
+        yokkouDoriArtWork.reset();
+        user.releasedArtWorks.add(yokkouDoriArtWork);
       }
       if (this.distance < this.max_distance)
       {
@@ -52,8 +59,7 @@ public class ZorroYokkouDori
     case 2: 
       if (!this.user.isSwitcher())
       {
-        this.user.superAttacking = true;
-        this.user.specialBG.reset();
+       
         this.user.freeze = true;
         this.user.freeze_loop = true;
         

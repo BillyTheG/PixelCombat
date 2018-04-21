@@ -13,7 +13,7 @@ public class RuffySuper extends ArtWork {
 	
 	
 	public RuffySuper() {
-		super(new Vector2d(PXMapHandler.X_FIELDS/2f,PXMapHandler.Y_FIELDS/2),0f,-2f);
+		super(new Vector2d(PXMapHandler.X_FIELDS_STANDARD/2f,PXMapHandler.Y_FIELDS_STANDARD/2),0f,-2f);
 		ArrayList<Image> images = new ArrayList<Image>();		
 		images.add(loadImage("/artWorks/IMG_Artwork_Ruffy_SuperAttack_1.png"));
 		images.add(loadImage("/artWorks/IMG_Artwork_Ruffy_SuperAttack_2.png"));
@@ -64,7 +64,7 @@ public class RuffySuper extends ArtWork {
 		
 		
 		this.dustAnimator = new Animation(images,times,true);
-
+		setSpecialArtWork(true);
 	}
 
 }

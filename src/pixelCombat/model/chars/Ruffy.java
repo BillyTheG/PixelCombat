@@ -436,7 +436,10 @@ public class Ruffy
   
   private void updateModeGear2()
   {
-    this.gear2aura.pos.x = this.pos.x;
+	if(!releasedDusts.contains(gear2aura))
+	  this.releasedDusts.add(gear2aura);  
+    
+	this.gear2aura.pos.x = this.pos.x;
     this.gear2aura.pos.y = (this.pos.y + 0.25F);
     if (isPushNotDoneSofar())
     {

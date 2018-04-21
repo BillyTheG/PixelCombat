@@ -1,5 +1,8 @@
 package pixelCombat.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -48,6 +51,8 @@ public class GameEngine
   private ConsoleStage consoleStage;
   private MediaPlayer mediaPlayer;
   public static boolean TOGGLE_MUSIC = true;
+  private List<String> hits = new ArrayList<>();
+private Media hit;
   public static final boolean TOGGLE_SOUND = true;
   
   public GameEngine(Pane mainViewGroup, GameStage gameStage, Console console, ConsoleStage consoleStage)
@@ -119,19 +124,47 @@ public class GameEngine
   
   public void stopMP3()
   {
-    if (this.mediaPlayer == null) {
+    if (mediaPlayer == null) {
       return;
     }
-    this.mediaPlayer.stop();
-    this.mediaPlayer.dispose();
+    mediaPlayer.stop();
+    //mediaPlayer.dispose();
   }
+  
+  public void pauseMP3()
+  {
+    if (mediaPlayer == null) {
+      return;
+    }
+    mediaPlayer.pause();;
+    //mediaPlayer.dispose();
+  }
+  
+  
+  public void playMP3()
+  {
+    if (mediaPlayer == null) {
+      return;
+    }
+    mediaPlayer.play();
+    //mediaPlayer.dispose();
+  }
+  
   
   public void musicMP3(String url)
   {
-    Media hit = new Media(getClass().getResource(url).toString());
-    this.mediaPlayer = new MediaPlayer(hit);
-    this.mediaPlayer.setCycleCount(-1);
-    this.mediaPlayer.play();
+	hits.add(url);  
+    hit = new Media(getClass().getResource(url).toString());
+    mediaPlayer = new MediaPlayer(hit);
+    mediaPlayer.setCycleCount(-1);
+    mediaPlayer.play();
+  }
+  
+  public void musicPreviousMP3(){
+	  if(hits.size()>1)
+		  musicMP3(hits.get(hits.size()-2));
+	  else
+		  musicMP3(hits.get(0));
   }
   
   public void update(long deltaTime)
