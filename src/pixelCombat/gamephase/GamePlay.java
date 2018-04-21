@@ -324,7 +324,22 @@ public class GamePlay
     case F10: 
       this.engine.getGameStage().setFullScreen(true);
       break;
-	default:
+    case J :
+    	handleCommand(KeyCode.NUMPAD1,hold);
+    	break;
+    case K :
+    	handleCommand(KeyCode.NUMPAD2,hold);
+    	break;
+    case L :
+    	handleCommand(KeyCode.NUMPAD3,hold);
+    	break;
+    case I :
+    	handleCommand(KeyCode.NUMPAD4,hold);
+    	break;
+    case O :
+    	handleCommand(KeyCode.NUMPAD5,hold);
+    	break;	
+    default:
 		break;
     }
   }

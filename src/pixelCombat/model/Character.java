@@ -32,6 +32,7 @@ import pixelCombat.view.AnimatorThread;
 import pixelCombat.view.PlayerPicManager;
 
 public abstract class Character extends PXObject {
+	private static final float MAXIMAL_VELOCITY_Y_FOR_INVINCIBLE = 6.0F;
 	public static final String STAT_ATTACKSPEED = "attackSpeed";
 	public static final String STAT_MAXLIFEPOINTS = "maxLifepoints";
 	public static final String STAT_ACTUALLIFEPOINTS = "actualLifepoints";
@@ -88,6 +89,7 @@ public abstract class Character extends PXObject {
 	private float knockBackHeight = -15.0F;
 	private float knockBackRange_df = 1.0F;
 	private float knockBackHeight_df = -15.0F;
+	private KnockBackManagement knockBackManagement = new KnockBackManagement(this);
 	public boolean collidesX = false;
 	public boolean collidesY = false;
 	public boolean collidesBX = false;
@@ -244,7 +246,11 @@ public abstract class Character extends PXObject {
 			this.physics.update(this.delta);
 			this.statusLogic.setOnAir(true);
 		}
-		if ((getPos().y == 7.5F) && (Math.abs(this.physics.VY) < 6.0F)) {
+		
+		knockBackManagement.update();
+		
+		
+		if ((getPos().y == PXMapHandler.GROUNDLEVEL) && (Math.abs(this.physics.VY) < MAXIMAL_VELOCITY_Y_FOR_INVINCIBLE)) {
 			this.timeManager.getDown().setY(Float.valueOf(0.0F));
 			sound(this.groundHitSound);
 			getJumpDust().reset(new Vector2d(this.pos.x, this.groundLevel + 0.25F), this.statusLogic.isRight());
@@ -254,6 +260,16 @@ public abstract class Character extends PXObject {
 			this.knockBackRange = this.knockBackRange_df;
 			this.statusLogic.setOnAir(false);
 		}
+	}
+	
+	public void knockBackRecover() {
+
+		
+		if (this.picManager.getAnimTime() == this.picManager.getTotalDuration()) {
+			this.statusLogic.setGlobalStatus(GlobalStates.ACTIVE);
+			this.statusLogic.setActionStates(ActionStates.JUMP);
+		}
+		
 	}
 
 	public void invincible() {
@@ -442,7 +458,7 @@ public abstract class Character extends PXObject {
 					makeDefendBubbles();
 					sound(this.defendSound);
 
-					getPos().x += attacker.getDir() * 0.1F;
+					getPos().x += attacker.getDir() * 0.25F;
 					attacker.statusLogic.setAHitDelay(true);
 				}
 				return true;
@@ -459,7 +475,7 @@ public abstract class Character extends PXObject {
 					makeDefendBubbles();
 					sound(this.defendSound);
 
-					getPos().x += attacker.getDir() * 0.1F;
+					getPos().x += attacker.getDir() * 0.25F;
 					attacker.statusLogic.setAHitDelay(true);
 				}
 				return true;
@@ -468,11 +484,7 @@ public abstract class Character extends PXObject {
 		if (isNotHittable()) {
 			return true;
 		}
-		if (attacker.statusLogic.isRight()) {
-			this.statusLogic.setMovementStates(MovementStates.LEFT);
-		} else {
-			this.statusLogic.setMovementStates(MovementStates.RIGHT);
-		}
+		
 		return false;
 	}
 
@@ -558,6 +570,7 @@ public abstract class Character extends PXObject {
 	}
 
 	public void cancelAction() {
+		
 		this.statusLogic.setActionStates(ActionStates.STAND);
 
 		this.attackLogic.setAttackStatus(AttackStates.notAttacking);
@@ -975,4 +988,6 @@ public abstract class Character extends PXObject {
 	public GameEngine getEngine() {
 		return engine;
 	}
+
+
 }

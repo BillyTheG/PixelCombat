@@ -56,8 +56,8 @@ public abstract class BoxLogic {
 
 	public final int AIR_SPECIALATTACK1 = 30;
 	
-	//Ruffy's Specials
-	public final int GEAR2TRANSFORM = 31;
+	public final int KNOCKBACKRECOVER = 31;
+	public final int MAX_STANDARD_SPRITES = KNOCKBACKRECOVER;
 	
     
 	public BoundingRectangle currentColBox;
@@ -125,6 +125,9 @@ public abstract class BoxLogic {
 		case KNOCKBACK:
 			updateBoxSeq(KNOCKBACK,"knockBack");
 			break;
+		case KNOCKBACKRECOVER:
+			updateBoxSeq(KNOCKBACKRECOVER,"knockBackRecover");
+			break;	
 		case KNOCKEDOUT:
 			updateBoxSeq(KNOCKEDOUT,"knockedOut");
 			break;

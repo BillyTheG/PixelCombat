@@ -22,7 +22,7 @@ public class ZorroRunAttack1
   
   public void process()
   {
-    createParticleWinds();
+  
     switch (getUser().picManager.getCurrFrameIndex())
     {
     case 0: 
@@ -71,18 +71,7 @@ public class ZorroRunAttack1
     }
   }
   
-  private void createParticleWinds()
-  {
-    if ((this.user.picManager.getCurrFrameIndex() >= 4) && (this.user.picManager.getCurrFrameIndex() <= 6))
-    {
-      this.user.ParticleManager.createParticleWinds(this.user.pos.add(new Vector2d(0.0F, 1.0F)), 180, 
-        0, this.user);
-      this.user.ParticleManager.createParticleWinds(this.user.pos, 180, 0, this.user);
-      this.user.ParticleManager.createParticleWinds(this.user.pos.add(new Vector2d(0.0F, -1.0F)), 
-        180, 0, this.user);
-    }
-  }
-  
+
   public void checkContent()
   {
     if (this.firstHit) {

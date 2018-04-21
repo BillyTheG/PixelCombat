@@ -16,7 +16,7 @@ public class RuffyGigantoGatling
   {
     super(user, id);
     this.user = user;
-    setRequiredEnergy(95.0F);
+    setRequiredEnergy(90.0F);
   }
   
   public void process()
@@ -26,6 +26,8 @@ public class RuffyGigantoGatling
     case 0: 
       if (getUser().isSwitcher())
       {
+    	  this.user.freeze = true;
+    	  this.user.freeze_loop = true;
         getUser().sound("/audio/Ruffy_SuperAttack.wav");
         this.user.gatling = this.user.getGatling_max();
         this.user.getJetGatling().reset();
@@ -68,6 +70,8 @@ public class RuffyGigantoGatling
     case 10: 
       if (!this.user.isSwitcher())
       {
+    	  this.user.freeze = false;
+    	  this.user.freeze_loop = false;
         getUser().sound("/audio/Ruffy_Giganto_Gatling_Haaa.wav");
         getUser().setSwitcher(true);
       }
@@ -155,6 +159,8 @@ public class RuffyGigantoGatling
   
   public void resetStats()
   {
+	  this.user.freeze = false;
+	  this.user.freeze_loop = false;
     this.user.superAttacking = false;
   }
 }

@@ -6,8 +6,8 @@ import pixelCombat.model.ViewLogic;
 
 public class RuffyViewLogic extends ViewLogic
 {
-
-	private int GigantoGatling = 32;
+	public 	final int GEAR2TRANSFORM = MAX_STANDARD_SPRITES+1;
+	public  final int GigantoGatling = MAX_STANDARD_SPRITES+2;
 
 	public RuffyViewLogic(Character character) {
 		super(character);

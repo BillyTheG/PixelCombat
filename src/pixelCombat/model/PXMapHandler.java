@@ -301,19 +301,10 @@ public class PXMapHandler
     this.height = height;
   }
   
-  public static int getxFields()
-  {
-    return 18;
-  }
-  
-  public static int getyFields()
-  {
-    return 10;
-  }
-  
+ 
   public static float getGroundlevel()
   {
-    return 7.5F;
+    return GROUNDLEVEL;
   }
   
   public void checkCollision(Character player1, Character player2)
@@ -411,12 +402,14 @@ public class PXMapHandler
   
   private boolean checkFurtherCollisions(Character player12, Character player22)
   {
-    if (((this.player1.statusLogic.isActive()) && (this.player2.statusLogic.isKnockback())) || 
-      ((this.player2.statusLogic.isActive()) && (this.player1.statusLogic.isKnockback())) || 
-      ((this.player1.statusLogic.isActive()) && (this.player2.statusLogic.isDisabled())) || 
-      ((this.player2.statusLogic.isActive()) && (this.player1.statusLogic.isDisabled())) || 
-      ((this.player1.statusLogic.isActive()) && (this.player2.statusLogic.isInvincible())) || (
-      (this.player2.statusLogic.isActive()) && (this.player1.statusLogic.isInvincible()))) {
+    if ((this.player1.statusLogic.isActive() && this.player2.statusLogic.isKnockback()) || 
+    	(this.player1.statusLogic.isActive() && this.player2.statusLogic.isKnockBackRecovering()) ||
+    	(this.player2.statusLogic.isActive() && this.player1.statusLogic.isKnockback()) || 
+    	(this.player2.statusLogic.isActive() && this.player1.statusLogic.isKnockBackRecovering()) ||
+    	(this.player1.statusLogic.isActive() && this.player2.statusLogic.isDisabled()) || 
+    	(this.player2.statusLogic.isActive() && this.player1.statusLogic.isDisabled()) || 
+    	(this.player1.statusLogic.isActive() && this.player2.statusLogic.isInvincible()) || 
+    	(this.player2.statusLogic.isActive() && this.player1.statusLogic.isInvincible()))  {
       return true;
     }
     return false;

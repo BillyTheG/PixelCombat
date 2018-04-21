@@ -57,6 +57,9 @@ public abstract class StatusLogic {
 			character.cancelAction();
 			character.knockBack();
 			return;
+		case KNOCKBACKRECOVER:
+			character.knockBackRecover();
+			break;
 		case BLINKING:
 			character.active();
 			character.blink();
@@ -69,6 +72,8 @@ public abstract class StatusLogic {
 		case DEAD:
 			
 			return;
+		default:
+			break;
 		}
 	}
 	
@@ -99,7 +104,7 @@ public abstract class StatusLogic {
 
 	public boolean canNotAttack() {
 		return 	  character.attackLogic.isAttacking()
-				|| isKnockback() 
+				|| isKnockback() || isKnockBackRecovering() 
 				|| isInvincible()
 				|| isDead()
 				|| isJumpRecovering()
@@ -109,10 +114,12 @@ public abstract class StatusLogic {
 
 	}
 	
+	
+
 	public boolean canNotDefend() {
 		return  
 				character.attackLogic.isAttacking()
-				|| isKnockback()
+				|| isKnockback() || isKnockBackRecovering()
 				|| isMoving()
 				|| isInvincible()
 				|| character.enemy.freeze
@@ -124,7 +131,7 @@ public abstract class StatusLogic {
 
 	public boolean canNotSpecial1() {
 		return character.attackLogic.isAttacking()	
-				|| isKnockback() 
+				|| isKnockback() || isKnockBackRecovering() 
 				|| isMoving()
 				|| isDead()
 				|| isInvincible()
@@ -137,7 +144,7 @@ public abstract class StatusLogic {
 
 	public boolean canNotAirSpecial1() {
 		return ( character.attackLogic.isAttacking()
-			    || isKnockback() 			   
+			    || isKnockback() || isKnockBackRecovering() 			   
 				|| isDead()
 				|| isInvincible()
 				|| isDisabled() 
@@ -350,18 +357,15 @@ public abstract class StatusLogic {
 		return this.actionStates == ActionStates.JUMP_RECOVER;
 	}
 
-
+	public boolean isKnockBackRecovering() {
+		return this.globalStates == GlobalStates.KNOCKBACKRECOVER;
+	}
 
 
 
 	public boolean isBlinking() {
 		return getGlobalStatus() == GlobalStates.BLINKING;
 	}
-
-
-
-
-
 
 
 	public boolean isJumping() {
@@ -382,7 +386,7 @@ public abstract class StatusLogic {
 
 
 	public boolean isDefending() {
-		return getActionStates() == ActionStates.DEFENDING ||getActionStates() == ActionStates.AIR_DEFENDING;
+		return (character.picManager.animationIsFinished()) && ( getActionStates()== ActionStates.DEFENDING ||getActionStates() == ActionStates.AIR_DEFENDING);
 	}
 
 

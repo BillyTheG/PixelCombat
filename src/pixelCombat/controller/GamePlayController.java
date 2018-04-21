@@ -356,17 +356,23 @@ public class GamePlayController extends Controller  implements EventListener{
 		for(Particle o : arena.getParticles())
 			o.update((float) delta / 1000000000.0f);
 		
-		for(Dust o : player1.getReleasedDusts())
-			{
+		if(!GLOBALFREEZE)
+		{
+			for(Dust o : player1.getReleasedDusts()){
 				if(!player2.freeze)
 					o.update((float) delta / 1000000000.0f);
 			}
-		for(Dust o : player2.getReleasedDusts())
-			{
+			for(Dust o : player2.getReleasedDusts()){
 			if(!player1.freeze)
 				o.update((float) delta / 1000000000.0f);
 			}
 		
+			for(Projectile o : arena.getProjectiles()){
+				if(!o.creator.freeze && !o.creator.enemy.freeze)
+					o.update((float) delta / 1000000000.0f);
+			}
+		}		
+			
 		for(ArtWork o : arena.getArtWorks())
 			o.update((float) delta / 1000000000.0f);
 		
@@ -379,13 +385,9 @@ public class GamePlayController extends Controller  implements EventListener{
 				arena.deleteParticle(o);
 		}
 		
-
 		
-		for(Projectile o : arena.getProjectiles())
-		{
-			if(!o.creator.freeze && !o.creator.enemy.freeze)
-				o.update((float) delta / 1000000000.0f);
-		}
+		
+		
 	
 		checkFinals();
 

@@ -11,6 +11,7 @@ import pixelCombat.model.PXMapHandler;
 public class PlayerPicManager extends PicManager<Character>{
 
 	
+	private static final float LEASTDISTANCETOGROUND = 0.15f;
 	// Bildsequenzen
 	public final int STAND = 0;
 	public final int MOVE = 1;
@@ -62,13 +63,16 @@ public class PlayerPicManager extends PicManager<Character>{
 
 		if (animTime >= totalDuration && once) {
 			// Bei Loop muss Zeit auf den LoopPunkt gesetzt werden.
-			float beginTime = 0f;
-			for (int i = 0; i < loopPoint; i++) {
-				beginTime += time.get(i);
-			}
-
-			animTime = (animTime + beginTime) % totalDuration;
-			currFrameIndex = loopPoint;
+//			
+			resetToIndex(loopPoint);			
+			
+//			float beginTime = 0f;
+//			for (int i = 0; i < loopPoint; i++) {
+//				beginTime += time.get(i);
+//			}
+//
+//			animTime = (animTime + beginTime) % totalDuration;
+//			currFrameIndex = loopPoint;
 		}
 
 		if (animTime >= totalDuration && !once) {
@@ -90,6 +94,7 @@ public class PlayerPicManager extends PicManager<Character>{
 				&& pxObject.attackLogic.getAttackStatus() == AttackStates.notAttacking) {
 			this.lastAnimation = this.currentAnimation;
 			this.currentAnimation = STAND;
+			pxObject.viewLogic.update();
 			pxObject.boxLogic.update();
 			setup();
 			return;
@@ -102,7 +107,7 @@ public class PlayerPicManager extends PicManager<Character>{
 		
 		// Spieler ist in Luft, Bilder werden ab LoopIndex gezeichnet
 		if ((nextAnim == JUMPING && currentAnimation != STAND && currentAnimation != MOVE)
-				|| (nextAnim == STAND && Math.abs(pxObject.getPos().y - PXMapHandler.GROUNDLEVEL) > 0.15f)) {
+				|| (nextAnim == STAND && Math.abs(pxObject.getPos().y - PXMapHandler.GROUNDLEVEL) > LEASTDISTANCETOGROUND)) {
 			// Bilder, Zeiten, LoopIndex holen
 			this.pxObject.statusLogic.setActionStates_manuell(ActionStates.JUMP);
 			this.lastAnimation = this.currentAnimation;

@@ -1237,7 +1237,20 @@
 					x="-0.30008698" y="0.43995667" />
 			</box_list>
 		</gigantoGatling>
-
+		<knockBackRecover>
+			<box_list picture="0">
+				<box height="2.2999983" hurts="false" id="0" width="1.0" x="-0.10000038"
+					y="-0.5399995" />
+			</box_list>
+			<box_list picture="1">
+				<box height="2.2999983" hurts="false" id="0" width="1.0" x="0.039995193"
+					y="-0.39999914" />
+			</box_list>
+			<box_list picture="2">
+				<box height="2.2999978" hurts="false" id="0" width="1.0"
+					x="-0.060009956" y="-0.3399992" />
+			</box_list>
+		</knockBackRecover>
 
 	</boxes>
 </character>

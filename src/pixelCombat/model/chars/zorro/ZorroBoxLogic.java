@@ -7,7 +7,7 @@ import pixelCombat.utils.Console;
 public class ZorroBoxLogic extends BoxLogic{
 
 	
-	private static final int YOKKOUDORI = 31;
+	private final int YOKKOUDORI = MAX_STANDARD_SPRITES +1;
 
 	public ZorroBoxLogic(Character character, Console console) {
 		super(character,console);

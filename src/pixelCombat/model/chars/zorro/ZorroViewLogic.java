@@ -7,7 +7,7 @@ import pixelCombat.model.ViewLogic;
 public class ZorroViewLogic extends ViewLogic
 {
 
-	private static final int YOKKOUDORI = 31;
+	private final int YOKKOUDORI = MAX_STANDARD_SPRITES+1;
 
 	public ZorroViewLogic(Character character) {
 		super(character);

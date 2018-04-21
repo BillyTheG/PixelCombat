@@ -127,6 +127,7 @@ public class ImageLoader implements Runnable {
 						Player1.add(28, player1.get("jumpRecover"));
 						Player1.add(29, player1.get("airDefend"));
 						Player1.add(30, player1.get("airSpecialAttack1"));
+						Player1.add(31, player1.get("knockBackRecover"));
 						char_player1.loadFurtherImages(Player1,player1);
 					}
 					
@@ -190,6 +191,7 @@ public class ImageLoader implements Runnable {
 						Player2.add(28, player2.get("jumpRecover"));
 						Player2.add(29, player2.get("airDefend"));
 						Player2.add(30, player2.get("airSpecialAttack1"));
+						Player2.add(31, player2.get("knockBackRecover"));
 						char_player2.loadFurtherImages(Player2,player2);
 					}
 					

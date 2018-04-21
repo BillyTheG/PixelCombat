@@ -326,6 +326,16 @@
 			<img duration="550" key="8">/images/zorro/IMG_Zorro_ToraGari_9.png</img>
 		</airSpecialAttack1>
 		
+		<knockBackRecover airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/zorro/IMG_Zorro_KnockBackRecover_1.png</img>
+			<img duration="100" key="1">/images/zorro/IMG_Zorro_KnockBackRecover_2.png</img>
+			<img duration="100" key="2">/images/zorro/IMG_Zorro_KnockBackRecover_3.png</img>
+			<img duration="100" key="3">/images/zorro/IMG_Zorro_KnockBackRecover_4.png</img>
+			<img duration="100" key="4">/images/zorro/IMG_Zorro_KnockBackRecover_5.png</img>
+			<img duration="100" key="5">/images/zorro/IMG_Zorro_KnockBackRecover_6.png</img>
+			<img duration="100" key="6">/images/zorro/IMG_Zorro_KnockBackRecover_7.png</img>		
+		</knockBackRecover>
+		
 		<yokkoudori airBool="false" airIndex="0"	loopIndex="0" loops="false">
 			<img duration="600" key="0">/images/zorro/IMG_Zorro_AirSpecialAttack2_1.png</img>
 			<img duration="400" key="1">/images/zorro/IMG_Zorro_AirSpecialAttack2_2.png</img>

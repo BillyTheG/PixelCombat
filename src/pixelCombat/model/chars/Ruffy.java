@@ -334,12 +334,14 @@ public class Ruffy
   
   public void finishing()
   {
+	  
+	  this.releasedDusts.remove(this.gear2aura);
 	  if (!this.statusLogic.isWinning()) {
 	      return;
 	    }  
 	  
     setGear2On(false);
-    this.releasedDusts.remove(this.gear2aura);
+   
     switch (this.picManager.getCurrFrameIndex())
     {
     case 0: 
@@ -457,8 +459,8 @@ public class Ruffy
   
   public void loadFurtherImages(List<ArrayList<Image>> player_all, Map<String, ArrayList<Image>> player)
   {
-    player_all.add(31, (ArrayList<Image>)player.get("gear2transform"));
-    player_all.add(32, (ArrayList<Image>)player.get("gigantoGatling"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<Image>)player.get("gear2transform"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+2, (ArrayList<Image>)player.get("gigantoGatling"));
   }
   
   public void checkFurtherCombos(List<ArrayList<String>> combos, List<String> result)

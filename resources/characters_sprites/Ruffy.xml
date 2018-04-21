@@ -322,6 +322,13 @@
 			<img duration="250" key="8">/images/ruffy/IMG_Ruffy_Air_Special_1_9.png</img>
 			<img duration="200" key="9">/images/ruffy/IMG_Ruffy_Air_Special_1_10.png</img>
 		</airSpecialAttack1>
+			
+		<knockBackRecover airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="350" key="0">/images/ruffy/IMG_Ruffy_Jump_3_re.png</img>
+			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
+			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+		</knockBackRecover>
+		
 		<gear2transform airBool="false" airIndex="0" loopIndex="0" loops="false">
 			<img duration="300" key="0">/images/ruffy/IMG_Ruffy_Dash_7.png</img>
 			<img duration="750" key="1">/images/ruffy/IMG_Ruffy_Gear2_Transform_1.png</img>

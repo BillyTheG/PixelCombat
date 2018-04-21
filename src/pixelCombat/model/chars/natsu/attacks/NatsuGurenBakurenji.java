@@ -136,7 +136,7 @@ public class NatsuGurenBakurenji
       if ((this.natsu.picManager.isAlmostFinished(11)) && (this.punches > 0))
       {
         this.punches -= 1;
-        this.natsu.enemy.physics.VX += this.natsu.getDir() * 0.25F;
+        this.natsu.physics.VX += this.natsu.getDir() * 0.25F;
         this.natsu.picManager.resetToIndex(4);
       }
       break;

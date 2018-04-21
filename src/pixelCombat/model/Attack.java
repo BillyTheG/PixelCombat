@@ -1,6 +1,7 @@
 package pixelCombat.model;
 
 import pixelCombat.enums.AttackStates;
+import pixelCombat.enums.MovementStates;
 
 
 /**
@@ -64,7 +65,14 @@ public abstract class Attack {
 	public void check()
 	{
 		if(user.checkDefender(user.enemy) && isAttacking())
+		{
+			if (user.statusLogic.isRight()) {
+				user.enemy.statusLogic.setMovementStates(MovementStates.LEFT);
+			} else {
+				user.enemy.statusLogic.setMovementStates(MovementStates.RIGHT);
+			}
 			checkContent();
+		}
 		if(user.animationTimeRunnedOut() && isAttacking())
 		{
 			checkFinished();

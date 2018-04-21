@@ -8,12 +8,12 @@
             <img key="2" duration="200">/images/natsu/IMG_Natsu_Stand_3_re.png</img>
         </stand>
         <move  airBool="false" airIndex="0" loops="true" loopIndex="0">
-	   <img key="0" duration="100">/images/natsu/IMG_Natsu_Move_1_re.png</img>
-	   <img key="1" duration="100">/images/natsu/IMG_Natsu_Move_2_re.png</img>
-	   <img key="2" duration="100">/images/natsu/IMG_Natsu_Move_3_re.png</img>
-	   <img key="3" duration="50">/images/natsu/IMG_Natsu_Move_4_re.png</img>
-	   <img key="4" duration="100">/images/natsu/IMG_Natsu_Move_5_re.png</img>
-	   <img key="5" duration="50">/images/natsu/IMG_Natsu_Move_6_re.png</img>
+	  		<img key="0" duration="100">/images/natsu/IMG_Natsu_Move_1_re.png</img>
+	   		<img key="1" duration="100">/images/natsu/IMG_Natsu_Move_2_re.png</img>
+	   		<img key="2" duration="100">/images/natsu/IMG_Natsu_Move_3_re.png</img>
+	   		<img key="3" duration="50">/images/natsu/IMG_Natsu_Move_4_re.png</img>
+	   		<img key="4" duration="100">/images/natsu/IMG_Natsu_Move_5_re.png</img>
+	   		<img key="5" duration="50">/images/natsu/IMG_Natsu_Move_6_re.png</img>
         </move>
         
         <jumping  airBool="false" airIndex="0" loops="true" loopIndex="3">
@@ -39,42 +39,42 @@
         
         <specialAttack2  airBool="false" airIndex="0" loops="false" loopIndex="0">
             <img key="0" duration="300">/images/natsu/IMG_Natsu_specialAttack1_1_re.png</img>
-	    <img key="1" duration="300">/images/natsu/IMG_Natsu_specialAttack1_2_re.png</img>
-	    <img key="2" duration="100">/images/natsu/IMG_Natsu_specialAttack1_3_re.png</img>
-	    <img key="3" duration="100">/images/natsu/IMG_Natsu_specialAttack1_4_re.png</img>
-	    <img key="4" duration="100">/images/natsu/IMG_Natsu_specialAttack1_5_re.png</img>
-	    <img key="5" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
-	    <img key="6" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
-	    <img key="7" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
-	    <img key="8" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
-	    <img key="9" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
-	    <img key="10" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
-	    <img key="11" duration="100">/images/natsu/IMG_Natsu_specialAttack1_8_re.png</img>
-	    <img key="12" duration="100">/images/natsu/IMG_Natsu_specialAttack1_9_re.png</img>		
+	    	<img key="1" duration="300">/images/natsu/IMG_Natsu_specialAttack1_2_re.png</img>
+	    	<img key="2" duration="100">/images/natsu/IMG_Natsu_specialAttack1_3_re.png</img>
+	    	<img key="3" duration="100">/images/natsu/IMG_Natsu_specialAttack1_4_re.png</img>
+	    	<img key="4" duration="100">/images/natsu/IMG_Natsu_specialAttack1_5_re.png</img>
+	    	<img key="5" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
+	    	<img key="6" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
+	    	<img key="7" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
+	    	<img key="8" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
+	    	<img key="9" duration="100">/images/natsu/IMG_Natsu_specialAttack1_6_re.png</img>
+	    	<img key="10" duration="100">/images/natsu/IMG_Natsu_specialAttack1_7_re.png</img>
+	    	<img key="11" duration="100">/images/natsu/IMG_Natsu_specialAttack1_8_re.png</img>
+	    	<img key="12" duration="100">/images/natsu/IMG_Natsu_specialAttack1_9_re.png</img>		
         </specialAttack2>
         
         <specialAttack3  airBool="false" airIndex="0" loops="false" loopIndex="0">
-        <img key="0" duration="600">/images/natsu/IMG_Natsu_specialAttack2_1_re.png</img>
-	    <img key="1" duration="100">/images/natsu/IMG_Natsu_specialAttack2_2_re.png</img>
-	    <img key="2" duration="100">/images/natsu/IMG_Natsu_specialAttack2_4_re.png</img>
-	    <img key="3" duration="30">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
-        <img key="4" duration="30">/images/natsu/IMG_Natsu_specialAttack2_9_re.png</img>
-	    <img key="5" duration="30">/images/natsu/IMG_Natsu_specialAttack2_10_re.png</img>
-	    <img key="6" duration="30">/images/natsu/IMG_Natsu_specialAttack2_11_re.png</img>
-	    <img key="7" duration="30">/images/natsu/IMG_Natsu_specialAttack2_12_re.png</img>
-	    <img key="8" duration="30">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
-        <img key="9" duration="100">/images/natsu/IMG_Natsu_specialAttack2_9_re.png</img>
-	    <img key="10" duration="100">/images/natsu/IMG_Natsu_specialAttack2_10_re.png</img>
-	    <img key="11" duration="100">/images/natsu/IMG_Natsu_specialAttack2_11_re.png</img>
-	    <img key="12" duration="100">/images/natsu/IMG_Natsu_specialAttack2_12_re.png</img>
-	    <img key="13" duration="100">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
-	    <img key="14" duration="100">/images/natsu/IMG_Natsu_specialAttack2_6_re.png</img>
-	    <img key="15" duration="100">/images/natsu/IMG_Natsu_specialAttack2_7_re.png</img>
-	    <img key="16" duration="100">/images/natsu/IMG_Natsu_specialAttack2_7_re.png</img>
+        	<img key="0" duration="600">/images/natsu/IMG_Natsu_specialAttack2_1_re.png</img>
+	    	<img key="1" duration="100">/images/natsu/IMG_Natsu_specialAttack2_2_re.png</img>
+	   	 	<img key="2" duration="100">/images/natsu/IMG_Natsu_specialAttack2_4_re.png</img>
+	    	<img key="3" duration="30">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
+        	<img key="4" duration="30">/images/natsu/IMG_Natsu_specialAttack2_9_re.png</img>
+	    	<img key="5" duration="30">/images/natsu/IMG_Natsu_specialAttack2_10_re.png</img>
+	    	<img key="6" duration="30">/images/natsu/IMG_Natsu_specialAttack2_11_re.png</img>
+	    	<img key="7" duration="30">/images/natsu/IMG_Natsu_specialAttack2_12_re.png</img>
+	    	<img key="8" duration="30">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
+        	<img key="9" duration="100">/images/natsu/IMG_Natsu_specialAttack2_9_re.png</img>
+	    	<img key="10" duration="100">/images/natsu/IMG_Natsu_specialAttack2_10_re.png</img>
+	    	<img key="11" duration="100">/images/natsu/IMG_Natsu_specialAttack2_11_re.png</img>
+	    	<img key="12" duration="100">/images/natsu/IMG_Natsu_specialAttack2_12_re.png</img>
+	    	<img key="13" duration="100">/images/natsu/IMG_Natsu_specialAttack2_5_re.png</img>
+	    	<img key="14" duration="100">/images/natsu/IMG_Natsu_specialAttack2_6_re.png</img>
+	    	<img key="15" duration="100">/images/natsu/IMG_Natsu_specialAttack2_7_re.png</img>
+	    	<img key="16" duration="100">/images/natsu/IMG_Natsu_specialAttack2_7_re.png</img>
         </specialAttack3>
         
         <isHit  airBool="false" airIndex="0" loops="false" loopIndex="0">
-           <img duration="400" key="0">/images/natsu/IMG_Natsu_Disable_1.png</img>
+          	<img duration="400" key="0">/images/natsu/IMG_Natsu_Disable_1.png</img>
 			<img duration="300" key="1">/images/natsu/IMG_Natsu_Disable_2.png</img>
 			<img duration="200" key="2">/images/natsu/IMG_Natsu_Disable_3.png</img>
         </isHit>
@@ -118,8 +118,8 @@
         
         <retreating  airBool="false" airIndex="0" loops="false" loopIndex="0">
             <img key="0" duration="100">/images/natsu/IMG_Natsu_retreat_1_re.png</img>
-   	    <img key="1" duration="100">/images/natsu/IMG_Natsu_retreat_2_re.png</img>
-   	    <img key="2" duration="100">/images/natsu/IMG_Natsu_retreat_3_re.png</img>	
+   	    	<img key="1" duration="100">/images/natsu/IMG_Natsu_retreat_2_re.png</img>
+   	    	<img key="2" duration="100">/images/natsu/IMG_Natsu_retreat_3_re.png</img>	
         </retreating>
 
          <dashing  airBool="false" airIndex="0" loops="false" loopIndex="0">
@@ -137,24 +137,24 @@
             <img key="0" duration="800">/images/natsu/IMG_Natsu_SpecialAttack3_1.png</img>
             <img key="1" duration="100">/images/natsu/IMG_Natsu_SpecialAttack3_2.png</img>
             <img key="2" duration="100">/images/natsu/IMG_Natsu_SpecialAttack3_3.png</img>
-	    <img key="3" duration="1800">/images/natsu/IMG_Natsu_SpecialAttack3_4.png</img>     
+	   	 	<img key="3" duration="1800">/images/natsu/IMG_Natsu_SpecialAttack3_4.png</img>     
 	</specialAttack4>
 		
 	<specialAttack5  airBool="false" airIndex="0" loops="false" loopIndex="0">
-	    <img key="0" duration = "2800">/images/natsu/IMG_Natsu_superAttack_1.png</img>
-	    <img key="1" duration = "2800">/images/natsu/IMG_Natsu_superAttack_2.png</img>
-	    <img key="2" duration = "3800">/images/natsu/IMG_Natsu_superAttack_3.png</img>
-	    <img key="3" duration = "2600">/images/natsu/IMG_Natsu_superAttack_4.png</img>
-        <img key="4" duration = "100">/images/natsu/IMG_Natsu_superAttack_5.png</img>
-	    <img key="5" duration = "100">/images/natsu/IMG_Natsu_superAttack_6.png</img>
-	    <img key="6" duration = "100">/images/natsu/IMG_Natsu_superAttack_7.png</img>
-	    <img key="7" duration = "100">/images/natsu/IMG_Natsu_superAttack_8.png</img>
-	    <img key="8" duration = "100">/images/natsu/IMG_Natsu_superAttack_9.png</img>
-        <img key="9" duration = "100">/images/natsu/IMG_Natsu_superAttack_10.png</img>
-	    <img key="10" duration = "300">/images/natsu/IMG_Natsu_superAttack_11.png</img>
-	    <img key="11" duration = "300">/images/natsu/IMG_Natsu_superAttack_12.png</img>
-	    <img key="12" duration = "200">/images/natsu/IMG_Natsu_superAttack_13.png</img>
-	    <img key="13" duration = "3000">/images/natsu/IMG_Natsu_superAttack_14.png</img>
+	    	<img key="0" duration = "2800">/images/natsu/IMG_Natsu_superAttack_1.png</img>
+	    	<img key="1" duration = "2800">/images/natsu/IMG_Natsu_superAttack_2.png</img>
+	    	<img key="2" duration = "3800">/images/natsu/IMG_Natsu_superAttack_3.png</img>
+	    	<img key="3" duration = "2600">/images/natsu/IMG_Natsu_superAttack_4.png</img>
+        	<img key="4" duration = "100">/images/natsu/IMG_Natsu_superAttack_5.png</img>
+	    	<img key="5" duration = "100">/images/natsu/IMG_Natsu_superAttack_6.png</img>
+	    	<img key="6" duration = "100">/images/natsu/IMG_Natsu_superAttack_7.png</img>
+	    	<img key="7" duration = "100">/images/natsu/IMG_Natsu_superAttack_8.png</img>
+	    	<img key="8" duration = "100">/images/natsu/IMG_Natsu_superAttack_9.png</img>
+        	<img key="9" duration = "100">/images/natsu/IMG_Natsu_superAttack_10.png</img>
+	    	<img key="10" duration = "300">/images/natsu/IMG_Natsu_superAttack_11.png</img>
+	    	<img key="11" duration = "300">/images/natsu/IMG_Natsu_superAttack_12.png</img>
+	    	<img key="12" duration = "200">/images/natsu/IMG_Natsu_superAttack_13.png</img>
+	    	<img key="13" duration = "3000">/images/natsu/IMG_Natsu_superAttack_14.png</img>
 	</specialAttack5>
 
 	<basicAttack21  airBool="false" airIndex="0" loops="false" loopIndex="0">
@@ -290,6 +290,18 @@
 	<airSpecialAttack1 airBool="false" airIndex="0" loopIndex="0" loops="false">
 		<img duration="100" key="0">/images/natsu/IMG_Natsu_Air_Defend_1.png</img>
 	</airSpecialAttack1>
+   	
+   	<knockBackRecover airBool="false" airIndex="0" loopIndex="0" loops="false">
+			<img duration="100" key="0">/images/natsu/IMG_Natsu_KnockBackRecover_1.png</img>
+			<img duration="100" key="1">/images/natsu/IMG_Natsu_KnockBackRecover_2.png</img>
+			<img duration="100" key="2">/images/natsu/IMG_Natsu_KnockBackRecover_3.png</img>
+			<img duration="100" key="3">/images/natsu/IMG_Natsu_KnockBackRecover_4.png</img>
+			<img duration="100" key="4">/images/natsu/IMG_Natsu_KnockBackRecover_5.png</img>
+			<img duration="100" key="5">/images/natsu/IMG_Natsu_KnockBackRecover_6.png</img>
+			<img duration="100" key="6">/images/natsu/IMG_Natsu_KnockBackRecover_7.png</img>
+			<img duration="100" key="7">/images/natsu/IMG_Natsu_KnockBackRecover_8.png</img>
+			<img duration="100" key="8">/images/natsu/IMG_Natsu_KnockBackRecover_9.png</img>		
+	</knockBackRecover>
    	
     </sprites>
 </character>

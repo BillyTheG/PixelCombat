@@ -1279,5 +1279,41 @@
 					x="-0.30001736" y="0.37998867" />
 			</box_list>
 		</runAttack2>
+		<knockBackRecover>
+			<box_list picture="0">
+				<box height="1.0" hurts="false" id="0" width="1.6499987" x="0.27998924"
+					y="0.020000458" />
+			</box_list>
+			<box_list picture="1">
+				<box height="1.0" hurts="false" id="0" width="1.6499977" x="0.31998444"
+					y="-0.100004196" />
+			</box_list>
+			<box_list picture="2">
+				<box height="0.9999995" hurts="false" id="0" width="1.6499977"
+					x="0.1399765" y="-0.040009975" />
+			</box_list>
+			<box_list picture="3">
+				<box height="1.0" hurts="false" id="0" width="1.6499977" x="0.3599701"
+					y="-0.26001263" />
+			</box_list>
+			<box_list picture="4">
+				<box height="1.0" hurts="false" id="0" width="1.6499996" x="0.61996555"
+					y="-0.8600135" />
+				<box height="1.0" hurts="false" id="1" width="1.0" x="-0.040006638"
+					y="0.1600008" />
+			</box_list>
+			<box_list picture="5">
+				<box height="2.0499992" hurts="false" id="0" width="1.1000004"
+					x="-0.020041466" y="0.11998749" />
+				<box height="1.0" hurts="false" id="1" width="1.0" x="0.4799919"
+					y="-1.4599986" />
+			</box_list>
+			<box_list picture="6">
+				<box height="2.0499992" hurts="false" id="0" width="1.1000004"
+					x="-4.673004E-5" y="0.07998276" />
+				<box height="1.0" hurts="false" id="1" width="1.0" x="0.39998913"
+					y="-1.4399986" />
+			</box_list>
+		</knockBackRecover>
 	</boxes>
 </character>

@@ -378,7 +378,7 @@ public class Zorro
   
   public void loadFurtherImages(List<ArrayList<Image>> player_all, Map<String, ArrayList<Image>> player)
   {
-    player_all.add(31, (ArrayList<Image>)player.get("yokkoudori"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<Image>)player.get("yokkoudori"));
   }
   
   public void checkFurtherCombos(List<ArrayList<String>> combos, List<String> result)

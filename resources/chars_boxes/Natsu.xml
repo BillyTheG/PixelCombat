@@ -824,6 +824,43 @@
 				<box height="2.0499992" hurts="false" id="0" width="1.6500006" x="0.1999855" y="0.09999657"/>
 			</box_list>
 		</airSpecialAttack1>
-		
+		<knockBackRecover>
+			<box_list picture="0">
+				<box height="1.5" hurts="false" id="0" width="1.4499989" x="-0.079995155"
+					y="0.24000454" />
+			</box_list>
+			<box_list picture="1">
+				<box height="1.5" hurts="false" id="0" width="1.4499989" x="-0.060002327"
+					y="0.11999893" />
+			</box_list>
+			<box_list picture="2">
+				<box height="1.5" hurts="false" id="0" width="1.4499989" x="0.039992332"
+					y="0.05999279" />
+			</box_list>
+			<box_list picture="3">
+				<box height="1.5" hurts="false" id="0" width="1.4499989" x="0.11998844"
+					y="-0.22001266" />
+			</box_list>
+			<box_list picture="4">
+				<box height="1.4999995" hurts="false" id="0" width="1.4499989"
+					x="0.25998402" y="-0.16001463" />
+			</box_list>
+			<box_list picture="5">
+				<box height="1.499999" hurts="false" id="0" width="1.4499989" x="0.5799818"
+					y="-0.18001795" />
+			</box_list>
+			<box_list picture="6">
+				<box height="1.4999995" hurts="false" id="0" width="1.4499979"
+					x="0.61998177" y="-0.10002136" />
+			</box_list>
+			<box_list picture="7">
+				<box height="1.5" hurts="false" id="0" width="1.4499989" x="0.27996922"
+					y="-0.1800251" />
+			</box_list>
+			<box_list picture="8">
+				<box height="1.4999995" hurts="false" id="0" width="1.4499989"
+					x="0.17996216" y="-0.18002844" />
+			</box_list>
+		</knockBackRecover>
 	</boxes>
 </character>

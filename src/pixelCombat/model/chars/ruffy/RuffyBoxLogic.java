@@ -6,7 +6,8 @@ import pixelCombat.utils.Console;
 
 public class RuffyBoxLogic extends BoxLogic{
 
-	private final int GigantoGatling = 32;
+	public 	final int GEAR2TRANSFORM = MAX_STANDARD_SPRITES+1;
+	private final int GigantoGatling = MAX_STANDARD_SPRITES+2;
 
 	public RuffyBoxLogic(Character character, Console console) {
 		super(character,console);
@@ -19,7 +20,7 @@ public class RuffyBoxLogic extends BoxLogic{
 			updateBoxSeq(GEAR2TRANSFORM,"gear2transform");
 			break;
 		case GigantoGatling :
-			updateBoxSeq(GEAR2TRANSFORM,"gigantoGatling");
+			updateBoxSeq(GigantoGatling,"gigantoGatling");
 			break;
 		default:
 			break;
