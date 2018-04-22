@@ -14,6 +14,7 @@ public abstract class AttackLogic {
 	// General Attacks
 
 	public boolean isAttacking() {
+		//sd
 
 		if (	   attackStatus == AttackStates.isComboAttacking 
 				|| attackStatus == AttackStates.isSpecialAttacking1

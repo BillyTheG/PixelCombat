@@ -13,7 +13,8 @@ public class FireSpearAura
   public FireSpearAura(Vector2d pos, boolean faceRight)
   {
     super(pos, faceRight);
-    ArrayList<Image> images = new ArrayList<Image>();
+    ArrayList<Image> images = new ArrayList<Image>(); 
+    //test
     
     images.add(loadImage("/dusts/IMG_Dust_Fire_Spear_Aura_1.png"));
     images.add(loadImage("/dusts/IMG_Dust_Fire_Spear_Aura_2.png"));
