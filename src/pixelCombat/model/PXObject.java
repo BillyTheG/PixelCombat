@@ -14,7 +14,7 @@ public abstract class PXObject {
 	public Vector2d pos;
 	private int id = 0;
 	public float dir = 1;
-	public int rank; // 0:= low, 1:=normal 2:= high for projectile
+	public int rank; 
 	public float delta = 0;
 	protected float jumpSpeed = 0f;
 	public static float FREEZE_TIME = 0.25f;
