@@ -76,19 +76,17 @@ public class ZorroJumpAttack
   
   public void checkFinished()
   {
-    this.user.setJumpAttacking(false);
     getUser().setSwitcher(true);
     this.user.viewLogic.update();
   }
   
   public boolean isAttacking()
   {
-    return getUser().isJumpAttacking();
+    return user.attackLogic.isJumpAttacking1();
   }
   
   public void resetStats()
   {
-    this.user.setJumpAttacking(false);
     getUser().setSwitcher(true);
     this.user.viewLogic.update();
   }

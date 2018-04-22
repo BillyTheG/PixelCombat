@@ -21,7 +21,7 @@ public abstract class PicManager<T> {
 	protected int currFrameIndex = 0;
 	protected float animTime = 0f;
 	protected float totalDuration = 0f;
-	public boolean once = false;
+	public boolean loops = false;
 	protected int loopPoint = 0;
 	protected int currentAnimation = 0;
 	protected int lastAnimation = 0;
@@ -45,7 +45,7 @@ public abstract class PicManager<T> {
 	public void setup() {
 		animation = Images.get(currentAnimation);
 		time = times.get(currentAnimation);
-		once = loopBools.get(currentAnimation);
+		loops = loopBools.get(currentAnimation);
 		loopPoint = this.loopIndizes.get(currentAnimation);
 		reset(this.animation, this.time);
 		loadFrames();
@@ -163,11 +163,11 @@ public abstract class PicManager<T> {
 	}
 
 	public boolean isOnce() {
-		return once;
+		return loops;
 	}
 
 	public void setOnce(boolean once) {
-		this.once = once;
+		this.loops = once;
 	}
 
 	public int getLoopPoint() {

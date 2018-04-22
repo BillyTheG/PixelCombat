@@ -10,6 +10,8 @@ import pixelCombat.enums.TimeState;
 
 public abstract class StatusLogic {
 
+	public static final float BOTTOM_BELT = PXMapHandler.GROUNDLEVEL-1.2f;
+
 	// Movement
 	private boolean onAir = false;
 
@@ -92,6 +94,7 @@ public abstract class StatusLogic {
 				|| character.attackLogic.isAttacking()
 				|| isJumping() || isJumpFalling()
 				|| isJumpRecovering()
+				|| isOnAir()
 				|| isDashing()
 				|| isDead()
 				|| isDefending()
@@ -129,7 +132,7 @@ public abstract class StatusLogic {
 				|| isDashing() ;
 	}
 
-	public boolean canNotSpecial1() {
+	public boolean canNotSpecialAttack() {
 		return character.attackLogic.isAttacking()	
 				|| isKnockback() || isKnockBackRecovering() 
 				|| isMoving()
@@ -140,10 +143,11 @@ public abstract class StatusLogic {
 				|| isDefending() 
 				|| isJumpRecovering()
 				|| isJumping()
+				|| isOnAir()
 				|| isJumpFalling();
 	}
 
-	public boolean canNotAirSpecial1() {
+	public boolean canNotAirSpecialAttack() {
 		return ( character.attackLogic.isAttacking()
 			    || isKnockback() || isKnockBackRecovering() 			   
 				|| isDead()
@@ -152,8 +156,7 @@ public abstract class StatusLogic {
 				|| isDashing() 
 				|| isDefending() 
 				|| isJumpRecovering()
-				|| (!isJumping()
-				&& !isJumpFalling()));
+				|| (!isJumping() && !isOnAir() && !isJumpFalling()));
 	}
 	
 	
@@ -161,6 +164,7 @@ public abstract class StatusLogic {
 	public boolean canNotMove() {
 		return canNotAttack() 
 				|| isJumping()
+				|| isOnAir()
 				|| isJumpFalling()
 				|| character.getPos().y < PXMapHandler.GROUNDLEVEL;
 
@@ -175,7 +179,7 @@ public abstract class StatusLogic {
 	}
 
 	public boolean canAirAttack() {
-		return isJumping()&& isJumpFalling()  && 	Math.abs(character.getPos().y - PXMapHandler.GROUNDLEVEL) > 1f;
+		return isJumping() &&  isOnAir()&& isJumpFalling()  && 	Math.abs(character.getPos().y - PXMapHandler.GROUNDLEVEL) > 1f;
 	}
 	
 	
@@ -303,7 +307,7 @@ public abstract class StatusLogic {
 
 
 	public boolean isOnAir() {
-		return onAir || character.getPos().y < PXMapHandler.GROUNDLEVEL-1.2f;
+		return onAir || character.getPos().y < BOTTOM_BELT;
 	}
 
 
@@ -374,7 +378,7 @@ public abstract class StatusLogic {
 
 
 	public boolean isJumping() {
-		return getActionStates() == ActionStates.JUMP || isOnAir();
+		return getActionStates() == ActionStates.JUMP;
 	}
 
 	boolean isJumpFalling() {

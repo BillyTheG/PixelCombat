@@ -459,8 +459,7 @@ public class KomboHandler {
 				engine.getController().onKey(KeyCommand.P2SPECIALATTACK3, true);
 
 		} 
-		else if (combos.get(17) == result  && player.statusLogic.isJumping()) {
-			player.stopActing();
+		else if (combos.get(17) == result  && (player.statusLogic.isJumping()|| player.statusLogic.isOnAir())) {
 			if (player.getName() == "p1")
 				engine.getController().onKey(KeyCommand.P1AIRSPECIALATTACK1, true);
 			else
@@ -527,7 +526,7 @@ public class KomboHandler {
 
 		if (time_combo1 > 0f && lastKey.equals("attack")) {
 			
-			if (!player.isJumpAttacking()
+			if (!player.attackLogic.isJumpAttacking()
 					&& !player.attackLogic.isSpecialAttacking()
 					&& !player.attackLogic.isRunAttacking()
 					&& !player.statusLogic.isJumping()) {
@@ -547,7 +546,7 @@ public class KomboHandler {
 		lastKey = lastKey.substring(0, subIndex);
 		if (time_combo1 > 0f && lastKey.equals("attack1")) 
 		{
-			if (!arena.getPlayer1().isJumpAttacking() && !player.statusLogic.isJumping()) 
+			if (!arena.getPlayer1().attackLogic.isJumpAttacking() && !player.statusLogic.isJumping()) 
 			{
 				player.cancelAction();
 				player.physics.VX = 0f;

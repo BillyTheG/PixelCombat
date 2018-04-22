@@ -38,17 +38,16 @@ public class NatsuJumpAttack
   public void checkFinished()
   {
     this.natsu.viewLogic.update();
-    this.natsu.setJumpAttacking(false);
   }
   
   public boolean isAttacking()
   {
-    return getUser().isJumpAttacking();
+	  return natsu.attackLogic.isJumpAttacking1();
   }
   
   public void resetStats()
   {
     this.natsu.viewLogic.update();
-    this.natsu.setJumpAttacking(false);
+
   }
 }

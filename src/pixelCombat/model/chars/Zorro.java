@@ -158,7 +158,7 @@ public class Zorro
       ((Attack)this.attacks.get("basicAttack22")).process();
     } else if (this.attackLogic.isBasicAttacking23()) {
       ((Attack)this.attacks.get("basicAttack23")).process();
-    } else if (isJumpAttacking()) {
+    } else if (this.attackLogic.isJumpAttacking1()) {
       ((Attack)this.attacks.get("jumpAttack")).process();
     }
   }

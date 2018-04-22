@@ -151,7 +151,7 @@ public class GamePlay
       }
       if (!hold)
       {
-        if ((this.arena.getPlayer1().statusLogic.isJumping()) && (!this.arena.getPlayer1().statusLogic.canNotAirSpecial1())) {
+        if ((this.arena.getPlayer1().statusLogic.isJumping()) && (!this.arena.getPlayer1().statusLogic.canNotAirSpecialAttack())) {
           KomboHandler.pressKey("attack", this.arena.getPlayer1());
         }
         if (!this.arena.getPlayer1().statusLogic.canNotAttack()) {
@@ -166,8 +166,9 @@ public class GamePlay
       }
       if (!hold) {
         KomboHandler.pressKey("dash", this.arena.getPlayer1());
+        this.controller.onKey(KeyCommand.P1DASH, hold);
       }
-      this.controller.onKey(KeyCommand.P1DASH, hold);
+     
       break;
     case B: 
       if (this.arena.getPlayer2().freeze) {
@@ -269,8 +270,9 @@ public class GamePlay
       {
         if (!hold) {
           KomboHandler.pressKey("dash", this.arena.getPlayer2());
+          this.controller.onKey(KeyCommand.P2DASH, hold);
         }
-        this.controller.onKey(KeyCommand.P2DASH, hold);
+       
       }
       break;
     case NUMPAD5: 

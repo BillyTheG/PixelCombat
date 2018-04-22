@@ -12,7 +12,7 @@ public enum AttackStates {
 	isSpecialAttacking1,
 	isSpecialAttacking2,
 	isSpecialAttacking3,
-	isJumpAttacking, 
+	isJumpAttacking1, 
 	isSpecialAttacking4, 
 	isSpecialAttacking5, 
 	isSpecialAttacking6,

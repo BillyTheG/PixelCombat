@@ -27,6 +27,7 @@ import pixelCombat.model.PXMapHandler;
 import pixelCombat.model.PXObject;
 import pixelCombat.model.Particle;
 import pixelCombat.model.Spirit;
+import pixelCombat.model.StatusLogic;
 import pixelCombat.npc.NPC;
 import pixelCombat.projectiles.Projectile;
 import pixelCombat.utils.GameEngine;
@@ -164,16 +165,13 @@ public class GamePlayController extends Controller  implements EventListener{
 	
 
 	public boolean defend(boolean hold, Character player) {
-		if (!player.statusLogic.canNotDefend()) {
-						
+		if (!player.statusLogic.canNotDefend())
 			player.statusLogic.setResetDefending(true);
-			if(!hold){
-				player.statusLogic.setActionStates(ActionStates.STAND);
-				player.statusLogic.setResetDefending(false);
-			}
-				
-			}
-		
+	
+		if(!hold){
+			player.statusLogic.setResetDefending(false);
+			player.statusLogic.setActionStates(ActionStates.STAND);	
+		}
 		return true;
 	}
 
@@ -214,7 +212,7 @@ public class GamePlayController extends Controller  implements EventListener{
 	      player.attackLogic.setAttackStatus(specialAttack);
 	      return true;
 	    }
-	    if (!player.statusLogic.canNotSpecial1())
+	    if (!player.statusLogic.canNotSpecialAttack())
 	    {
 	      if (!player.enoughMagicMinus(input_seq)) {
 	        return true;
@@ -231,7 +229,7 @@ public class GamePlayController extends Controller  implements EventListener{
 	    if (!player.enoughMagic(input_seq, true)) {
 	      return true;
 	    }
-	    if ((!player.statusLogic.canNotAirSpecial1()) && 
+	    if ((!player.statusLogic.canNotAirSpecialAttack()) && 
 	      (Math.abs(player.getPos().y - 7.5F) > 2.0F))
 	    {
 	      if (!player.enoughMagicMinus(input_seq)) {
@@ -265,26 +263,27 @@ public class GamePlayController extends Controller  implements EventListener{
 		
 			if(!hold && !player.statusLogic.isOnAir())
 				player.statusLogic.setActionStates(ActionStates.STAND);
-			
-			player.physics.isMoving =true;
+			if(player.aiManager == null)
+				player.physics.isMoving =true;
 		}
 		
 		if (	player.statusLogic.isActive() 
 			&& 	player.statusLogic.isOnAir() 
-			&& !player.isJumpAttacking() 
+			&& !player.attackLogic.isJumpAttacking() 
 			&& !player.attackLogic.isAttacking() 
 			&& !player.statusLogic.isDashing() ) {
 			player.statusLogic.setMovementStates(movementState);
 			if(!player.statusLogic.isMoving())
 				{
-					if(!player.collidesBY)
+//					if(!player.collidesBY)
 						player.physics.VX = factor*player.getMovementspeed()*1.75f;
 				}
 			
 			if(!hold)
 				player.statusLogic.setActionStates(ActionStates.JUMP);
 			
-			player.physics.isMoving =true;
+			if(player.aiManager == null)
+				player.physics.isMoving =true;
 		}
 		
 		return true;	
@@ -293,15 +292,15 @@ public class GamePlayController extends Controller  implements EventListener{
 	
 	public boolean basicAttack(Character player,AttackStates attackStates)
 	{
-		if(	player.statusLogic.isJumping()  
-				&& 	Math.abs(player.getPos().y - PXMapHandler.GROUNDLEVEL) > 2f) 
+		if(	(player.statusLogic.isJumping() || player.statusLogic.isOnAir() ) 
+				&& 	player.getPos().y < StatusLogic.BOTTOM_BELT) 
 			{
-				if (player.statusLogic.canNotAirSpecial1())
+				if (player.statusLogic.canNotAirSpecialAttack())
 					return true;
-				if (player.statusLogic.canNotAttack() && !player.statusLogic.isJumping()) 
+				if (player.statusLogic.canNotAttack() && !player.statusLogic.isOnAir() && !player.statusLogic.isJumping()) 
 					return true;
-
-				player.setJumpAttacking(true); 
+				
+				player.attackLogic.setAttackStatus(AttackStates.isJumpAttacking1);
 				return true;
 			}
 			if (player.statusLogic.canNotAttack())
@@ -314,7 +313,7 @@ public class GamePlayController extends Controller  implements EventListener{
 				player.statusLogic.setActionStates(ActionStates.STAND);
 				return true;
 			}
-			if(!player.statusLogic.isJumping())
+			if(!player.statusLogic.isJumping() && !player.statusLogic.isOnAir())
 			{
 				player.statusLogic.setActionStates(ActionStates.STAND);
 				player.attackLogic.setAttackStatus(attackStates);

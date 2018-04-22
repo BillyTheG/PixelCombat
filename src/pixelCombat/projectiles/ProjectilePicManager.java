@@ -26,7 +26,7 @@ public class ProjectilePicManager extends PicManager<Projectile>{
 	public void init() {
 		animation = Images.get(CREATION);
 		time = times.get(CREATION);
-		once = loopBools.get(CREATION);
+		loops = loopBools.get(CREATION);
 		reset(this.animation, this.time);
 		loadFrames();
 	}
@@ -36,7 +36,7 @@ public class ProjectilePicManager extends PicManager<Projectile>{
 		if (!frames.isEmpty())
 			animTime += delta;
 
-		if (animTime >= totalDuration && once) 
+		if (animTime >= totalDuration && loops) 
 		{
 			// Bei Loop muss Zeit auf den LoopPunkt gesetzt werden.
 			float beginTime = 0f;
@@ -48,7 +48,7 @@ public class ProjectilePicManager extends PicManager<Projectile>{
 			currFrameIndex = loopPoint;
 		}
 
-		if (animTime >= totalDuration && !once) {
+		if (animTime >= totalDuration && !loops) {
 			animTime = totalDuration;
 		}
 

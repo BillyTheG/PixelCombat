@@ -56,11 +56,7 @@ public abstract class ViewLogic {
 		// Character ist aktiv
 		if (character.statusLogic.isActive() || character.statusLogic.isBlinking()) {
 
-			// muss noch geändert werden
-			if (character.isJumpAttacking()) {
-				character.picManager.change(JUMPATTACK);
-				return;
-			} else {
+			
 				if (character.attackLogic.isAttacking()) {
 
 					switch (character.attackLogic.getAttackStatus()) {
@@ -78,6 +74,9 @@ public abstract class ViewLogic {
 						break;
 					case isBasicAttacking23:
 						character.picManager.change(BASICATTACK23);
+						break;
+					case isJumpAttacking1:
+						character.picManager.change(JUMPATTACK);
 						break;
 					case isComboAttacking:
 						character.picManager.change(SPECIALATTACK1);
@@ -153,8 +152,6 @@ public abstract class ViewLogic {
 					}
 					return;
 				}
-
-			}
 
 		} else {
 

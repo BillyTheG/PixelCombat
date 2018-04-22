@@ -67,6 +67,10 @@
 				<box height="3.6999965" hurts="false" id="0" width="1.0"
 					x="-0.060027122" y="-0.28000736" />
 			</box_list>		
+			<box_list picture="3">
+				<box height="3.6999965" hurts="false" id="0" width="1.0"
+					x="-0.020018578" y="-0.260005" />
+			</box_list>
 		</jumpFall>	
 		
 		<dashing>

@@ -395,7 +395,8 @@ public class PXMapHandler
   
   private boolean playersCanCollide(Character player1, Character player2)
   {
-    return (player1.statusLogic.isJumping()) || (player2.statusLogic.isJumping()) || 
+    return player1.statusLogic.isJumping() || player2.statusLogic.isJumping() || 
+    		player1.statusLogic.isOnAir() || player2.statusLogic.isOnAir() || 
     		(player1.statusLogic.isJumpFalling()) || (player2.statusLogic.isJumpFalling()) || 
       ((!player1.statusLogic.isActive()) && (!player2.statusLogic.isActive())) || 
       (player1.statusLogic.isDashing()) || (player2.statusLogic.isDashing());

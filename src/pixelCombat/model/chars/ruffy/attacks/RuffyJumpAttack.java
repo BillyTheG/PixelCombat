@@ -2,6 +2,7 @@ package pixelCombat.model.chars.ruffy.attacks;
 
 import pixelCombat.dusts.JetPistoleBlueHit;
 import pixelCombat.enums.ActionStates;
+import pixelCombat.enums.AttackStates;
 import pixelCombat.enums.GlobalStates;
 import pixelCombat.model.Attack;
 import pixelCombat.model.chars.Ruffy;
@@ -65,7 +66,6 @@ public class RuffyJumpAttack
   
   public void checkFinished()
   {
-    this.user.setJumpAttacking(false);
     getUser().setSwitcher(true);
     getUser().sound("/audio/punch.wav");
     this.user.viewLogic.update();
@@ -73,12 +73,12 @@ public class RuffyJumpAttack
   
   public boolean isAttacking()
   {
-    return getUser().isJumpAttacking();
+    return getUser().attackLogic.isJumpAttacking1();
   }
   
   public void resetStats()
   {
-    this.user.setJumpAttacking(false);
+    this.user.attackLogic.setAttackStatus(AttackStates.notAttacking);
     getUser().setSwitcher(true);
   }
 }

@@ -82,7 +82,6 @@ public abstract class Character extends PXObject {
 	public float x;
 	public float distanceToGo = 0.0F;
 	private Vector2d target = new Vector2d();
-	private boolean isJumpAttacking = false;
 	protected float retreatRangeMax = 10.0F;
 	protected float retreatRange = this.retreatRangeMax;
 	private float knockBackRange = 1.0F;
@@ -202,49 +201,40 @@ public abstract class Character extends PXObject {
 	protected abstract String retreat();
 
 	public void updateMovement(){
-			if(Math.abs(physics.VX)<= 1f && !physics.isMoving){
-				statusLogic.setActionStates(ActionStates.STAND);
-			}		
+		if(aiManager != null)
+			return;
+		
+		if(Math.abs(physics.VX)<= 1f && !physics.isMoving){
+			statusLogic.setActionStates(ActionStates.STAND);
+		}		
 		
 	}
 	
-	public void updateJump() {
-		
-		if (getPos().y == this.groundLevel) {
-			this.jumpDust.reset(new Vector2d(this.pos.x, this.groundLevel + 0.25F), this.statusLogic.isRight());
-			this.releasedDusts.add(this.jumpDust);
-			this.statusLogic.setOnAir(false);
-			this.timeManager.getJumpDelay().setY(Float.valueOf(0.0F));
-			setJumpAttacking(false);
-			this.attackLogic.setAttackStatus(AttackStates.notAttacking);
-			this.freeze = false;
-			this.freeze_loop = false;
-			setSwitcher(true);
-
-			sound(this.landSound);
-			this.statusLogic.setActionStates(ActionStates.JUMP_RECOVER);
-		}
-		
+	public void updateJump() {		
 		if (this.physics.VY >0) {
 			this.statusLogic.setActionStates(ActionStates.JUMPFALL);
 		}
 	}
-	
-	public void updateJumpFall() {
+
+	private void updateOnAir() {
 		if (getPos().y == this.groundLevel) {
 			this.jumpDust.reset(new Vector2d(this.pos.x, this.groundLevel + 0.25F), this.statusLogic.isRight());
 			this.releasedDusts.add(this.jumpDust);
 			this.statusLogic.setOnAir(false);
 			this.timeManager.getJumpDelay().setY(Float.valueOf(0.0F));
-			setJumpAttacking(false);
 			this.attackLogic.setAttackStatus(AttackStates.notAttacking);
 			this.freeze = false;
 			this.freeze_loop = false;
 			setSwitcher(true);
-
+			
 			sound(this.landSound);
 			this.statusLogic.setActionStates(ActionStates.JUMP_RECOVER);
 		}
+	}
+	
+	public void updateJumpFall() {
+		updateOnAir();
+		
 	}
 
 	private void updateJumpRecover() {
@@ -262,7 +252,7 @@ public abstract class Character extends PXObject {
 		
 		if (this.statusLogic.isResetDefending()) {
 			this.timeManager.getDefendReleaseTime().setY(Float.valueOf(0.0F));
-			if (this.statusLogic.isJumping()) {
+			if (this.statusLogic.isJumping() || this.statusLogic.isOnAir()) {
 				this.statusLogic.setActionStates(ActionStates.AIR_DEFENDING);
 			} else {
 				this.statusLogic.setActionStates(ActionStates.DEFENDING);
@@ -396,15 +386,20 @@ public abstract class Character extends PXObject {
 			if (this.statusLogic.isWinning()) {
 				finishing();
 			}
-			if ((this.attackLogic.isBasicAttacking()) || (isJumpAttacking())) {
+			if ((this.attackLogic.isBasicAttacking()) || this.attackLogic.isJumpAttacking()) {
 				updateAttack();
 			}
 			if (this.statusLogic.isJumping()) {
 				updateJump();
 			}
 			
-			if (this.statusLogic.isJumpFalling()) {
-				updateJumpFall();			}
+			if(this.statusLogic.isOnAir())
+				updateOnAir();
+			
+			if (this.statusLogic.isJumpFalling()) 
+				updateJumpFall();			
+			
+			
 			
 			if (this.statusLogic.isJumpRecovering()) {
 				updateJumpRecover();
@@ -430,6 +425,7 @@ public abstract class Character extends PXObject {
 			dying();
 		}
 		this.picManager.update(this.delta);
+//		this.viewLogic.update();
 		this.boxLogic.update();
 	}
 
@@ -608,9 +604,6 @@ public abstract class Character extends PXObject {
 			this.attackLogic.setAttackStatus(AttackStates.notAttacking);
 		}
 		this.statusLogic.setAHitDelay(false);
-		if (this.isJumpAttacking) {
-			setJumpAttacking(false);
-		}
 		this.statusLogic.setActionStates(ActionStates.STAND);
 	}
 
@@ -623,8 +616,6 @@ public abstract class Character extends PXObject {
 		this.statusLogic.setActionStates(ActionStates.STAND);
 
 		this.attackLogic.setAttackStatus(AttackStates.notAttacking);
-
-		setJumpAttacking(false);
 
 		this.switcher = true;
 
@@ -657,9 +648,9 @@ public abstract class Character extends PXObject {
 			energy = ((Attack) this.attacks.get(input_seq)).getRequiredEnergy();
 		} catch (Exception localException) {
 		}
-		boolean permittedAttackBeforeRelease = (!this.attackLogic.isBasicAttacking1())
-				&& (!this.attackLogic.isBasicAttacking21()) && (!isJumpAttacking()) ? false
-						: airAttack ? isJumpAttacking() : true;
+		boolean permittedAttackBeforeRelease = (!this.attackLogic.isBasicAttacking1()) 	&& (!this.attackLogic.isBasicAttacking21()) 
+				&& (!this.attackLogic.isJumpAttacking1()) ? false
+						: airAttack ? this.attackLogic.isJumpAttacking1() : true;
 		if ((energy <= this.actualMagicpoints)
 				&& ((!this.statusLogic.canNotAttack()) || (permittedAttackBeforeRelease))) {
 			stopActing();
@@ -873,15 +864,6 @@ public abstract class Character extends PXObject {
 		return this.maxLifepoints;
 	}
 
-	public boolean isJumpAttacking() {
-		return this.isJumpAttacking;
-	}
-
-	public void setJumpAttacking(boolean b) {
-		this.isJumpAttacking = b;
-		this.viewLogic.update();
-	}
-
 	public String toString() {
 		return "Player " + getName();
 	}
@@ -916,7 +898,7 @@ public abstract class Character extends PXObject {
 	}
 
 	public boolean checkAirCombo(String spriteSeq) {
-		return (((Boolean) this.airBools.get(spriteSeq)).booleanValue()) && (!this.statusLogic.canNotAirSpecial1())
+		return (((Boolean) this.airBools.get(spriteSeq)).booleanValue()) && (!this.statusLogic.canNotAirSpecialAttack())
 				&& (Math.abs(getPos().y - 7.5F) > 2.0F);
 	}
 

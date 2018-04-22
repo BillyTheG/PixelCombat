@@ -29,8 +29,8 @@ public abstract class AttackLogic {
 				|| attackStatus == AttackStates.isBasicAttacking2
 				|| attackStatus == AttackStates.isRunAttacking1 
 				|| attackStatus == AttackStates.isRunAttacking2
-				|| attackStatus == AttackStates.isAirSpecialAttacking1 
-				|| character.isJumpAttacking()
+				|| attackStatus == AttackStates.isAirSpecialAttacking1
+				|| attackStatus == AttackStates.isJumpAttacking1
 				|| furtherAttacks()
 				)
 			return true;
@@ -51,7 +51,23 @@ public abstract class AttackLogic {
 		return false;
 	}
 	
+	// Jump Attacks
+		public boolean isJumpAttacking() {
+
+			if (attackStatus == AttackStates.isJumpAttacking1 )
+				return true;
+
+			return false;
+		}
 	
+		public boolean isJumpAttacking1() {
+
+			if (attackStatus == AttackStates.isJumpAttacking1)
+				return true;
+
+			return false;
+		}
+
 
 	public boolean isBasicAttacking1() {
 

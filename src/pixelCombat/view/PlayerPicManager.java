@@ -39,7 +39,7 @@ public class PlayerPicManager extends PicManager<Character>{
 	public final int INTRO = 23;
 	public final int WIN = 24;
 	public final int DEAD = 25;
-
+	public final int JUMPFALL = 32;
 
 	public PlayerPicManager(Character character, ArrayList<ArrayList<Image>> Images,
 			ArrayList<ArrayList<Float>> times, ArrayList<Integer> loopIndizes,
@@ -50,7 +50,7 @@ public class PlayerPicManager extends PicManager<Character>{
 	public void init() {
 		animation = Images.get(STAND);
 		time = times.get(STAND);
-		once = loopBools.get(STAND);
+		loops = loopBools.get(STAND);
 		reset(this.animation, this.time);
 		loadFrames();
 	}
@@ -61,21 +61,11 @@ public class PlayerPicManager extends PicManager<Character>{
 		if (frames.size() > 1)
 			animTime += delta;
 
-		if (animTime >= totalDuration && once) {
-			// Bei Loop muss Zeit auf den LoopPunkt gesetzt werden.
-//			
+		if (animTime >= totalDuration && loops) {	
 			resetToIndex(loopPoint);			
-			
-//			float beginTime = 0f;
-//			for (int i = 0; i < loopPoint; i++) {
-//				beginTime += time.get(i);
-//			}
-//
-//			animTime = (animTime + beginTime) % totalDuration;
-//			currFrameIndex = loopPoint;
 		}
 
-		if (animTime >= totalDuration && !once) {
+		if (animTime >= totalDuration && !loops) {
 			animTime = totalDuration;
 		}
 
@@ -90,7 +80,7 @@ public class PlayerPicManager extends PicManager<Character>{
 	private void checkOnGround() {
 
 		if (Math.abs(pxObject.getPos().y - PXMapHandler.GROUNDLEVEL) <= 0.25f && pxObject.statusLogic.getActionStates() == ActionStates.STAND
-				&& this.currentAnimation != STAND && pxObject.statusLogic.isActive() && !pxObject.isJumpAttacking()
+				&& this.currentAnimation != STAND && pxObject.statusLogic.isActive() && !pxObject.attackLogic.isJumpAttacking()
 				&& pxObject.attackLogic.getAttackStatus() == AttackStates.notAttacking) {
 			this.lastAnimation = this.currentAnimation;
 			this.currentAnimation = STAND;
@@ -104,38 +94,45 @@ public class PlayerPicManager extends PicManager<Character>{
 	@Override
 	public void change(int nextAnim) 
 	{
+		if (currentAnimation == nextAnim)
+			return;
 		
 		// Spieler ist in Luft, Bilder werden ab LoopIndex gezeichnet
 		if ((nextAnim == JUMPING && currentAnimation != STAND && currentAnimation != MOVE)
 				|| (nextAnim == STAND && Math.abs(pxObject.getPos().y - PXMapHandler.GROUNDLEVEL) > LEASTDISTANCETOGROUND)) {
 			// Bilder, Zeiten, LoopIndex holen
-			this.pxObject.statusLogic.setActionStates_manuell(ActionStates.JUMP);
+			this.pxObject.statusLogic.setActionStates_manuell(ActionStates.JUMPFALL);
 			this.lastAnimation = this.currentAnimation;
-			this.currentAnimation = JUMPING;
-			once = this.loopBools.get(JUMPING);
-			loopPoint = this.loopIndizes.get(JUMPING);
-			this.animation = Images.get(JUMPING);
-			this.time = times.get(JUMPING);
-			
-			// Frames erneuern
-			totalDuration = 0;
-			currFrameIndex = loopIndizes.get(JUMPING);
+			this.currentAnimation = JUMPFALL;
 			this.pxObject.boxLogic.update();
-			this.frames = new ArrayList<AnimFrame>();
-			loadFrames();
-
-			// animTime auf LoopIndex setzen
-			float beginTime = 0f;
-			for (int i = 0; i < loopPoint; i++) 
-			{
-				beginTime += time.get(i);
-			}
-			animTime = (animTime + beginTime) % totalDuration;
+			
+			setup();
+			
+//			this.lastAnimation = this.currentAnimation;
+//			this.currentAnimation = JUMPING;
+//			once = this.loopBools.get(JUMPING);
+//			loopPoint = this.loopIndizes.get(JUMPING);
+//			this.animation = Images.get(JUMPING);
+//			this.time = times.get(JUMPING);
+//			
+//			// Frames erneuern
+//			totalDuration = 0;
+//			currFrameIndex = loopIndizes.get(JUMPING);
+//			this.pxObject.boxLogic.update();
+//			this.frames = new ArrayList<AnimFrame>();
+//			loadFrames();
+//
+//			// animTime auf LoopIndex setzen
+//			float beginTime = 0f;
+//			for (int i = 0; i < loopPoint; i++) 
+//			{
+//				beginTime += time.get(i);
+//			}
+//			animTime = (animTime + beginTime) % totalDuration;
 			return;
 		}
 
-		if (currentAnimation == nextAnim)
-			return;
+		
 
 		if (Images.get(nextAnim).size() == 0)
 			return;

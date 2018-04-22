@@ -60,7 +60,7 @@ public class PlayerPhysics
     if ((((Character)this.pxObject).statusLogic.isActive()) || (((Character)this.pxObject).statusLogic.isBlinking()) || (((Character)this.pxObject).statusLogic.isInvincible()) || (((Character)this.pxObject).statusLogic.isDisabled())) {
       friction(delta);
     }
-    if (this.isMoving) {
+    if (this.isMoving || (pxObject.aiManager != null)&& pxObject.statusLogic.isMoving() ){
       acceleration(delta);
     }
     this.isMoving = false;

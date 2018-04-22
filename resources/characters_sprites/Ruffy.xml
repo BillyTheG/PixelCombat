@@ -326,10 +326,11 @@
 			<img duration="200" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
 		</knockBackRecover>
 		
-		<jumpFall airBool="false" airIndex="1" loopIndex="1" loops="true">>
+		<jumpFall airBool="false" airIndex="1" loopIndex="2" loops="true">>
 			<img duration="250" key="0">/images/ruffy/IMG_Ruffy_Jump_3_re.png</img>
-			<img duration="200" key="1">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
-			<img duration="300" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+			<img duration="150" key="1">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
+			<img duration="150" key="2">/images/ruffy/IMG_Ruffy_Jump_5_re.png</img>
+			<img duration="150" key="3">/images/ruffy/IMG_Ruffy_Jump_4_re.png</img>
 		</jumpFall>
 		
 		<gear2transform airBool="false" airIndex="0" loopIndex="0" loops="false">
