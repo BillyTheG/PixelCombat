@@ -22,7 +22,7 @@ When we "finished" the project for getting only the credit points, I was not ful
 Here is one video, how it looks like today. 
 
 
-[![IMAGE ALT TEXT HERE](https://i.ytimg.com/vi/Y-ufnZv3pXo/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCp0iKXKAUCNLP6HDxf-DonKDNqVQ)](https://www.youtube.com/watch?v=5bwIy8VUrNc&feature=youtu.be)
+[!(https://i.ytimg.com/vi/Y-ufnZv3pXo/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCp0iKXKAUCNLP6HDxf-DonKDNqVQ)](https://www.youtube.com/watch?v=5bwIy8VUrNc&feature=youtu.be)
 
 <b>Future plans</b>
 
@@ -39,7 +39,7 @@ Here is one video, how it looks like today.
 
 <b>Importing the Project</b>
 
-0. I am using Eclipse IDE for Java Developers Version: Luna Service Release 2 (4.4.2)
+0. I am using Eclipse IDE Mars 2 for Java Developers Version: Luna Service Release 2 (4.4.2)
 1. Should be jre1.8.0_101++
 2. Main Class: PixelCombat.java in the default directory
 3. Run Configurations: VM Arguments: -Xms1024m -Xmx4g
