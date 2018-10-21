@@ -1,7 +1,10 @@
 package pixelCombat.projectiles;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -80,6 +83,8 @@ public class ProjectileManager
 				String filename = file.split(".xml")[0];
 				System.out.println("Now, the file " + filename + " will be loaded.");
 				
+				
+				
 				InputStream stream1 = ProjectileManager.class.getResourceAsStream("/projectiles_sprites/" + filename + ".xml");
 				InputSource source1 = new InputSource(stream1);
 			    XMLReader xmlreader1 = XMLReaderFactory.createXMLReader();
@@ -152,9 +157,13 @@ public class ProjectileManager
 				String filename = file.split(".xml")[0];
 				System.out.println("Now, the file " + filename + " will be loaded.");
 				
-				path = "/projectiles_sprites/" + filename + ".xml";
-				InputStream stream1 = getClass().getResourceAsStream(path);
-				InputSource source1 = new InputSource(stream1);
+				URL url  = getClass().getClassLoader().getResource("projectiles_sprites/" + filename + ".xml");
+				path = url.getPath();
+				InputStream imageStream = new FileInputStream(new File(path));
+								
+			//	path = "/projectiles_sprites/" + filename + ".xml";
+			//	InputStream stream1 = getClass().getResourceAsStream(path);
+				InputSource source1 = new InputSource(imageStream);
 			    XMLReader xmlreader1 = XMLReaderFactory.createXMLReader();
 			    CharacterParser ch = new CharacterParser(console);
 			    xmlreader1.setContentHandler(ch);
@@ -178,9 +187,13 @@ public class ProjectileManager
 				this.loopVariabels.put(filename.toLowerCase(), projectile_loopIndices);
 				this.times.put(filename.toLowerCase(), projectile_times);
 			    
+				URL boxUrl  = getClass().getClassLoader().getResource("projectile/boxes/" + filename + ".xml");
+				path = boxUrl.getPath();
+				InputStream boxStream = new FileInputStream(new File(path));
+	
 				
-			    InputStream stream2 = getClass().getResourceAsStream("/projectile/boxes/" + filename + ".xml");
-				InputSource source2 = new InputSource(stream2);
+			//  InputStream stream2 = getClass().getResourceAsStream("/projectile/boxes/" + filename + ".xml");
+				InputSource source2 = new InputSource(boxStream);
 				XMLReader xmlreader2 = XMLReaderFactory.createXMLReader();
 				XML_Box_Reader bo = new XML_Box_Reader(console);
 				xmlreader2.setContentHandler(bo);
