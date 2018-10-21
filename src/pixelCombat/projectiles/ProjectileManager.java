@@ -139,7 +139,7 @@ public class ProjectileManager
 	private void loadAll() 
 	{
 		//All Projectiles
-		
+		String path = "";
 		try {
 			ArrayList<String> files = new ArrayList<>();
 			
@@ -152,7 +152,8 @@ public class ProjectileManager
 				String filename = file.split(".xml")[0];
 				System.out.println("Now, the file " + filename + " will be loaded.");
 				
-				InputStream stream1 = getClass().getResourceAsStream("/projectiles_sprites/" + filename + ".xml");
+				path = "/projectiles_sprites/" + filename + ".xml";
+				InputStream stream1 = getClass().getResourceAsStream(path);
 				InputSource source1 = new InputSource(stream1);
 			    XMLReader xmlreader1 = XMLReaderFactory.createXMLReader();
 			    CharacterParser ch = new CharacterParser(console);
@@ -205,7 +206,7 @@ public class ProjectileManager
 		catch (Exception e) 
 		{
 			e.printStackTrace();
-			System.out.println("Fehler beim Laden der Projektile");
+			System.out.println("The file: "+path +" does not exist. Check your resources");
 		}
 		
 	}
