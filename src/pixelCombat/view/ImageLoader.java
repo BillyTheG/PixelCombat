@@ -252,7 +252,7 @@ public class ImageLoader implements Runnable {
 			InputStream imageStream = getClass().getClassLoader().getResourceAsStream("characters_sprites/" + name + ".xml");
 		
 			
-			//InputStream stream = StatsParser.class.getResourceAsStream("/characters_sprites/" + name + ".xml");
+		//	InputStream stream = StatsParser.class.getResourceAsStream("/characters_sprites/" + name + ".xml");
 			InputSource source = new InputSource(imageStream);
 
 			XMLReader xmlreader = XMLReaderFactory.createXMLReader();
