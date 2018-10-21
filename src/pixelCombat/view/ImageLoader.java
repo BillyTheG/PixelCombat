@@ -1,6 +1,9 @@
 package pixelCombat.view;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +18,6 @@ import pixelCombat.model.Character;
 import pixelCombat.model.PXMapHandler;
 import pixelCombat.utils.Console;
 import pixelCombat.xml.CharacterParser;
-import pixelCombat.xml.StatsParser;
 
 public class ImageLoader implements Runnable {
 
@@ -248,8 +250,13 @@ public class ImageLoader implements Runnable {
 
 		try {
 
-			InputStream stream = StatsParser.class.getResourceAsStream("/characters_sprites/" + name + ".xml");
-			InputSource source = new InputSource(stream);
+			URL url  = getClass().getClassLoader().getResource("characters_sprites/" + name + ".xml");
+			String path = url.getPath();
+			InputStream imageStream = new FileInputStream(new File(path));
+		
+			
+			//InputStream stream = StatsParser.class.getResourceAsStream("/characters_sprites/" + name + ".xml");
+			InputSource source = new InputSource(imageStream);
 
 			XMLReader xmlreader = XMLReaderFactory.createXMLReader();
 			CharacterParser ch = new CharacterParser(console);
