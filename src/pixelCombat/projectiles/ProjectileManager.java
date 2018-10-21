@@ -1,10 +1,7 @@
 package pixelCombat.projectiles;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -157,9 +154,7 @@ public class ProjectileManager
 				String filename = file.split(".xml")[0];
 				System.out.println("Now, the file " + filename + " will be loaded.");
 				
-				URL url  = getClass().getClassLoader().getResource("projectiles_sprites/" + filename + ".xml");
-				path = url.getPath();
-				InputStream imageStream = new FileInputStream(new File(path));
+				InputStream imageStream = getClass().getClassLoader().getResourceAsStream("projectiles_sprites/" + filename + ".xml");
 								
 			//	path = "/projectiles_sprites/" + filename + ".xml";
 			//	InputStream stream1 = getClass().getResourceAsStream(path);
@@ -187,9 +182,7 @@ public class ProjectileManager
 				this.loopVariabels.put(filename.toLowerCase(), projectile_loopIndices);
 				this.times.put(filename.toLowerCase(), projectile_times);
 			    
-				URL boxUrl  = getClass().getClassLoader().getResource("projectile/boxes/" + filename + ".xml");
-				path = boxUrl.getPath();
-				InputStream boxStream = new FileInputStream(new File(path));
+				InputStream boxStream = getClass().getClassLoader().getResourceAsStream("projectile/boxes/" + filename + ".xml");;
 	
 				
 			//  InputStream stream2 = getClass().getResourceAsStream("/projectile/boxes/" + filename + ".xml");

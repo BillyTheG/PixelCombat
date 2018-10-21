@@ -1,9 +1,6 @@
 package pixelCombat.view;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -250,9 +247,9 @@ public class ImageLoader implements Runnable {
 
 		try {
 
-			URL url  = getClass().getClassLoader().getResource("characters_sprites/" + name + ".xml");
-			String path = url.getPath();
-			InputStream imageStream = new FileInputStream(new File(path));
+//			URL url  = 
+//			String path = url.getPath();
+			InputStream imageStream = getClass().getClassLoader().getResourceAsStream("characters_sprites/" + name + ".xml");
 		
 			
 			//InputStream stream = StatsParser.class.getResourceAsStream("/characters_sprites/" + name + ".xml");
