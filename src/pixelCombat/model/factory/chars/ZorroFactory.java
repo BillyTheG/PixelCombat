@@ -1,20 +1,21 @@
-package pixelCombat.model.chars;
+package pixelCombat.model.factory.chars;
 
 import java.util.Map;
 
 import pixelCombat.Math.Vector2d;
 import pixelCombat.model.Character;
-import pixelCombat.model.chars.ruffy.RuffyAttackLogic;
-import pixelCombat.model.chars.ruffy.RuffyBoxLogic;
-import pixelCombat.model.chars.ruffy.RuffyStatusLogic;
-import pixelCombat.model.chars.ruffy.RuffyViewLogic;
+import pixelCombat.model.chars.Zorro;
+import pixelCombat.model.chars.zorro.ZorroAttackLogic;
+import pixelCombat.model.chars.zorro.ZorroBoxLogic;
+import pixelCombat.model.chars.zorro.ZorroStatusLogic;
+import pixelCombat.model.chars.zorro.ZorroViewLogic;
 import pixelCombat.model.factory.PCCharacterFactoryInterface;
 import pixelCombat.projectiles.ProjectileManager;
 
-public class RuffyFactory implements PCCharacterFactoryInterface<Ruffy> {
+public class ZorroFactory implements PCCharacterFactoryInterface<Zorro> {
 
 	@Override
-	public Ruffy createCharacter(Map<String, Object> stats,ProjectileManager projectile_manager) {
+	public Zorro createCharacter(Map<String, Object> stats,ProjectileManager projectile_manager) {
 		Vector2d pos = (Vector2d)stats.get("pos");
 		String playerName = (String)stats.get("name");
 		Vector2d direction = (Vector2d)stats.get("dir");
@@ -26,12 +27,12 @@ public class RuffyFactory implements PCCharacterFactoryInterface<Ruffy> {
 //		Integer maxMagicPoints = (Integer)stats.get("mMP");
 //		Float attackSpeed = (Float)stats.get("attackSpeed");
 		
-		Ruffy u = new Ruffy(playerName, hitPoints, pos, direction, maxHitPoints,projectile_manager);
+		Zorro u = new Zorro(playerName, hitPoints, pos, direction, maxHitPoints,projectile_manager);
 		
-		RuffyStatusLogic statusLogic 	= new RuffyStatusLogic(u);
-		RuffyAttackLogic attackLogic 	= new RuffyAttackLogic(u);;
-		RuffyBoxLogic 	boxLogic 		= new RuffyBoxLogic(u,projectile_manager.getConsole());
-		RuffyViewLogic  viewLogic 		= new RuffyViewLogic(u);
+		ZorroStatusLogic statusLogic 	= new ZorroStatusLogic(u);
+		ZorroAttackLogic attackLogic 	= new ZorroAttackLogic(u);;
+		ZorroBoxLogic 	boxLogic 		= new ZorroBoxLogic(u,projectile_manager.getConsole());
+		ZorroViewLogic  viewLogic 		= new ZorroViewLogic(u);
 		
 		u.statusLogic = statusLogic;
 		u.attackLogic = attackLogic;

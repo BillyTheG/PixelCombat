@@ -79,7 +79,7 @@ public class CharacterParser implements ContentHandler {
 	}
 
 	public void startDocument() throws SAXException {
-		console.println("Starte Charakter parsen");
+ 
 	}
 
 	public void endDocument() throws SAXException {

@@ -77,7 +77,8 @@ public class Zorro
   private OniGiriSmoke oniGiriSmoke5;
   private ArrayList<OniGiriSmoke> oniGiriSmokes = new ArrayList<OniGiriSmoke>();
   private int oniGiriSmokeId = 0;
-  private int introBlabberings = 5;
+  private final int introBlabberingsMax = 5;
+  private int introBlabberings = introBlabberingsMax;
   
   public Zorro(String name, int lifePoints, Vector2d pos, Vector2d dir, int maxLifePoints, ProjectileManager projectileManager)
   {
@@ -285,24 +286,38 @@ public class Zorro
   
   public void finishing()
   {
-	  
-	  
-	  
     getUlToraGariArtWork().dead = true;
     this.releasedArtWorks.clear();
-    if (!this.statusLogic.isWinning()) {
+    
+    if (!this.statusLogic.isWinning()) 
         return;
-      }
     
-    
-    switch (this.picManager.getCurrFrameIndex())
-    {
-    case 0: 
-      break;
-    case 1: 
-      break;
-    }
-  }
+	switch (this.picManager.getCurrFrameIndex()) {
+		case 3:
+			if (this.switcher) {
+				sound("/audio/Zorro_Sword_OutOfSheath.wav");
+				this.switcher = false;
+			}
+			break;
+		case 5:
+			if (!this.switcher) {
+				sound("/audio/Zorro_Won_Round.wav");
+				this.switcher = true;
+			}
+			break;			
+		case 8:
+			if (this.picManager.isAlmostFinished(8) && introBlabberings > 0) {
+				this.picManager.resetToIndex(7);
+				this.introBlabberings -= 1;
+			}
+			break;
+		case 9:
+			this.switcher = true;
+			this.introBlabberings = introBlabberingsMax;
+			break;
+		}
+	
+	}
   
   public void introduct()
   {
@@ -321,11 +336,17 @@ public class Zorro
       this.picManager.resetToIndex(7);
       this.introBlabberings -= 1;
     }
+    if ((this.picManager.getCurrFrameIndex() == 10) && (this.switcher)){
+    	sound("/audio/Zorro_Sword_ReturnToSheath.wav");
+        this.switcher = false;
+    }
+    
+    
     if (this.picManager.getAnimTime() == this.picManager.getTotalDuration())
     {
       this.statusLogic.setActionStates(ActionStates.STAND);
       this.switcher = true;
-      this.introBlabberings = 5;
+      this.introBlabberings  = introBlabberingsMax;
     }
   }
   

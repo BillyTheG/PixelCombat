@@ -37,6 +37,8 @@ public class ConsoleStage extends Stage {
 		rootScene = initGameScene();
 		setScene(rootScene);
 		// display GameStage
+		
+		show();
 	}
 
 	/**

@@ -345,6 +345,10 @@ public class Ruffy
     switch (this.picManager.getCurrFrameIndex())
     {
     case 0: 
+    	if(this.switcher){
+    		sound("/audio/Ruffy_Won_Round.wav");
+    		this.switcher = false;
+    	}
       break;
     case 1: 
       break;

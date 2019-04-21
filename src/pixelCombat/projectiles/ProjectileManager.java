@@ -157,7 +157,7 @@ public class ProjectileManager
 				InputStream imageStream = getClass().getClassLoader().getResourceAsStream("projectiles_sprites/" + filename + ".xml");
 								
 			//	path = "/projectiles_sprites/" + filename + ".xml";
-			//	InputStream stream1 = getClass().getResourceAsStream(path);
+				//InputStream stream1 = getClass().getResourceAsStream(path);
 				InputSource source1 = new InputSource(imageStream);
 			    XMLReader xmlreader1 = XMLReaderFactory.createXMLReader();
 			    CharacterParser ch = new CharacterParser(console);
