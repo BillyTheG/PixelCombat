@@ -1,4 +1,4 @@
-package pixelCombat.ki;
+package pixelCombat.ai;
 
 public interface AI {
 

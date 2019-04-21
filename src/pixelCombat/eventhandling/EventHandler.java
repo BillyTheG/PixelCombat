@@ -82,6 +82,7 @@ public class EventHandler {
 	}
 
 	public void init() {
+		engine.console.println("Intro Phase starts");
 		this.event = GameEvent.INTRODUCTION;
 		this.player1 = arena.getPlayer1();
 		this.player2 = arena.getPlayer2();
@@ -196,6 +197,7 @@ public class EventHandler {
 				} else if (fight.dead) {
 					freezeready = false;
 					beginFight = false;
+					engine.console.println("Battle Phase starts");
 					this.event = GameEvent.BATTLE;
 					this.timeBuffer = 0f;
 					player1ready = false;
@@ -254,6 +256,7 @@ public class EventHandler {
 			timeBuffer = 0f;
 			engine.getGamePlay().resetNextRoundBorder();
 			GamePlayView.CAMERA_X_SPEED /= CAMERA_ACCELERATION;
+			engine.console.println("End Phase starts");
 			this.event = GameEvent.END;
 		}
 		// player1 wins
@@ -263,7 +266,7 @@ public class EventHandler {
 			timeBuffer = 0f;
 			engine.getGamePlay().resetNextRoundBorder();
 			GamePlayView.CAMERA_X_SPEED /= CAMERA_ACCELERATION;
-
+			engine.console.println("End Phase starts");
 			this.event = GameEvent.END;
 		}
 	}

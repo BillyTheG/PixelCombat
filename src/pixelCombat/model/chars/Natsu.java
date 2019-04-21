@@ -7,6 +7,7 @@ import java.util.Random;
 
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
+import pixelCombat.ai.NatsuKi;
 import pixelCombat.auras.Natsu_Aura;
 import pixelCombat.auras.Natsu_Aurabeam;
 import pixelCombat.controller.GamePlayController;
@@ -17,7 +18,6 @@ import pixelCombat.dusts.Lightning;
 import pixelCombat.dusts.NatsuPunch;
 import pixelCombat.dusts.ZorroSpecialBG;
 import pixelCombat.enums.ActionStates;
-import pixelCombat.ki.NatsuKi;
 import pixelCombat.model.Attack;
 import pixelCombat.model.Character;
 import pixelCombat.model.Dust;

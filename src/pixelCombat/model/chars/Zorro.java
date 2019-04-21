@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
+import pixelCombat.ai.ZorroKI;
 import pixelCombat.artworks.TatsumakiDragon;
 import pixelCombat.artworks.UlToraGari;
 import pixelCombat.artworks.ZorroWaterDrop;
@@ -25,7 +26,6 @@ import pixelCombat.dusts.ZorroShiShinShinSonSlash;
 import pixelCombat.dusts.ZorroSpecialBG;
 import pixelCombat.enums.ActionStates;
 import pixelCombat.enums.AttackStates;
-import pixelCombat.ki.ZorroKI;
 import pixelCombat.model.Attack;
 import pixelCombat.model.Character;
 import pixelCombat.model.chars.zorro.ZorroAttackLogic;

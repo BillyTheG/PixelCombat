@@ -50,9 +50,9 @@ public class GameEngine
   public volatile Console console;
   private ConsoleStage consoleStage;
   private MediaPlayer mediaPlayer;
-  public static boolean TOGGLE_MUSIC = true;
+  public static boolean TOGGLE_MUSIC = false;
   private List<String> hits = new ArrayList<>();
-private Media hit;
+  private Media hit;
   public static final boolean TOGGLE_SOUND = true;
   
   public GameEngine(Pane mainViewGroup, GameStage gameStage, Console console, ConsoleStage consoleStage)
@@ -153,6 +153,10 @@ private Media hit;
   
   public void musicMP3(String url)
   {
+	  if (!TOGGLE_MUSIC) {
+	      return;
+	    }  
+	  
 	hits.add(url);  
     hit = new Media(getClass().getResource(url).toString());
     mediaPlayer = new MediaPlayer(hit);
@@ -161,10 +165,18 @@ private Media hit;
   }
   
   public void musicPreviousMP3(){
+	  console.println("The previous music will be played again");
+	  if(hits.size()==0){
+		  console.println("There was no previous music");
+		  return;
+	  }
+			  
 	  if(hits.size()>1)
 		  musicMP3(hits.get(hits.size()-2));
 	  else
 		  musicMP3(hits.get(0));
+	  
+	  console.println("Previous music has been played.");
   }
   
   public void update(long deltaTime)

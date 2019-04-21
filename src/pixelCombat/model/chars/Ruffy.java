@@ -7,6 +7,7 @@ import java.util.Random;
 
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
+import pixelCombat.ai.RuffyKI;
 import pixelCombat.artworks.Gear2;
 import pixelCombat.artworks.Gear3;
 import pixelCombat.artworks.JetGatling;
@@ -29,7 +30,6 @@ import pixelCombat.dusts.JetPistoleBlueHit;
 import pixelCombat.dusts.RuffySpecialBG;
 import pixelCombat.enums.ActionStates;
 import pixelCombat.enums.AttackStates;
-import pixelCombat.ki.RuffyKI;
 import pixelCombat.model.Attack;
 import pixelCombat.model.Character;
 import pixelCombat.model.chars.ruffy.RuffyAttackLogic;

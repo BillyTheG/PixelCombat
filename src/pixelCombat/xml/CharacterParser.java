@@ -37,7 +37,7 @@ public class CharacterParser implements ContentHandler {
 	private int airIndex ;
 	private boolean airBool;
 	private float duration;
-	
+	private String  readingType = "";
 	private boolean readingSprites = false;
 	private boolean readingAnimation = false;
 	private boolean readingIMG = false;
@@ -50,7 +50,6 @@ public class CharacterParser implements ContentHandler {
 	public CharacterParser(Console console) {
 		this.console = console;
 	}
-
 
 
 
@@ -79,11 +78,11 @@ public class CharacterParser implements ContentHandler {
 	}
 
 	public void startDocument() throws SAXException {
- 
+		console.println("Initiating Parsing of Image-Elements");
 	}
 
 	public void endDocument() throws SAXException {
-		console.println("Ende Charakter parsen");
+		console.println("Parsing of "+readingType+ " Image-Elements done");
 	}
 
 	public void startPrefixMapping(String prefix, String uri)
@@ -137,6 +136,9 @@ public class CharacterParser implements ContentHandler {
 
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
+		if (localName.equals("type")){
+			readingType =""+ ElementContent;
+		}
 		if (readingSprites == true) {
 			if (readingAnimation == true) {
 				if (readingIMG == true) {

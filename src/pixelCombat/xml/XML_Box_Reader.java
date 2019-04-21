@@ -30,6 +30,7 @@ public class XML_Box_Reader implements ContentHandler {
 	private boolean readingBox = false;
 	private boolean readingBoxList = false;
 	private boolean readingIMG = false;
+	private String  readingType = "";
 	private boolean readingAnimation = false;
 	private int picture = 0;
 	private int id = 0;
@@ -81,13 +82,12 @@ public class XML_Box_Reader implements ContentHandler {
 	}
 
 	public void startDocument() throws SAXException {
-		console.println("Starte Charakter parsen");
+		console.println("Initiating Parsing of Box-Elements");
 	}
 
 	public void endDocument() throws SAXException {
-		console.println("Ende Charakter parsen");
+		console.println("Parsing of "+readingType+ " Box-Elements done");
 	}
-
 	public void startPrefixMapping(String prefix, String uri)
 			throws SAXException {
 	}
@@ -135,6 +135,9 @@ public class XML_Box_Reader implements ContentHandler {
 
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
+		if (localName.equals("type")){
+			readingType =""+ ElementContent;
+		}
 		if (readingAnimation == true) {
 			if(readingIMG == true){
 			if (readingBoxList == true) {
