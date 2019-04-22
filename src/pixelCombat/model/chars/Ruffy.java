@@ -58,7 +58,8 @@ import pixelCombat.view.EffectManager;
 public class Ruffy
   extends Character
 {
-  public float range = 8.0F;
+  private static final int GatlingMax = 50;
+public float range = 8.0F;
   public boolean jetHammer = false;
   public int gatling = 40;
   public int SuperAttackIntro = 10;
@@ -512,7 +513,7 @@ public class Ruffy
   
   public int getGatling_max()
   {
-    return 40;
+    return GatlingMax;
   }
   
   public int getGatling()
