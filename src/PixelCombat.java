@@ -2,6 +2,7 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.CacheHint;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.input.InputEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -38,7 +39,9 @@ public class PixelCombat extends Application {
 	
 	private ConsoleStage consoleStage;
 	private Console console;
-	private Scene consoleScene;
+	private Scene 	consoleScene;
+	private Pane 	consoleRoot;
+	private Canvas 	consoleCanvas;
 
 	public static void main(String[] args) {
 		// Redraw canvas when size changes.		
@@ -48,13 +51,21 @@ public class PixelCombat extends Application {
 	@Override
 	public void start(Stage primaryStage) 
 	{
-		console = new WordWrapConsole();
-		consoleStage = new ConsoleStage();
-
+		console 		= new WordWrapConsole();
+		consoleRoot 	= new Pane();			
+		consoleCanvas 	= new Canvas();
+		consoleRoot.getChildren().add(consoleCanvas);			
+		consoleRoot.getChildren().add(console);	
+		consoleStage 	= new ConsoleStage(consoleRoot);
+		letterbox(consoleStage.getScene(),consoleRoot);
+		consoleStage.setResizable(false);
+		
+		
 		// show game
 		gameStage = new GameStage();		
 		letterbox(gameStage.rootScene, gameStage.getGroup()); //scale
 		gameStage.setResizable(false);
+
 		gameStage.setFullScreen(true);
 		mainViewGroup = gameStage.getGroup();
 		engine = new GameEngine(mainViewGroup, gameStage,console,consoleStage);
@@ -63,6 +74,7 @@ public class PixelCombat extends Application {
 		mainViewGroup.setCache(true);
 		mainViewGroup.setCacheShape(true);
 		mainViewGroup.setCacheHint(CacheHint.SPEED);
+		
 		System.gc();
 		gameLoop();
 		

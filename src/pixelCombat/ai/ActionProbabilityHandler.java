@@ -1,4 +1,4 @@
-package pixelCombat.ki;
+package pixelCombat.ai;
 
 import java.util.ArrayList;
 import java.util.Random;

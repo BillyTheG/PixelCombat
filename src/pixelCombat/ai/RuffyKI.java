@@ -1,4 +1,4 @@
-package pixelCombat.ki;
+package pixelCombat.ai;
 
 import pixelCombat.controller.GamePlayController;
 import pixelCombat.enums.AttackStates;

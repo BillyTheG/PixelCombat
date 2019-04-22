@@ -12,27 +12,32 @@ import pixelCombat.gamephase.Title;
 import pixelCombat.stage.ConsoleStage;
 import pixelCombat.stage.GameStage;
 
+/**
+ * <b>Anleitung !!!!:</b> 
+ * <br>
+ * - Zuerst in GameEngine alle Concrets of Gamephase definieren<br>
+ * - Danach ‹berg‰nge zwischen Phasen sicherstellen <br>
+ * - Anschlieﬂend die visits und exists definieren<br>
+ * - accept Methode in GamePhase Concrets mit boolean Parameter (forward:= true, back:= false)<br>
+ * - [Title und Gameplay sind speziell (Kein Back/Forward)]<br>
+ * - GamePlayView s‰ubern<br>
+ * - PXMap in Handler umwandeln und neue Klasse Map mit Attributen definieren<br>
+ * 
+ * 
+ * Info:<br>
+ * accept Methode wird durch Enter oder BackSlash aufgerufen<br>
+ * 
+ * @author BillyG
+ *
+ */
 public class EvalGamePhase implements GamePhaseVisitor {
 
 	private GameEngine 		engine;
 	
-	public EvalGamePhase(GameEngine engine, GameStage gameStage, ConsoleStage consoleStage)
-	{
+	public EvalGamePhase(GameEngine engine, GameStage gameStage, ConsoleStage consoleStage)	{
 		this.engine = engine;
 	}
 	
-//Anleitung !!!!:
-	
-//	- Zuerst in GameEngine alle Concrets of Gamephase definieren
-//	- Danach ‹berg‰nge zwischen Phasen sicherstellen
-//	- Anschlieﬂend die visits und exists definieren
-//	- accept Methode in GamePhase Concrets mit boolean Parameter (forward:= true, back:= false)
-//	- [Title und Gameplay sind speziell (Kein Back/Forward)]
-//	- GamePlayView s‰ubern
-//	- PXMap in Handler umwandeln und neue Klasse Map mit Attributen definieren
-	
-//	Info:
-//	accept Methode wird durch Enter oder BackSlash aufgerufen
 	
 	@Override
 	public GamePhase visit(Title element) 
@@ -41,8 +46,7 @@ public class EvalGamePhase implements GamePhaseVisitor {
 	}
 
 	@Override
-	public GamePhase visit(MainMenue element) 
-	{
+	public GamePhase visit(MainMenue element){
 		switch(element.getMenuPoint())
 		{
 		case ARCADE:
@@ -64,8 +68,7 @@ public class EvalGamePhase implements GamePhaseVisitor {
 	}
 
 	@Override
-	public GamePhase visit(CharacterSelection element) 
-	{
+	public GamePhase visit(CharacterSelection element){
 		
 		return engine.mapSelection;
 	}
@@ -73,10 +76,6 @@ public class EvalGamePhase implements GamePhaseVisitor {
 	@Override
 	public GamePhase visit(MapSelection element) 
 	{
-//		engine.getGameStage().getGroup().getChildren().remove(engine.getGameCanvas());
-//		engine.getGameStage().getGroup().getChildren().add(console);
-//		engine.getGameStage().getGroup().requestLayout();
-//		console.requestLayout();
 		engine.loading.init(false);		
 		Thread thread = new Thread(new Runnable(){
 
@@ -91,8 +90,7 @@ public class EvalGamePhase implements GamePhaseVisitor {
 	}
 
 	@Override
-	public GamePhase visit(GamePlay element) 
-	{
+	public GamePhase visit(GamePlay element){
 		element.reset();	
 		engine.title.reset();
 		return engine.title;
@@ -106,8 +104,7 @@ public class EvalGamePhase implements GamePhaseVisitor {
 	
 	
 	@Override
-	public GamePhase exit(MainMenue element) 
-	{
+	public GamePhase exit(MainMenue element){
 		element.reset();	
 		engine.title.reset();
 		return engine.title;
@@ -115,8 +112,7 @@ public class EvalGamePhase implements GamePhaseVisitor {
 
 
 	@Override
-	public GamePhase exit(CharacterSelection element) 
-	{
+	public GamePhase exit(CharacterSelection element){
 		element.reset();	
 		engine.mainMenue.reset();
 		return engine.mainMenue;

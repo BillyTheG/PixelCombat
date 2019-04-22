@@ -20,11 +20,10 @@ public class Console extends BorderPane {
     public Console() {
     	setLayoutX(0);
         textArea.setEditable(false);
-        textArea.setMaxSize(GamePlayView.SCREEN_WIDTH, GamePlayView.SCREEN_HEIGHT);
-        textArea.setMinSize(GamePlayView.SCREEN_WIDTH, GamePlayView.SCREEN_HEIGHT);
+        textArea.setMaxSize(GamePlayView.SCREEN_WIDTH -23, GamePlayView.SCREEN_HEIGHT);
+        textArea.setMinSize(GamePlayView.SCREEN_WIDTH -23, GamePlayView.SCREEN_HEIGHT);
         textArea.setStyle(""
                 + "-fx-font-size: 14px;"
-                + "-fx-font-style: consolas;"
                 + "-fx-font-weight: bold;"
                 + "-fx-font-family: consolas;"
                 + "-fx-text-fill: white;"

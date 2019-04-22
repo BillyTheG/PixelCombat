@@ -19,8 +19,8 @@ public class InterfaceView {
 	private GamePlayView gamePlayView;
 	private Character player1;
 	private Character player2;
-	private Image interface_player1 = GamePlayView.loadImage("/images/interface_prot_left.png");
-	private Image interface_player2 = GamePlayView.loadImage("/images/interface_prot_right.png");
+	private Image interface_player1 = GamePlayView.loadImage("/images/Interface_prot_left.png");
+	private Image interface_player2 = GamePlayView.loadImage("/images/Interface_prot_right.png");
 	private Image winPoint			= GamePlayView.loadImage("/images/interfaceelements/IMG_Misc_Win_Point_Icon.png");
 	 private Image comboWriting = GamePlayView.loadImage("/images/interfaceelements/Interface_combo_Writing.png");
 	public Map<String,ComboNumber> comboNumber_leaders = new HashMap<>();

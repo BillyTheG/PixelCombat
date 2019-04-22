@@ -1,9 +1,10 @@
-package pixelCombat.model.chars;
+package pixelCombat.model.factory.chars;
 
 import java.util.Map;
 
 import pixelCombat.Math.Vector2d;
 import pixelCombat.model.Character;
+import pixelCombat.model.chars.Natsu;
 import pixelCombat.model.chars.natsu.NatsuAttackLogic;
 import pixelCombat.model.chars.natsu.NatsuBoxLogic;
 import pixelCombat.model.chars.natsu.NatsuStatusLogic;

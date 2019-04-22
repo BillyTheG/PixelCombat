@@ -9,8 +9,6 @@ import pixelCombat.view.Animation;
 
 public class JetBigDustBackDust extends Dust {
 
-	
-	
 	public JetBigDustBackDust(Vector2d pos, boolean faceRight) {
 		super(pos,faceRight);
 		ArrayList<Image> images = new ArrayList<Image>();

@@ -7,7 +7,13 @@ import pixelCombat.enums.GlobalStates;
 import pixelCombat.enums.MovementStates;
 import pixelCombat.enums.TimeState;
 
-
+/**
+ * 
+ * 
+ * @author Xenon
+ * @author BillyG
+ *
+ */
 public abstract class StatusLogic {
 
 	public static final float BOTTOM_BELT = PXMapHandler.GROUNDLEVEL-1.2f;
@@ -40,12 +46,7 @@ public abstract class StatusLogic {
 	}
 
 	public void checkUpdate(){
-		
-//		if(actionStates == ActionStates.MOVE)
-//			character.physics.isMoving =true;
-//		else
-//			character.physics.isMoving =false;
-		
+				
 		switch (globalStates) {
 
 		case ACTIVE:

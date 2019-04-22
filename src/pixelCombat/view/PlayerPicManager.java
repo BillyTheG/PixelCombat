@@ -11,6 +11,7 @@ import pixelCombat.model.PXMapHandler;
 public class PlayerPicManager extends PicManager<Character>{
 
 	
+	private static final float MINIMUM_DURATION_INDEX = 0.30f;
 	private static final float LEASTDISTANCETOGROUND = 0.15f;
 	// Bildsequenzen
 	public final int STAND = 0;
@@ -148,14 +149,20 @@ public class PlayerPicManager extends PicManager<Character>{
 		return animTime >= totalDuration;
 	}
 	
-
+	/**
+	 * Checks if the index time has been finished
+	 * 
+	 * 
+	 * @param currentFrameIndex , the index which should be finished
+	 * @return 
+	 */
 	public boolean isAlmostFinished(int currentFrameIndex) {	
 		int previousIndex 		= currentFrameIndex-1;
 		float middleTime		= animTime -getFrame(previousIndex).endTime;				
 		float diff  			= getFrame(currentFrameIndex).endTime - getFrame(previousIndex).endTime;
 		float percent			= middleTime/diff;	
 			
-		return(percent >= 0.30f);							
+		return(percent >= MINIMUM_DURATION_INDEX);							
 	}
 	
 	public void resetToIndex(int returnIndex) {	

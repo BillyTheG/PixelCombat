@@ -27,8 +27,7 @@ public class Yakkoudori extends Projectile implements ICanExplode{
 	private boolean canSound = true;
 	private boolean switcher;
 	
-	
-	
+		
 	public Yakkoudori(Zorro character,
 			Vector2d pos, Vector2d target,
 			GlobalStates effect, boolean sounding,
@@ -63,8 +62,7 @@ public class Yakkoudori extends Projectile implements ICanExplode{
 				
 	}
 
-	
-	
+		
 	public void sound(String url) {
 		try {
 			
