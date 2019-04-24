@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.model.PXMapHandler;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public class Round2 extends ArtWork {
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.utils.GamePhase;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 import pixelCombat.view.gamephases.GamePlayView;
 
 

@@ -1,4 +1,4 @@
-package pixelCombat.view;
+package pixelCombat.view.animation;
 
 import java.util.ArrayList;
 

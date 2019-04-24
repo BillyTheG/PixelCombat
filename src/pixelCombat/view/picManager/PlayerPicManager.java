@@ -1,12 +1,12 @@
-package pixelCombat.view;
+package pixelCombat.view.picManager;
 
 import java.util.ArrayList;
 
-import javafx.scene.image.Image;
 import pixelCombat.enums.ActionStates;
 import pixelCombat.enums.AttackStates;
 import pixelCombat.model.Character;
 import pixelCombat.model.PXMapHandler;
+import pixelCombat.view.animation.PositionedImage;
 
 public class PlayerPicManager extends PicManager<Character>{
 
@@ -42,7 +42,7 @@ public class PlayerPicManager extends PicManager<Character>{
 	public final int DEAD = 25;
 	public final int JUMPFALL = 32;
 
-	public PlayerPicManager(Character character, ArrayList<ArrayList<Image>> Images,
+	public PlayerPicManager(Character character, ArrayList<ArrayList<PositionedImage>> Images,
 			ArrayList<ArrayList<Float>> times, ArrayList<Integer> loopIndizes,
 			ArrayList<Boolean> loopBools) {
 		super(character,Images,times,loopIndizes,loopBools);

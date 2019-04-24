@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.ai.NatsuKi;
 import pixelCombat.auras.Natsu_Aura;
@@ -38,6 +37,7 @@ import pixelCombat.model.chars.natsu.attacks.NatsuRainenNoMahoNoPika;
 import pixelCombat.model.chars.natsu.attacks.NatsuRunAttack1;
 import pixelCombat.model.chars.natsu.attacks.NatsuRunAttack2;
 import pixelCombat.projectiles.ProjectileManager;
+import pixelCombat.view.animation.PositionedImage;
 
 public class Natsu
   extends Character
@@ -349,7 +349,7 @@ public class Natsu
   
   public void updateMiscs() {}
   
-  public void loadFurtherImages(List<ArrayList<Image>> player_all, Map<String, ArrayList<Image>> player1) {}
+  public void loadFurtherImages(List<ArrayList<PositionedImage>> player_all, Map<String, ArrayList<PositionedImage>> player1) {}
   
   public void checkFurtherCombos(List<ArrayList<String>> combos, List<String> result) {}
   

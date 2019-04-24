@@ -8,7 +8,7 @@ import pixelCombat.npc.Erza;
 import pixelCombat.npc.Gray;
 import pixelCombat.npc.Lucy;
 import pixelCombat.utils.GameEngine;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 import pixelCombat.view.gamephases.GamePlayView;
 
 public class FairyTailGuildDestroyed

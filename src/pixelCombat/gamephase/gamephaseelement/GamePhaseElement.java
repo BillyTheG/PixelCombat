@@ -7,7 +7,7 @@ import javax.sound.sampled.Clip;
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.utils.GamePhase;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public abstract class GamePhaseElement 
 {

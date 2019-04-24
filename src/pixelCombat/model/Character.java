@@ -9,7 +9,6 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-import javafx.scene.image.Image;
 import pixelCombat.Math.BoundingRectangle;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.ai.AIManager;
@@ -28,8 +27,9 @@ import pixelCombat.projectiles.Projectile;
 import pixelCombat.projectiles.ProjectileManager;
 import pixelCombat.utils.Console;
 import pixelCombat.utils.GameEngine;
-import pixelCombat.view.AnimatorThread;
-import pixelCombat.view.PlayerPicManager;
+import pixelCombat.view.animation.AnimatorThread;
+import pixelCombat.view.animation.PositionedImage;
+import pixelCombat.view.picManager.PlayerPicManager;
 
 public abstract class Character extends PXObject {
 	private static final float MAXIMAL_VELOCITY_Y_FOR_INVINCIBLE = 6.0F;
@@ -607,7 +607,7 @@ public abstract class Character extends PXObject {
 		this.statusLogic.setActionStates(ActionStates.STAND);
 	}
 
-	public Image draw() {
+	public PositionedImage draw() {
 		return this.picManager.getImage();
 	}
 
@@ -954,7 +954,7 @@ public abstract class Character extends PXObject {
 		this.switcher = switcher;
 	}
 
-	public abstract void loadFurtherImages(List<ArrayList<Image>> paramList, Map<String, ArrayList<Image>> paramMap);
+	public abstract void loadFurtherImages(List<ArrayList<PositionedImage>> paramList, Map<String, ArrayList<PositionedImage>> paramMap);
 
 	public abstract void checkFurtherCombos(List<ArrayList<String>> paramList, List<String> paramList1);
 

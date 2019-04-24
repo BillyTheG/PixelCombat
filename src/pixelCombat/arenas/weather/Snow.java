@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 import pixelCombat.arenas.Weather;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 import pixelCombat.view.gamephases.GamePlayView;
 
 public class Snow extends Weather {

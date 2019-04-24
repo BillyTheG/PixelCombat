@@ -10,18 +10,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import javafx.scene.image.Image;
 import pixelCombat.model.Character;
 import pixelCombat.model.PXMapHandler;
 import pixelCombat.utils.Console;
+import pixelCombat.view.animation.PositionedImage;
+import pixelCombat.view.picManager.PlayerPicManager;
 import pixelCombat.xml.CharacterParser;
 
 public class ImageLoader implements Runnable {
 
-	private ArrayList<ArrayList<ArrayList<Image>>> IMAGES = new ArrayList<ArrayList<ArrayList<Image>>>();
+	private ArrayList<ArrayList<ArrayList<PositionedImage>>> IMAGES = new ArrayList<ArrayList<ArrayList<PositionedImage>>>();
 //	private ArrayList<ArrayList<Image>> Player1 = new ArrayList<ArrayList<Image>>();
 //	private ArrayList<ArrayList<Image>> Player2 = new ArrayList<ArrayList<Image>>();
-	private Map<String,Map<String, ArrayList<Image>>> allIMAGES = new HashMap<>();
+	private Map<String,Map<String, ArrayList<PositionedImage>>> allIMAGES = new HashMap<>();
 	private Map<String,Map<String, Integer>> allAirLoops = new HashMap<>();
 	private Map<String,Map<String, Boolean>> allAirBools = new HashMap<>();
 	private Map<String,ArrayList<Integer>> allLoops = new HashMap<>();
@@ -30,8 +31,8 @@ public class ImageLoader implements Runnable {
 	
 	
 	// container for loaded sprites
-	private Map<String, ArrayList<Image>> player1;
-	private Map<String, ArrayList<Image>> player2;
+	private Map<String, ArrayList<PositionedImage>> player1;
+	private Map<String, ArrayList<PositionedImage>> player2;
 
 	private ArrayList<ArrayList<Float>> player1_times;
 	private ArrayList<Integer> player1_loops;
@@ -50,7 +51,7 @@ public class ImageLoader implements Runnable {
 	private PXMapHandler arena;
 	private volatile Console console;
 
-	public ImageLoader(PXMapHandler arena, Map<String, ArrayList<Image>> player1, Map<String, ArrayList<Image>> player2, Console console) {
+	public ImageLoader(PXMapHandler arena, Map<String, ArrayList<PositionedImage>> player1, Map<String, ArrayList<PositionedImage>> player2, Console console) {
 		this.console = console;
 		this.arena = arena;
 		this.player1 = player1;
@@ -62,8 +63,8 @@ public class ImageLoader implements Runnable {
 		init();
 
 		List<Character> cl = new ArrayList<Character>(arena.getCharacter());
-		ArrayList<ArrayList<Image>> Player1 = new ArrayList<ArrayList<Image>>();
-		ArrayList<ArrayList<Image>> Player2 = new ArrayList<ArrayList<Image>>();
+		ArrayList<ArrayList<PositionedImage>> Player1 = new ArrayList<ArrayList<PositionedImage>>();
+		ArrayList<ArrayList<PositionedImage>> Player2 = new ArrayList<ArrayList<PositionedImage>>();
 		
 		ArrayList<Thread> threads = new ArrayList<Thread>();
 
@@ -211,12 +212,6 @@ public class ImageLoader implements Runnable {
 				e.printStackTrace();
 			}
 		
-				
-
-		
-		
-		
-		
 		// Liste aller Bilder zusammenfÃ¼gen
 		IMAGES.clear();
 		IMAGES.add(0, Player1);
@@ -241,9 +236,9 @@ public class ImageLoader implements Runnable {
 
 	}
 
-	public Map<String, ArrayList<Image>> loadCharacter(String name, int number) {
+	public Map<String, ArrayList<PositionedImage>> loadCharacter(String name, int number) {
 
-		Map<String, ArrayList<Image>> player = new HashMap<String, ArrayList<Image>>();
+		Map<String, ArrayList<PositionedImage>> player = new HashMap<String, ArrayList<PositionedImage>>();
 
 		try {
 
@@ -283,19 +278,19 @@ public class ImageLoader implements Runnable {
 		return player;
 	}
 
-	public ArrayList<ArrayList<ArrayList<Image>>> getIMAGES() {
+	public ArrayList<ArrayList<ArrayList<PositionedImage>>> getIMAGES() {
 		return IMAGES;
 	}
 
-	public void setIMAGES(ArrayList<ArrayList<ArrayList<Image>>> iMAGES) {
+	public void setIMAGES(ArrayList<ArrayList<ArrayList<PositionedImage>>> iMAGES) {
 		IMAGES = iMAGES;
 	}
 
-	public Map<String, ArrayList<Image>> getMapPlayer1() {
+	public Map<String, ArrayList<PositionedImage>> getMapPlayer1() {
 		return player1;
 	}
 
-	public Map<String, ArrayList<Image>> getMapPlayer2() {
+	public Map<String, ArrayList<PositionedImage>> getMapPlayer2() {
 		return player2;
 	}
 

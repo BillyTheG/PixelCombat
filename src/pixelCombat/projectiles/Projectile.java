@@ -17,6 +17,7 @@ import pixelCombat.model.Character;
 import pixelCombat.model.PXObject;
 import pixelCombat.physics.ProjectilePhysics;
 import pixelCombat.utils.Console;
+import pixelCombat.view.animation.PositionedImage;
 
 /**
  * PCProjectile
@@ -62,7 +63,7 @@ public abstract class Projectile extends PXObject {
 	public ArrayList<ArrayList<BoundingRectangle>> currentBox;
 	public ArrayList<ArrayList<ArrayList<BoundingRectangle>>> boxes;
 	//images
-	public ArrayList<ArrayList<Image>> Images;
+	public ArrayList<ArrayList<PositionedImage>> Images;
 	public ArrayList<ArrayList<Float>> times;
 	public ArrayList<Integer> loopIndizes;
 	public ArrayList<Boolean> loopBools;
@@ -118,7 +119,7 @@ public abstract class Projectile extends PXObject {
 		this.boxes = new  ArrayList<ArrayList<ArrayList<BoundingRectangle>>>();
 		
 		//images
-		this.Images = new ArrayList<ArrayList<Image>>();
+		this.Images = new ArrayList<ArrayList<PositionedImage>>();
 		this.times = new ArrayList<ArrayList<Float>>();
 		this.loopIndizes = new ArrayList<Integer>();
 		this.loopBools = new ArrayList<Boolean>();	

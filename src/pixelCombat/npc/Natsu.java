@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public class Natsu extends NPC {
 

@@ -2,7 +2,7 @@ package pixelCombat.arenas;
 
 
 import javafx.scene.image.Image;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public abstract class Weather {
 

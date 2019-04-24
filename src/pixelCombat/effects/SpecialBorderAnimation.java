@@ -3,7 +3,7 @@ package pixelCombat.effects;
 import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.model.PXObject;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public class SpecialBorderAnimation extends PXObject {
 

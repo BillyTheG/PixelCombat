@@ -6,7 +6,7 @@ import java.util.List;
 import javafx.scene.image.Image;
 import pixelCombat.npc.NPC;
 import pixelCombat.utils.GameEngine;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public abstract class PXMap
 {

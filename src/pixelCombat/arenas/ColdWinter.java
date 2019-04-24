@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 import pixelCombat.arenas.weather.Snow;
 import pixelCombat.utils.GameEngine;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 import pixelCombat.view.gamephases.GamePlayView;
 
 public class ColdWinter extends PXMap {

@@ -1,6 +1,7 @@
-package pixelCombat.view;
+package pixelCombat.view.animation;
 
 import pixelCombat.model.Character;
+import pixelCombat.view.picManager.PicManager;
 
 public class AnimatorThread implements Runnable 
 {

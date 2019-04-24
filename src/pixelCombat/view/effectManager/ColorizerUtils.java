@@ -1,4 +1,4 @@
-package pixelCombat.view;
+package pixelCombat.view.effectManager;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;

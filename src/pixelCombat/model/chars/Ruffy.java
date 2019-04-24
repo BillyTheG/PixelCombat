@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.ai.RuffyKI;
 import pixelCombat.artworks.Gear2;
@@ -53,7 +52,8 @@ import pixelCombat.model.chars.ruffy.attacks.RuffyModeGear2;
 import pixelCombat.model.chars.ruffy.attacks.RuffyRunAttack1;
 import pixelCombat.model.chars.ruffy.attacks.RuffyRunAttack2;
 import pixelCombat.projectiles.ProjectileManager;
-import pixelCombat.view.EffectManager;
+import pixelCombat.view.animation.PositionedImage;
+import pixelCombat.view.effectManager.EffectManager;
 
 public class Ruffy
   extends Character
@@ -410,19 +410,20 @@ public float range = 8.0F;
     ((Attack)this.attacks.get("airSpecialAttack1")).check();
   }
   
-  public Image draw()
+  public PositionedImage draw()
   {
-    if (isGear2On()) {
-      try
-      {
-        return this.effectManager.drawImage(this.picManager.getImage(), this.picManager.getCurrFrameIndex(), 
-          this.picManager.getCurrentAnimation());
-      }
-      catch (InterruptedException e)
-      {
-        e.printStackTrace();
-      }
-    }
+// TODO load images instead of doing it during game    
+//	  if (isGear2On()) {
+//      try
+//      {
+//        return this.effectManager.drawImage(this.picManager.getImage(), this.picManager.getCurrFrameIndex(), 
+//          this.picManager.getCurrentAnimation());
+//      }
+//      catch (InterruptedException e)
+//      {
+//        e.printStackTrace();
+//      }
+//    }
     return this.picManager.getImage();
   }
   
@@ -462,10 +463,10 @@ public float range = 8.0F;
     }
   }
   
-  public void loadFurtherImages(List<ArrayList<Image>> player_all, Map<String, ArrayList<Image>> player)
+  public void loadFurtherImages(List<ArrayList<PositionedImage>> player_all, Map<String, ArrayList<PositionedImage>> player)
   {
-    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<Image>)player.get("gear2transform"));
-    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+2, (ArrayList<Image>)player.get("gigantoGatling"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<PositionedImage>)player.get("gear2transform"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+2, (ArrayList<PositionedImage>)player.get("gigantoGatling"));
   }
   
   public void checkFurtherCombos(List<ArrayList<String>> combos, List<String> result)

@@ -3,7 +3,7 @@ package pixelCombat.effects;
 import java.util.ArrayList;
 
 import javafx.scene.image.Image;
-import pixelCombat.view.Animation;
+import pixelCombat.view.animation.Animation;
 
 public class NextRoundBorder extends SpecialBorderAnimation {
 

@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.enums.FigureState;
 import pixelCombat.utils.GamePhase;
-import pixelCombat.view.FigureAnimation;
+import pixelCombat.view.animation.FigureAnimation;
 
 public abstract class GamePhaseFigure extends GamePhaseElement 
 {

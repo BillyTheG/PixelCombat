@@ -84,7 +84,7 @@ public class PlayerPhysics extends Physics<Character> {
 
 	private void makeGroundDust() {
 		if (Math.abs(this.VY) > HARD_LAND_VELOCITY_THRESHOLD_VY) {
-			pxObject.getEngine().console.print("That was a hard landing.");
+			pxObject.getEngine().console.println("That was a hard landing.");
 			makeHardLandDust();
 			((Character) this.pxObject).sound("/audio/Ruffy_Stamp.wav");
 			if (!((Character) this.pxObject).shaking) {

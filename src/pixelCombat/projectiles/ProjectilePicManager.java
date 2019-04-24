@@ -2,8 +2,8 @@ package pixelCombat.projectiles;
 
 import java.util.ArrayList;
 
-import javafx.scene.image.Image;
-import pixelCombat.view.PicManager;
+import pixelCombat.view.animation.PositionedImage;
+import pixelCombat.view.picManager.PicManager;
 
 public class ProjectilePicManager extends PicManager<Projectile>{
 
@@ -17,7 +17,7 @@ public class ProjectilePicManager extends PicManager<Projectile>{
 	public final int SPECIALEFFECT2 = 5;
 
 
-	public ProjectilePicManager(Projectile projectile, ArrayList<ArrayList<Image>> Images,
+	public ProjectilePicManager(Projectile projectile, ArrayList<ArrayList<PositionedImage>> Images,
 			ArrayList<ArrayList<Float>> times, ArrayList<Integer> loopIndizes,
 			ArrayList<Boolean> loopBools) {
 		super(projectile,Images,times,loopIndizes,loopBools);

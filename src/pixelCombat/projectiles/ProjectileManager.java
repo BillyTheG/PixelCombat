@@ -11,10 +11,10 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import javafx.scene.image.Image;
 import pixelCombat.Math.BoundingRectangle;
 import pixelCombat.utils.Console;
 import pixelCombat.utils.WordWrapConsole;
+import pixelCombat.view.animation.PositionedImage;
 import pixelCombat.xml.CharacterParser;
 import pixelCombat.xml.StatsParser;
 import pixelCombat.xml.XML_Box_Reader;
@@ -31,7 +31,7 @@ import pixelCombat.xml.XML_Box_Reader;
  */
 public class ProjectileManager {
 	// all pictures hold in map
-	public HashMap<String, ArrayList<ArrayList<Image>>> pictures;
+	public HashMap<String, ArrayList<ArrayList<PositionedImage>>> pictures;
 
 	// all boxes hold in map
 	public HashMap<String, ArrayList<ArrayList<ArrayList<BoundingRectangle>>>> boxes;
@@ -50,7 +50,7 @@ public class ProjectileManager {
 
 	private void init() {
 		// create dummy lists for pics/boxes
-		this.pictures = new HashMap<String, ArrayList<ArrayList<Image>>>();
+		this.pictures = new HashMap<String, ArrayList<ArrayList<PositionedImage>>>();
 		this.loopVariabels = new HashMap<String, ArrayList<Integer>>();
 		this.loopBools = new HashMap<String, ArrayList<Boolean>>();
 		this.times = new HashMap<String, ArrayList<ArrayList<Float>>>();
@@ -81,11 +81,11 @@ public class ProjectileManager {
 				xmlreader1.setContentHandler(ch);
 				xmlreader1.parse(source1);
 
-				Map<String, ArrayList<Image>> pictures = ch.getCharacter();
+				Map<String, ArrayList<PositionedImage>> pictures = ch.getCharacter();
 				ArrayList<Boolean> projectile_loopBools = ch.getLoopBools();
 				ArrayList<Integer> projectile_loopIndices = ch.getLoopIndizes();
 				ArrayList<ArrayList<Float>> projectile_times = ch.getTimes();
-				ArrayList<ArrayList<Image>> pictures_all = new ArrayList<ArrayList<Image>>();
+				ArrayList<ArrayList<PositionedImage>> pictures_all = new ArrayList<ArrayList<PositionedImage>>();
 				pictures_all.add(0, pictures.get("creation"));
 				pictures_all.add(1, pictures.get("move"));
 				pictures_all.add(2, pictures.get("explosion"));
@@ -150,11 +150,11 @@ public class ProjectileManager {
 				xmlreader1.setContentHandler(ch);
 				xmlreader1.parse(source1);
 
-				Map<String, ArrayList<Image>> pictures = ch.getCharacter();
+				Map<String, ArrayList<PositionedImage>> pictures = ch.getCharacter();
 				ArrayList<Boolean> projectile_loopBools = ch.getLoopBools();
 				ArrayList<Integer> projectile_loopIndices = ch.getLoopIndizes();
 				ArrayList<ArrayList<Float>> projectile_times = ch.getTimes();
-				ArrayList<ArrayList<Image>> pictures_all = new ArrayList<ArrayList<Image>>();
+				ArrayList<ArrayList<PositionedImage>> pictures_all = new ArrayList<ArrayList<PositionedImage>>();
 				pictures_all.add(0, pictures.get("creation"));
 				pictures_all.add(1, pictures.get("move"));
 				pictures_all.add(2, pictures.get("explosion"));
@@ -205,9 +205,9 @@ public class ProjectileManager {
 	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	// XML Reader for Images
-	public Map<String, ArrayList<Image>> loadProjectileImages(String name) {
+	public Map<String, ArrayList<PositionedImage>> loadProjectileImages(String name) {
 
-		Map<String, ArrayList<Image>> projectile = new HashMap<String, ArrayList<Image>>();
+		Map<String, ArrayList<PositionedImage>> projectile = new HashMap<String, ArrayList<PositionedImage>>();
 
 		try {
 

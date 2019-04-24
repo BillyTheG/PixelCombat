@@ -5,7 +5,7 @@ import pixelCombat.Math.Vector2d;
 import pixelCombat.enums.FigureState;
 import pixelCombat.gamephase.gamephaseelement.GamePhaseFigure;
 import pixelCombat.utils.GamePhase;
-import pixelCombat.view.FigureAnimation;
+import pixelCombat.view.animation.FigureAnimation;
 import pixelCombat.view.gamephases.GamePlayView;
 
 public class RuffyFigure extends GamePhaseFigure {

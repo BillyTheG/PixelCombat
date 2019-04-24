@@ -1,4 +1,4 @@
-package pixelCombat.view;
+package pixelCombat.view.effectManager;
 
 import java.util.HashMap;
 import java.util.Random;

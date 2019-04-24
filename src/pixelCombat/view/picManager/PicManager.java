@@ -1,19 +1,20 @@
-package pixelCombat.view;
+package pixelCombat.view.picManager;
 
 import java.util.ArrayList;
 
-import javafx.scene.image.Image;
+import pixelCombat.view.animation.Animation;
+import pixelCombat.view.animation.PositionedImage;
 
 public abstract class PicManager<T> {
 
 	// gesamte Bildreihe + Zeiten + LoopIndizes + LoopBoolean
-	protected ArrayList<ArrayList<Image>> Images;
+	protected ArrayList<ArrayList<PositionedImage>> Images;
 	protected ArrayList<ArrayList<Float>> times;
 	protected ArrayList<Boolean> loopBools;
 	protected ArrayList<Integer> loopIndizes;
 
 	// temporäre Bildreihe und dessen Zeiten
-	protected ArrayList<Image> animation;
+	protected ArrayList<PositionedImage> animation;
 	protected ArrayList<Float> time;
 
 	// Animationsvariablen
@@ -28,7 +29,7 @@ public abstract class PicManager<T> {
 	
 	protected T pxObject;
 
-	public PicManager(T pxObject, ArrayList<ArrayList<Image>> Images,
+	public PicManager(T pxObject, ArrayList<ArrayList<PositionedImage>> Images,
 			ArrayList<ArrayList<Float>> times, ArrayList<Integer> loopIndizes,
 			ArrayList<Boolean> loopBools) 
 	{
@@ -51,7 +52,7 @@ public abstract class PicManager<T> {
 		loadFrames();
 	}
 
-	public void reset(ArrayList<Image> animation, ArrayList<Float> time) {
+	public void reset(ArrayList<PositionedImage> animation, ArrayList<Float> time) {
 		totalDuration = 0;
 		currFrameIndex = 0;
 		animTime = 0;
@@ -75,16 +76,16 @@ public abstract class PicManager<T> {
 		return (AnimFrame) frames.get(currFrameIndex);
 	}
 
-	public void addFrame(Image image, float duration) {
+	public void addFrame(PositionedImage image, float duration) {
 		totalDuration += duration;
 		frames.add(new AnimFrame(image, totalDuration));
 	}
 
 	public class AnimFrame {
-		Image image;
+		PositionedImage image;
 		public float endTime;
 
-		public AnimFrame(Image image, float endTime) {
+		public AnimFrame(PositionedImage image, float endTime) {
 			this.image = image;
 			this.endTime = endTime;
 		}
@@ -94,7 +95,7 @@ public abstract class PicManager<T> {
 		}
 	}
 
-	public Image getImage() {
+	public PositionedImage getImage() {
 		if (frames.size() == 0) {
 
 			return null;
@@ -106,19 +107,19 @@ public abstract class PicManager<T> {
 	}
 
 	// getter,setter
-	public ArrayList<ArrayList<Image>> getImages() {
+	public ArrayList<ArrayList<PositionedImage>> getImages() {
 		return Images;
 	}
 
-	public void setImages(ArrayList<ArrayList<Image>> images) {
+	public void setImages(ArrayList<ArrayList<PositionedImage>> images) {
 		Images = images;
 	}
 
-	public ArrayList<Image> getAnimation() {
+	public ArrayList<PositionedImage> getAnimation() {
 		return animation;
 	}
 
-	public void setAnimation(ArrayList<Image> animation) {
+	public void setAnimation(ArrayList<PositionedImage> animation) {
 		this.animation = animation;
 	}
 

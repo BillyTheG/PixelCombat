@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javafx.scene.image.Image;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.ai.ZorroKI;
 import pixelCombat.artworks.TatsumakiDragon;
@@ -48,6 +47,7 @@ import pixelCombat.model.chars.zorro.attacks.ZorroTatsumaki;
 import pixelCombat.model.chars.zorro.attacks.ZorroToraGari;
 import pixelCombat.model.chars.zorro.attacks.ZorroYokkouDori;
 import pixelCombat.projectiles.ProjectileManager;
+import pixelCombat.view.animation.PositionedImage;
 
 public class Zorro
   extends Character
@@ -390,16 +390,16 @@ public class Zorro
     ((Attack)this.attacks.get("yokkoudori")).check();
   }
   
-  public Image draw()
+  public PositionedImage draw()
   {
     return this.picManager.getImage();
   }
   
   public void updateMiscs() {}
   
-  public void loadFurtherImages(List<ArrayList<Image>> player_all, Map<String, ArrayList<Image>> player)
+  public void loadFurtherImages(List<ArrayList<PositionedImage>> player_all, Map<String, ArrayList<PositionedImage>> player)
   {
-    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<Image>)player.get("yokkoudori"));
+    player_all.add(this.viewLogic.MAX_STANDARD_SPRITES+1, (ArrayList<PositionedImage>)player.get("yokkoudori"));
   }
   
   public void checkFurtherCombos(List<ArrayList<String>> combos, List<String> result)

@@ -13,16 +13,16 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import javafx.scene.image.Image;
 import pixelCombat.utils.Console;
 import pixelCombat.utils.WordWrapConsole;
+import pixelCombat.view.animation.PositionedImage;
 
 
 public class CharacterParser implements ContentHandler {
 
 	// Zwischenspeicher fuer Inhalt von Elementen
 	String ElementContent = null;
-	private Map<String, ArrayList<Image>> character = new HashMap<String, ArrayList<Image>>();
+	private Map<String, ArrayList<PositionedImage>> character = new HashMap<String, ArrayList<PositionedImage>>();
 	private ArrayList<ArrayList<Float>> times = new ArrayList<>();
 	private ArrayList<Float> time = new ArrayList<>();
 	private ArrayList<Boolean> loop = new ArrayList<>();
@@ -38,6 +38,8 @@ public class CharacterParser implements ContentHandler {
 	private boolean airBool;
 	private float duration;
 	private String  readingType = "";
+	private float  readingOffsetX = 0.0f;
+	private float  readingOffsetY = 0.0f;
 	private boolean readingSprites = false;
 	private boolean readingAnimation = false;
 	private boolean readingIMG = false;
@@ -78,11 +80,13 @@ public class CharacterParser implements ContentHandler {
 	}
 
 	public void startDocument() throws SAXException {
-		console.println("Initiating Parsing of Image-Elements");
+		if(console != null)
+			console.println("Initiating Parsing of Image-Elements");
 	}
 
 	public void endDocument() throws SAXException {
-		console.println("Parsing of "+readingType+ " Image-Elements done");
+		if(console != null)
+			console.println("Parsing of "+readingType+ " Image-Elements done");
 	}
 
 	public void startPrefixMapping(String prefix, String uri)
@@ -100,18 +104,16 @@ public class CharacterParser implements ContentHandler {
 			if (readingAnimation == false) {
 				readingAnimation = true;
 				time = new ArrayList<Float>();								
-				character.put(localName, new ArrayList<Image>());
+				character.put(localName, new ArrayList<PositionedImage>());
 				
 				animation = localName;
 				
 				loopIndex = Integer.parseInt(atts.getValue("loopIndex"));
 				loops =  getVal(atts.getValue("loops").toString());
-				
-	
+						
 				airIndex = Integer.parseInt(atts.getValue("airIndex"));
 				airBool =  getVal(atts.getValue("airBool").toString());
-		
-				
+						
 				this.airBools.put(animation, airBool);
 				this.airIndices.put(animation,airIndex);	
 				loop.add(loops);
@@ -121,6 +123,8 @@ public class CharacterParser implements ContentHandler {
 			} else {
 				key = Integer.parseInt(atts.getValue("key"));
 				duration = Float.parseFloat(atts.getValue("duration"));
+				readingOffsetX = (atts.getValue("x") != null) ? Float.parseFloat(atts.getValue("x")) : 0f;
+				readingOffsetY = (atts.getValue("y") != null) ? Float.parseFloat(atts.getValue("y")) : 0f;
 				time.add(duration);
 				readingIMG = true;
 			}
@@ -145,17 +149,20 @@ public class CharacterParser implements ContentHandler {
 					readingIMG = false;
 					try {
 						character.get(animation).add(key,
-								loadImage(ElementContent));
+								loadImage(ElementContent,readingOffsetX,readingOffsetY));
 						
 					} catch (IndexOutOfBoundsException e) {
-						console.println("IndexOutOfBoundsException while parsing character... CHECK KEYS!");
+						if(console != null)
+							console.println("IndexOutOfBoundsException while parsing character... CHECK KEYS!");
 					}
-					console.println("Loaded image key " + key + " from "
+					if(console != null)
+						console.println("Loaded image key " + key + " from "
 							+ ElementContent);
 				} else {
 					times.add(time);
 					readingAnimation = false;
-					console.println("Loaded animation " + localName
+					if(console != null)
+						console.println("Loaded animation " + localName
 							+ " with " + character.get(localName).size()
 							+ " images and with " + time.size() + " time units and is on Air: " + airBool);
 				}
@@ -181,9 +188,9 @@ public class CharacterParser implements ContentHandler {
 	public void skippedEntity(String name) throws SAXException {
 	}
 
-	public Image loadImage(String url) {
+	public PositionedImage loadImage(String url, float x, float y) {
 		try {
-			Image img = new Image(url);
+			PositionedImage img = new PositionedImage(url,x,y);
 			return img;
 		} catch (Exception e) {
 			return null;
@@ -207,7 +214,7 @@ public class CharacterParser implements ContentHandler {
 	}
 	
 
-	public Map<String, ArrayList<Image>> getCharacter() {
+	public Map<String, ArrayList<PositionedImage>> getCharacter() {
 		return this.character;
 	}
 	

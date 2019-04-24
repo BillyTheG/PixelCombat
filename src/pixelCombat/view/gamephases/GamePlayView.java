@@ -35,8 +35,8 @@ import pixelCombat.projectiles.Projectile;
 import pixelCombat.utils.Console;
 import pixelCombat.utils.GameEngine;
 import pixelCombat.view.ImageLoader;
-import pixelCombat.view.InterfaceView;
 import pixelCombat.view.Renderer;
+import pixelCombat.view.animation.PositionedImage;
 
 public class GamePlayView extends Renderer {
 
@@ -65,8 +65,8 @@ public class GamePlayView extends Renderer {
 	protected float delta_Y = 0f;
 
 	public volatile ImageLoader imageLoader;
-	private Map<String, ArrayList<Image>> player1 = new HashMap<String, ArrayList<Image>>();
-	private Map<String, ArrayList<Image>> player2 = new HashMap<String, ArrayList<Image>>();
+	private Map<String, ArrayList<PositionedImage>> player1 = new HashMap<String, ArrayList<PositionedImage>>();
+	private Map<String, ArrayList<PositionedImage>> player2 = new HashMap<String, ArrayList<PositionedImage>>();
 
 	// Hilfsvariablen fuer Animatorfunktion
 
@@ -855,7 +855,9 @@ public class GamePlayView extends Renderer {
 		getGraphicsContext().save();
 		getGraphicsContext().translate((2 * x), 0);
 		getGraphicsContext().scale(-1, 1);
-		getGraphicsContext().drawImage(p.draw(), x - (float) p.draw().getWidth() / 2f, y - (float) p.draw().getHeight() / 2f - fixPic(p.draw()));
+		getGraphicsContext().drawImage(p.draw(), 	x - (float) p.draw().getWidth()  / 2f + p.draw().getOffSetPos().x,
+													y - (float) p.draw().getHeight() / 2f + p.draw().getOffSetPos().y
+													- fixPic(p.draw()));
 		getGraphicsContext().restore();
 
 	}
@@ -866,7 +868,8 @@ public class GamePlayView extends Renderer {
 	}
 
 	private void drawRight(float x, Character p, float y) {
-		getGraphicsContext().drawImage(p.draw(), x - (float) p.draw().getWidth() / 2f, y - (float) p.draw().getHeight() / 2f - fixPic(p.draw()));
+		getGraphicsContext().drawImage(p.draw(), 	x - (float) p.draw().getWidth()  / 2f + p.draw().getOffSetPos().x, 
+													y - (float) p.draw().getHeight() / 2f + p.draw().getOffSetPos().y - fixPic(p.draw()));
 	}
 
 	private float fixPic(Image i) {
@@ -901,11 +904,11 @@ public class GamePlayView extends Renderer {
 		return char_player2;
 	}
 
-	public Map<String, ArrayList<Image>> getPlayer1() {
+	public Map<String, ArrayList<PositionedImage>> getPlayer1() {
 		return imageLoader.getMapPlayer1();
 	}
 
-	public Map<String, ArrayList<Image>> getPlayer2() {
+	public Map<String, ArrayList<PositionedImage>> getPlayer2() {
 		return imageLoader.getMapPlayer2();
 	}
 

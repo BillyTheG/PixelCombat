@@ -1,4 +1,4 @@
-package pixelCombat.view;
+package pixelCombat.view.gamephases;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import pixelCombat.Math.Vector2d;
 import pixelCombat.model.Character;
 import pixelCombat.model.PXMapHandler;
-import pixelCombat.view.gamephases.GamePlayView;
+import pixelCombat.view.ComboNumber;
 
 public class InterfaceView {
 	private int x;
@@ -26,8 +26,7 @@ public class InterfaceView {
 	public Map<String,ComboNumber> comboNumber_leaders = new HashMap<>();
 	public Map<String,ComboNumber> comboNumber_successors = new HashMap<>();
 	
-	
-	
+		
 	public InterfaceView(GraphicsContext graphicsContext, GamePlayView gamePlayView) {
 		this.graphicsContext = graphicsContext;
 		this.gamePlayView = gamePlayView;
